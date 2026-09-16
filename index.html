@@ -1,55 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+>
 
-<title>Vaishnavi • Pediatric Companion</title>
+<meta
+    name="theme-color"
+    content="#fffafd"
+>
 
-<meta name="theme-color" content="#f6f9ff">
-<meta name="description"
-      content="A personal pediatric clinical calculation companion for Vaishnavi.">
+<meta
+    name="description"
+    content="A personal pediatric clinical calculation companion for Vaishuu."
+>
+
+<title>Vaishuu • Pediatric Companion</title>
+
 
 <style>
 
 /* =========================================================
-   ROOT / THEME
+   ROOT — BABY PINK PREMIUM THEME
 ========================================================= */
 
 :root{
-    --bg:#f5f8fd;
+
+    --bg:#fffafd;
     --surface:#ffffff;
-    --surface-2:#f8faff;
+    --surface-2:#fffefe;
 
-    --navy:#20345f;
-    --navy-2:#2c477a;
+    --navy:#4b3340;
+    --navy-2:#684655;
 
-    --cyan:#21b8c7;
-    --cyan-soft:#e7f9fb;
+    --pink:#ee9fba;
+    --pink-dark:#d982a2;
+    --pink-soft:#fff1f6;
 
-    --purple:#7767d9;
-    --purple-soft:#f0edff;
+    --rose:#f3b7ca;
+    --rose-soft:#fff5f8;
 
-    --blue:#4b82df;
-    --blue-soft:#edf4ff;
+    --purple:#b294bb;
+    --purple-dark:#98769f;
+    --purple-soft:#f8f1fa;
 
-    --green:#29a879;
-    --green-soft:#e9f8f2;
+    --blue:#91a6d1;
+    --blue-soft:#f1f4fb;
 
-    --orange:#e99b42;
-    --orange-soft:#fff4e5;
+    --green:#76b9a2;
+    --green-soft:#eef9f5;
 
-    --red:#dd6464;
-    --red-soft:#fff0f0;
+    --orange:#e2b17c;
+    --orange-soft:#fff8ef;
 
-    --text:#25324a;
-    --muted:#7c879b;
-    --border:#e5eaf2;
+    --red:#df929d;
+    --red-soft:#fff4f5;
 
-    --shadow:0 12px 35px rgba(42,61,96,.08);
-    --shadow-soft:0 6px 20px rgba(42,61,96,.06);
+    --text:#55424b;
+    --muted:#98858e;
+
+    --border:#f2e3e9;
+
+    --shadow:
+        0 12px 35px rgba(126,70,94,.065);
+
+    --shadow-soft:
+        0 6px 20px rgba(126,70,94,.045);
 
     --radius-xl:26px;
     --radius-lg:20px;
@@ -59,7 +80,7 @@
 
 
 /* =========================================================
-   GLOBAL
+   RESET
 ========================================================= */
 
 *{
@@ -72,50 +93,59 @@ html{
 }
 
 body{
+
     margin:0;
-
-    background:
-        radial-gradient(
-            circle at 10% 0%,
-            rgba(119,103,217,.08),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 95% 5%,
-            rgba(33,184,199,.08),
-            transparent 25%
-        ),
-        var(--bg);
-
-    color:var(--text);
+    min-height:100vh;
 
     font-family:
         Inter,
-        ui-sans-serif,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
-        Roboto,
-        Arial,
         sans-serif;
 
-    min-height:100vh;
+    color:var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at 5% 0%,
+            rgba(243,183,202,.16),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 95% 8%,
+            rgba(178,148,187,.10),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(238,159,186,.08),
+            transparent 32%
+        ),
+
+        var(--bg);
+
+    padding-bottom:30px;
 }
 
-button,
-input,
-select{
-    font:inherit;
-}
 
-button{
-    cursor:pointer;
-}
+/* =========================================================
+   APP
+========================================================= */
 
 .app{
+
     width:min(100%,900px);
+
     margin:auto;
-    padding:18px 16px 90px;
+
+    padding:
+        16px
+        16px
+        40px;
 }
 
 
@@ -124,76 +154,116 @@ button{
 ========================================================= */
 
 .topbar{
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    margin-bottom:16px;
+    justify-content:space-between;
+
+    margin-bottom:15px;
 }
 
 .brand{
+
     display:flex;
     align-items:center;
     gap:11px;
 }
 
 .brand-icon{
-    width:44px;
-    height:44px;
 
-    border-radius:14px;
+    width:43px;
+    height:43px;
 
     display:grid;
     place-items:center;
 
+    flex:none;
+
+    border-radius:14px;
+
     color:white;
 
-    font-size:21px;
+    font-size:22px;
 
     background:
         linear-gradient(
             135deg,
-            var(--cyan),
+            var(--pink),
             var(--purple)
         );
 
     box-shadow:
-        0 8px 18px rgba(80,105,205,.18);
+        0 8px 20px
+        rgba(238,159,186,.20);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.brand-icon:hover{
+
+    transform:rotate(-4deg) scale(1.03);
+
+    box-shadow:
+        0 10px 24px
+        rgba(238,159,186,.25);
 }
 
 .brand-title{
-    font-weight:800;
-    font-size:15px;
+
     color:var(--navy);
+
+    font-size:15px;
+    font-weight:850;
+
+    letter-spacing:-.2px;
 }
 
-.brand-sub{
-    color:var(--muted);
-    font-size:11px;
+.brand-subtitle{
+
     margin-top:2px;
+
+    color:var(--muted);
+
+    font-size:10px;
 }
 
-.icon-button{
+.info-btn{
+
+    width:36px;
+    height:36px;
+
     border:1px solid var(--border);
 
+    border-radius:12px;
+
     background:
-        rgba(255,255,255,.85);
-
-    width:42px;
-    height:42px;
-
-    border-radius:13px;
+        rgba(255,255,255,.82);
 
     color:var(--navy);
 
-    display:grid;
-    place-items:center;
+    font-size:15px;
 
-    box-shadow:var(--shadow-soft);
+    cursor:pointer;
 
-    transition:.2s ease;
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
 }
 
-.icon-button:active{
+.info-btn:hover{
+
+    transform:translateY(-1px);
+
+    background:var(--pink-soft);
+
+    border-color:#efc9d7;
+}
+
+.info-btn:active{
+
     transform:scale(.94);
 }
 
@@ -203,146 +273,125 @@ button{
 ========================================================= */
 
 .hero{
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.97),
-            rgba(247,250,255,.98)
-        );
 
-    border:1px solid var(--border);
+    position:relative;
+    overflow:hidden;
+
+    padding:24px 21px;
 
     border-radius:var(--radius-xl);
 
-    padding:22px 20px;
+    border:1px solid var(--border);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff9fb
+        );
 
     box-shadow:var(--shadow);
 
-    position:relative;
-
-    overflow:hidden;
+    margin-bottom:18px;
 }
 
 .hero::before{
+
     content:"";
 
     position:absolute;
 
-    width:190px;
-    height:190px;
+    width:200px;
+    height:200px;
+
+    right:-95px;
+    top:-110px;
 
     border-radius:50%;
-
-    right:-100px;
-    bottom:-120px;
 
     background:
         radial-gradient(
             circle,
-            rgba(119,103,217,.12),
-            transparent 70%
+            rgba(238,159,186,.17),
+            transparent 68%
         );
+
+    pointer-events:none;
 }
 
 .hero::after{
+
     content:"";
 
     position:absolute;
 
-    width:150px;
-    height:150px;
+    width:175px;
+    height:175px;
+
+    left:-105px;
+    bottom:-110px;
 
     border-radius:50%;
 
-    right:-70px;
-    top:-65px;
-
     background:
-        rgba(33,184,199,.08);
+        radial-gradient(
+            circle,
+            rgba(178,148,187,.12),
+            transparent 68%
+        );
+
+    pointer-events:none;
 }
 
-.hero-greeting{
-    color:var(--muted);
-
-    font-size:13px;
-
-    font-weight:700;
-
-    margin-bottom:5px;
+.hero-content{
 
     position:relative;
     z-index:1;
+}
 
-    animation:
-        softAppear .5s ease;
+.greeting{
+
+    color:var(--pink-dark);
+
+    font-size:13px;
+    font-weight:800;
+
+    letter-spacing:.15px;
 }
 
 .hero-name{
-    font-size:29px;
 
-    line-height:1.1;
+    margin-top:2px;
 
     color:var(--navy);
 
-    font-weight:850;
+    font-size:32px;
+    line-height:1.05;
 
-    letter-spacing:-.7px;
+    letter-spacing:-1.2px;
 
-    position:relative;
-    z-index:1;
+    font-weight:900;
 }
 
 .hero-message{
+
+    max-width:620px;
+
+    margin-top:10px;
+
     color:var(--muted);
 
-    margin-top:9px;
+    font-size:12px;
 
-    font-size:13px;
+    line-height:1.6;
 
-    line-height:1.55;
-
-    max-width:600px;
-
-    position:relative;
-    z-index:1;
-
-    animation:
-        messageAppear .55s ease;
-}
-
-@keyframes softAppear{
-
-    from{
-        opacity:0;
-        transform:translateY(4px);
-    }
-
-    to{
-        opacity:1;
-        transform:none;
-    }
-
-}
-
-@keyframes messageAppear{
-
-    from{
-        opacity:0;
-        transform:translateY(7px);
-    }
-
-    to{
-        opacity:1;
-        transform:none;
-    }
-
+    transition:opacity .22s ease;
 }
 
 .date-pill{
+
     display:inline-flex;
-
     align-items:center;
-
     gap:7px;
 
     margin-top:15px;
@@ -351,52 +400,58 @@ button{
 
     border-radius:999px;
 
-    background:var(--cyan-soft);
+    background:var(--pink-soft);
 
-    color:#218792;
+    border:1px solid #f3d7e1;
 
-    font-size:11px;
+    color:#916276;
 
-    font-weight:700;
-
-    position:relative;
-    z-index:1;
+    font-size:10px;
+    font-weight:750;
 }
 
 
 /* =========================================================
-   QUICK ACTIONS
+   SECTIONS
 ========================================================= */
 
 .section{
-    margin-top:22px;
+    margin-top:19px;
 }
 
 .section-head{
-    display:flex;
 
+    display:flex;
+    align-items:center;
     justify-content:space-between;
 
-    align-items:center;
+    gap:10px;
 
-    margin-bottom:11px;
+    margin-bottom:10px;
 }
 
 .section-title{
-    font-size:15px;
-
-    font-weight:800;
 
     color:var(--navy);
+
+    font-size:14px;
+    font-weight:850;
 }
 
 .section-hint{
-    font-size:11px;
 
     color:var(--muted);
+
+    font-size:10px;
 }
 
+
+/* =========================================================
+   QUICK TOOLS
+========================================================= */
+
 .quick-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -405,220 +460,303 @@ button{
     gap:9px;
 }
 
-.quick-card{
+.quick-tool{
+
+    min-width:0;
+
     border:1px solid var(--border);
 
-    background:var(--surface);
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fffafd
+        );
 
     border-radius:17px;
 
-    padding:13px 7px;
+    padding:13px 9px;
 
-    text-align:center;
+    cursor:pointer;
 
     box-shadow:var(--shadow-soft);
 
-    transition:.2s ease;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
 }
 
-.quick-card:hover{
+.quick-tool:hover{
+
     transform:translateY(-2px);
 
     box-shadow:
-        0 10px 25px rgba(42,61,96,.09);
+        0 10px 25px
+        rgba(126,70,94,.08);
+
+    border-color:#edcad7;
 }
 
-.quick-card:active{
-    transform:
-        translateY(1px)
-        scale(.98);
+.quick-tool:active{
+    transform:scale(.97);
 }
 
 .quick-icon{
+
     width:35px;
     height:35px;
 
-    border-radius:11px;
-
     display:grid;
-
     place-items:center;
 
-    margin:0 auto 7px;
+    border-radius:12px;
+
+    margin-bottom:8px;
 
     font-size:17px;
 }
 
-.quick-card:nth-child(1)
-.quick-icon{
-    background:var(--cyan-soft);
+.quick-tool:nth-child(1) .quick-icon{
+    background:var(--pink-soft);
 }
 
-.quick-card:nth-child(2)
-.quick-icon{
-    background:var(--purple-soft);
-}
-
-.quick-card:nth-child(3)
-.quick-icon{
+.quick-tool:nth-child(2) .quick-icon{
     background:var(--blue-soft);
 }
 
-.quick-card:nth-child(4)
-.quick-icon{
+.quick-tool:nth-child(3) .quick-icon{
+    background:var(--purple-soft);
+}
+
+.quick-tool:nth-child(4) .quick-icon{
     background:var(--green-soft);
 }
 
-.quick-label{
-    font-size:10px;
-
-    font-weight:750;
+.quick-name{
 
     color:var(--navy);
+
+    font-size:10px;
+    font-weight:800;
+
+    line-height:1.3;
 }
 
 
 /* =========================================================
-   CALCULATOR
+   CATEGORY FILTERS
 ========================================================= */
 
-.calculator-shell{
-    margin-top:24px;
+.category-row{
+
+    display:flex;
+    gap:7px;
+
+    overflow-x:auto;
+
+    padding:
+        2px
+        1px
+        7px;
+
+    scrollbar-width:none;
 }
 
+.category-row::-webkit-scrollbar{
+    display:none;
+}
+
+.category{
+
+    flex:none;
+
+    padding:8px 11px;
+
+    border-radius:999px;
+
+    border:1px solid var(--border);
+
+    background:white;
+
+    color:var(--muted);
+
+    font-size:10px;
+    font-weight:750;
+
+    cursor:pointer;
+
+    transition:
+        color .2s ease,
+        border-color .2s ease,
+        background .2s ease,
+        transform .2s ease;
+}
+
+.category:hover{
+
+    border-color:#eabfd0;
+
+    color:var(--pink-dark);
+}
+
+.category:active{
+    transform:scale(.96);
+}
+
+.category.active{
+
+    color:white;
+
+    border-color:transparent;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--purple)
+        );
+
+    box-shadow:
+        0 6px 15px
+        rgba(238,159,186,.18);
+}
+
+
+/* =========================================================
+   CALCULATOR CARD
+========================================================= */
+
 .calculator-card{
-    background:var(--surface);
+
+    margin-top:9px;
 
     border:1px solid var(--border);
 
     border-radius:var(--radius-xl);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fffafd
+        );
 
     box-shadow:var(--shadow);
 
     overflow:hidden;
 }
 
-.calculator-top{
-    padding:18px 17px 14px;
+.calculator-head{
+
+    padding:
+        18px
+        18px
+        15px;
 
     border-bottom:
-        1px solid var(--border);
-}
-
-.calculator-title-row{
-    display:flex;
-
-    gap:12px;
-
-    align-items:center;
-}
-
-.calculator-icon{
-    width:46px;
-    height:46px;
-
-    flex:none;
-
-    border-radius:15px;
-
-    display:grid;
-
-    place-items:center;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--cyan-soft),
-            var(--purple-soft)
-        );
-
-    font-size:21px;
+        1px solid
+        #f4e8ed;
 }
 
 .calculator-title{
-    font-size:17px;
-
-    font-weight:850;
 
     color:var(--navy);
+
+    font-size:16px;
+    font-weight:900;
+
+    letter-spacing:-.3px;
 }
 
 .calculator-description{
+
+    margin-top:5px;
+
     color:var(--muted);
 
-    font-size:11px;
-
-    margin-top:3px;
-
-    line-height:1.45;
-}
-
-.select-wrap{
-    position:relative;
-
-    margin-top:14px;
-}
-
-.select-label{
     font-size:10px;
 
-    font-weight:800;
+    line-height:1.5;
+}
 
-    color:var(--muted);
+.calculator-selector-wrap{
 
-    margin-bottom:6px;
+    padding:13px 16px;
 
-    display:block;
+    background:#fffafd;
 
-    text-transform:uppercase;
-
-    letter-spacing:.6px;
+    border-bottom:
+        1px solid
+        #f4e8ed;
 }
 
 .calculator-select{
+
     width:100%;
 
     appearance:none;
 
-    border:1px solid #dce3ee;
-
-    background:#f9fbff;
-
-    color:var(--navy);
-
-    min-height:48px;
-
-    padding:
-        0
-        43px
-        0
-        14px;
+    border:1px solid #eadce3;
 
     border-radius:14px;
 
-    font-weight:700;
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff8fb
+        );
+
+    color:var(--navy);
+
+    padding:
+        12px
+        40px
+        12px
+        13px;
+
+    font-family:inherit;
+
+    font-size:12px;
+    font-weight:750;
 
     outline:none;
+    cursor:pointer;
+
+    background-image:
+
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            var(--pink-dark) 50%
+        ),
+
+        linear-gradient(
+            135deg,
+            var(--pink-dark) 50%,
+            transparent 50%
+        );
+
+    background-position:
+
+        calc(100% - 17px) 52%,
+        calc(100% - 12px) 52%;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat:no-repeat;
 }
 
 .calculator-select:focus{
-    border-color:var(--cyan);
+
+    border-color:#df9db7;
 
     box-shadow:
         0 0 0 3px
-        rgba(33,184,199,.09);
-}
-
-.select-arrow{
-    position:absolute;
-
-    right:15px;
-
-    bottom:14px;
-
-    pointer-events:none;
-
-    color:var(--muted);
+        rgba(238,159,186,.09);
 }
 
 .calculator-body{
@@ -627,198 +765,121 @@ button{
 
 
 /* =========================================================
-   CATEGORY STRIP
-========================================================= */
-
-.category-strip{
-    display:flex;
-
-    gap:7px;
-
-    overflow-x:auto;
-
-    padding:
-        1px
-        1px
-        5px;
-
-    scrollbar-width:none;
-}
-
-.category-strip::-webkit-scrollbar{
-    display:none;
-}
-
-.category{
-    flex:none;
-
-    border:1px solid var(--border);
-
-    background:white;
-
-    border-radius:999px;
-
-    padding:8px 12px;
-
-    color:#64718a;
-
-    font-size:10px;
-
-    font-weight:800;
-
-    transition:.2s ease;
-}
-
-.category:active{
-    transform:scale(.96);
-}
-
-.category.active{
-    background:var(--navy);
-
-    color:white;
-
-    border-color:var(--navy);
-}
-
-
-/* =========================================================
-   INPUTS
+   FORM FIELDS
 ========================================================= */
 
 .field{
     margin-bottom:13px;
 }
 
-.field:last-child{
-    margin-bottom:0;
-}
-
 .field-label{
+
     display:block;
 
-    font-size:11px;
-
-    font-weight:750;
-
-    color:#55627a;
-
     margin-bottom:6px;
+
+    color:#755965;
+
+    font-size:10px;
+    font-weight:800;
 }
 
-.input-wrap{
-    position:relative;
-}
+.field input,
+.field select{
 
-.input{
     width:100%;
 
-    min-height:48px;
+    padding:12px 13px;
 
-    border:1px solid #dce3ee;
-
-    background:#fbfcff;
-
-    color:var(--text);
+    border:1px solid #eadfe4;
 
     border-radius:13px;
 
-    padding:
-        0
-        62px
-        0
-        13px;
+    background:#ffffff;
+
+    color:var(--navy);
+
+    font-family:inherit;
+
+    font-size:12px;
 
     outline:none;
 
-    transition:.2s ease;
-
-    font-size:15px;
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
 }
 
-.input:focus{
-    border-color:var(--cyan);
+.field input:focus,
+.field select:focus{
+
+    border-color:#df9db7;
 
     box-shadow:
         0 0 0 3px
-        rgba(33,184,199,.1);
-
-    background:white;
+        rgba(238,159,186,.08);
 }
 
-.input::placeholder{
-    color:#a9b2c0;
-}
-
-.unit{
-    position:absolute;
-
-    right:12px;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    color:var(--muted);
-
-    font-size:11px;
-
-    font-weight:700;
-}
-
-.two-col{
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:10px;
+.field input::placeholder{
+    color:#b7a7ae;
 }
 
 
 /* =========================================================
-   BUTTONS
+   BUTTON
 ========================================================= */
 
-.button{
+.calculate-btn{
+
     width:100%;
 
     border:0;
 
-    min-height:48px;
-
     border-radius:14px;
+
+    padding:12px 15px;
+
+    margin-top:3px;
+
+    color:white;
 
     background:
         linear-gradient(
             135deg,
-            var(--navy),
-            #38548a
+            var(--pink),
+            var(--purple)
         );
 
-    color:white;
+    font-family:inherit;
 
-    font-weight:800;
+    font-size:12px;
+    font-weight:850;
 
-    margin-top:15px;
+    cursor:pointer;
 
     box-shadow:
         0 8px 18px
-        rgba(32,52,95,.16);
+        rgba(238,159,186,.18);
 
-    transition:.2s ease;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        filter .2s ease;
 }
 
-.button:hover{
+.calculate-btn:hover{
+
     transform:translateY(-1px);
 
+    filter:saturate(1.04);
+
     box-shadow:
-        0 10px 22px
-        rgba(32,52,95,.19);
+        0 11px 22px
+        rgba(238,159,186,.23);
 }
 
-.button:active{
-    transform:scale(.985);
+.calculate-btn:active{
+    transform:scale(.98);
 }
 
 
@@ -826,162 +887,71 @@ button{
    RESULT
 ========================================================= */
 
-.result{
-    margin-top:15px;
+.result-card{
 
-    border-radius:17px;
+    margin-top:14px;
 
     padding:15px;
+
+    border-radius:16px;
+
+    border:1px solid #f0dfe6;
 
     background:
         linear-gradient(
             135deg,
-            #f1fbfc,
-            #f6f3ff
+            #fff6fa,
+            #faf6fb
         );
 
-    border:1px solid #dce8f0;
-
     animation:
-        resultIn .25s ease;
+        resultIn .3s ease;
 }
 
 @keyframes resultIn{
 
     from{
         opacity:0;
-        transform:translateY(5px);
+        transform:translateY(6px);
     }
 
     to{
         opacity:1;
-        transform:none;
+        transform:translateY(0);
     }
-
 }
 
 .result-label{
-    font-size:10px;
-
-    font-weight:800;
 
     color:var(--muted);
+
+    font-size:9px;
+    font-weight:800;
 
     text-transform:uppercase;
 
-    letter-spacing:.6px;
+    letter-spacing:.7px;
 }
 
 .result-value{
-    font-size:27px;
 
-    font-weight:900;
+    margin-top:4px;
 
     color:var(--navy);
 
-    margin-top:3px;
+    font-size:20px;
+    font-weight:900;
 }
 
-.result-sub{
-    color:#66758d;
-
-    font-size:11px;
-
-    line-height:1.5;
+.result-note{
 
     margin-top:5px;
-}
 
-.result-grid{
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:9px;
-
-    margin-top:10px;
-}
-
-.mini-result{
-    background:
-        rgba(255,255,255,.8);
-
-    border:
-        1px solid
-        rgba(218,226,238,.8);
-
-    padding:10px;
-
-    border-radius:12px;
-}
-
-.mini-label{
-    font-size:9px;
-
-    color:var(--muted);
-
-    font-weight:750;
-}
-
-.mini-value{
-    font-size:16px;
-
-    color:var(--navy);
-
-    font-weight:850;
-
-    margin-top:3px;
-}
-
-
-/* =========================================================
-   REFERENCE CARDS
-========================================================= */
-
-.reference-grid{
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:10px;
-}
-
-.reference-card{
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:17px;
-
-    padding:14px;
-
-    box-shadow:var(--shadow-soft);
-
-    transition:.2s ease;
-}
-
-.reference-card:hover{
-    transform:translateY(-2px);
-}
-
-.reference-card-title{
-    font-size:12px;
-
-    font-weight:850;
-
-    color:var(--navy);
-}
-
-.reference-card-text{
-    color:var(--muted);
+    color:#826f78;
 
     font-size:10px;
 
-    line-height:1.5;
-
-    margin-top:5px;
+    line-height:1.55;
 }
 
 
@@ -989,34 +959,118 @@ button{
    NOTES
 ========================================================= */
 
-.warning{
+.note{
+
+    display:flex;
+
+    gap:10px;
+
     margin-top:12px;
 
-    padding:10px 11px;
+    padding:12px;
 
-    border-radius:12px;
+    border-radius:14px;
+
+    font-size:10px;
+
+    line-height:1.55;
+}
+
+.note-icon{
+
+    flex:none;
+
+    width:28px;
+    height:28px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:9px;
+}
+
+.note.safe{
+
+    background:var(--green-soft);
+
+    border:1px solid #d8eee6;
+
+    color:#55786e;
+}
+
+.note.safe .note-icon{
+    background:#d9f0e8;
+}
+
+.note.warning{
 
     background:var(--orange-soft);
 
-    color:#946125;
+    border:1px solid #f2dfc7;
 
-    font-size:10px;
-
-    line-height:1.5;
+    color:#806a4e;
 }
 
-.safe-note{
-    margin-top:12px;
+.note.warning .note-icon{
+    background:#ffead1;
+}
 
-    padding:10px 11px;
 
-    border-radius:12px;
+/* =========================================================
+   REFERENCES
+========================================================= */
 
-    background:#f4f7fb;
+.references{
 
-    color:#78859a;
+    margin-top:20px;
 
-    font-size:10px;
+    padding:17px;
+
+    border-radius:var(--radius-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff8fb
+        );
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-soft);
+}
+
+.reference-item{
+
+    padding:11px 0;
+
+    border-bottom:
+        1px solid
+        #f3e6eb;
+}
+
+.reference-item:last-child{
+
+    border-bottom:0;
+
+    padding-bottom:0;
+}
+
+.reference-title{
+
+    color:var(--navy);
+
+    font-size:11px;
+    font-weight:800;
+}
+
+.reference-text{
+
+    margin-top:3px;
+
+    color:var(--muted);
+
+    font-size:9px;
 
     line-height:1.5;
 }
@@ -1027,15 +1081,22 @@ button{
 ========================================================= */
 
 .footer{
+
+    margin-top:22px;
+
+    padding:10px 4px;
+
     text-align:center;
 
-    margin-top:28px;
+    color:#a48f99;
 
-    color:#9aa4b6;
-
-    font-size:10px;
+    font-size:9px;
 
     line-height:1.6;
+}
+
+.footer strong{
+    color:#80586b;
 }
 
 
@@ -1046,88 +1107,93 @@ button{
 @media(max-width:520px){
 
     .app{
+
         padding:
             13px
             12px
-            75px;
+            30px;
     }
 
     .hero{
+
         padding:
-            19px
-            17px;
+            21px
+            18px;
+
+        border-radius:23px;
     }
+
+    .hero-name{
+        font-size:29px;
+    }
+
+    .quick-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:8px;
+    }
+
+    .quick-tool{
+        padding:12px;
+    }
+
+    .quick-icon{
+
+        width:34px;
+        height:34px;
+    }
+
+    .calculator-body{
+        padding:14px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:360px){
 
     .hero-name{
         font-size:26px;
     }
 
-    .quick-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+    .brand-title{
+        font-size:14px;
     }
 
-    .quick-card{
-        padding:14px;
-
-        display:flex;
-
-        align-items:center;
-
-        text-align:left;
-
-        gap:10px;
+    .quick-name{
+        font-size:9px;
     }
-
-    .quick-icon{
-        margin:0;
-
-        flex:none;
-    }
-
-    .calculator-top{
-        padding:
-            16px
-            14px
-            13px;
-    }
-
-    .calculator-body{
-        padding:14px;
-    }
-
-    .reference-grid{
-        grid-template-columns:1fr;
-    }
-
-}
-
-@media(min-width:700px){
-
-    .calculator-body{
-        padding:22px;
-    }
-
 }
 
 
 /* =========================================================
-   SMALL UTILITIES
+   REDUCED MOTION
 ========================================================= */
 
-.hidden{
-    display:none !important;
-}
+@media(prefers-reduced-motion:reduce){
 
-.muted{
-    color:var(--muted);
+    *{
+
+        scroll-behavior:auto !important;
+
+        animation-duration:.01ms !important;
+
+        transition-duration:.01ms !important;
+    }
 }
 
 </style>
+
 </head>
 
 
 <body>
+
 
 <div class="app">
 
@@ -1150,7 +1216,7 @@ button{
                 Pediatric Companion
             </div>
 
-            <div class="brand-sub">
+            <div class="brand-subtitle">
                 A quiet clinical toolkit
             </div>
 
@@ -1160,12 +1226,17 @@ button{
 
 
     <button
-        class="icon-button"
-        onclick="scrollToSection('references')"
-        aria-label="Reference section">
-
+        class="info-btn"
+        onclick="
+            document
+            .getElementById('references')
+            .scrollIntoView({
+                behavior:'smooth'
+            })
+        "
+        aria-label="Information"
+    >
         ℹ
-
     </button>
 
 </header>
@@ -1178,32 +1249,33 @@ button{
 
 <section class="hero">
 
-    <div
-        class="hero-greeting"
-        id="greeting">
-        Good Morning
-    </div>
+    <div class="hero-content">
 
+        <div
+            class="greeting"
+            id="greeting"
+        >
+            Good Morning
+        </div>
 
-    <div class="hero-name">
-        Vaishnavi
-    </div>
+        <div class="hero-name">
+            Vaishuu
+        </div>
 
+        <div
+            class="hero-message"
+            id="heroMessage"
+        >
+            Hope your day goes smoothly.
+            Your little clinical toolkit is ready.
+        </div>
 
-    <div
-        class="hero-message"
-        id="heroMessage">
-
-        Hope your day goes smoothly. Your little clinical toolkit is ready.
-
-    </div>
-
-
-    <div class="date-pill">
-
-        <span>◷</span>
-
-        <span id="todayDate"></span>
+        <div
+            class="date-pill"
+            id="todayDate"
+        >
+            Today
+        </div>
 
     </div>
 
@@ -1212,7 +1284,7 @@ button{
 
 
 <!-- =====================================================
-     QUICK ACTIONS
+     QUICK TOOLS
 ====================================================== -->
 
 <section class="section">
@@ -1220,11 +1292,11 @@ button{
     <div class="section-head">
 
         <div class="section-title">
-            Quick tools
+            Quick Tools
         </div>
 
         <div class="section-hint">
-            One tap
+            Tap to open
         </div>
 
     </div>
@@ -1234,14 +1306,15 @@ button{
 
 
         <button
-            class="quick-card"
-            onclick="openCalculator('drugDose')">
+            class="quick-tool"
+            onclick="openCalculator('drugDose')"
+        >
 
             <div class="quick-icon">
                 💊
             </div>
 
-            <div class="quick-label">
+            <div class="quick-name">
                 Drug dose
             </div>
 
@@ -1250,14 +1323,15 @@ button{
 
 
         <button
-            class="quick-card"
-            onclick="openCalculator('maintenance')">
+            class="quick-tool"
+            onclick="openCalculator('maintenance')"
+        >
 
             <div class="quick-icon">
                 💧
             </div>
 
-            <div class="quick-label">
+            <div class="quick-name">
                 Fluids
             </div>
 
@@ -1266,14 +1340,15 @@ button{
 
 
         <button
-            class="quick-card"
-            onclick="openCalculator('ett')">
+            class="quick-tool"
+            onclick="openCalculator('ett')"
+        >
 
             <div class="quick-icon">
                 🫁
             </div>
 
-            <div class="quick-label">
+            <div class="quick-name">
                 ETT
             </div>
 
@@ -1282,19 +1357,19 @@ button{
 
 
         <button
-            class="quick-card"
-            onclick="openCalculator('bmi')">
+            class="quick-tool"
+            onclick="openCalculator('bmi')"
+        >
 
             <div class="quick-icon">
                 📏
             </div>
 
-            <div class="quick-label">
+            <div class="quick-name">
                 BMI / BSA
             </div>
 
         </button>
-
 
     </div>
 
@@ -1303,162 +1378,122 @@ button{
 
 
 <!-- =====================================================
-     CALCULATOR
+     CLINICAL CALCULATOR
 ====================================================== -->
 
-<section
-    class="calculator-shell"
-    id="calculatorSection">
-
+<section class="section">
 
     <div class="section-head">
 
         <div class="section-title">
-            Clinical calculator
+            Clinical Calculator
         </div>
 
         <div class="section-hint">
-            Choose a tool
+            Select a tool
         </div>
 
     </div>
 
 
-
-    <!-- CATEGORY FILTER -->
-
-    <div class="category-strip">
-
+    <div class="category-row">
 
         <button
             class="category active"
-            onclick="filterCategory('all',this)">
+            data-category="all"
+            onclick="filterCategory('all',this)"
+        >
             All
         </button>
 
-
         <button
             class="category"
-            onclick="filterCategory('dose',this)">
+            data-category="dose"
+            onclick="filterCategory('dose',this)"
+        >
             Dosing
         </button>
 
-
         <button
             class="category"
-            onclick="filterCategory('fluid',this)">
+            data-category="fluid"
+            onclick="filterCategory('fluid',this)"
+        >
             Fluids
         </button>
 
-
         <button
             class="category"
-            onclick="filterCategory('resp',this)">
+            data-category="resp"
+            onclick="filterCategory('resp',this)"
+        >
             Respiratory
         </button>
 
-
         <button
             class="category"
-            onclick="filterCategory('growth',this)">
+            data-category="growth"
+            onclick="filterCategory('growth',this)"
+        >
             Growth
         </button>
 
-
         <button
             class="category"
-            onclick="filterCategory('lab',this)">
+            data-category="lab"
+            onclick="filterCategory('lab',this)"
+        >
             Labs
         </button>
 
-
         <button
             class="category"
-            onclick="filterCategory('general',this)">
+            data-category="general"
+            onclick="filterCategory('general',this)"
+        >
             General
         </button>
 
-
     </div>
 
-
-
-    <!-- CALCULATOR CARD -->
 
     <div class="calculator-card">
 
 
-        <div class="calculator-top">
+        <div class="calculator-head">
 
-
-            <div class="calculator-title-row">
-
-
-                <div
-                    class="calculator-icon"
-                    id="calculatorIcon">
-
-                    💊
-
-                </div>
-
-
-                <div>
-
-                    <div
-                        class="calculator-title"
-                        id="calculatorTitle">
-
-                        Pediatric Drug Dose
-
-                    </div>
-
-
-                    <div
-                        class="calculator-description"
-                        id="calculatorDescription">
-
-                        Calculate a weight-based dose from a known dose per kg.
-
-                    </div>
-
-                </div>
-
-
+            <div
+                class="calculator-title"
+                id="calculatorTitle"
+            >
+                Pediatric Drug Dose
             </div>
 
-
-
-            <div class="select-wrap">
-
-
-                <label class="select-label">
-                    Select calculator
-                </label>
-
-
-                <select
-                    id="calculatorSelect"
-                    class="calculator-select"
-                    onchange="changeCalculator(this.value)">
-                </select>
-
-
-                <span class="select-arrow">
-                    ▾
-                </span>
-
-
+            <div
+                class="calculator-description"
+                id="calculatorDescription"
+            >
+                Calculate a weight-based dose from a known dose per kg.
             </div>
 
+        </div>
+
+
+        <div class="calculator-selector-wrap">
+
+            <select
+                id="calculatorSelect"
+                class="calculator-select"
+                onchange="changeCalculator(this.value)"
+            ></select>
 
         </div>
 
 
         <div
             class="calculator-body"
-            id="calculatorBody">
-        </div>
+            id="calculatorBody"
+        ></div>
 
 
     </div>
@@ -1468,106 +1503,75 @@ button{
 
 
 <!-- =====================================================
-     REFERENCES
+     QUICK REFERENCES
 ====================================================== -->
 
 <section
-    class="section"
-    id="references">
+    class="references"
+    id="references"
+>
+
+    <div class="section-title">
+        Quick References
+    </div>
 
 
-    <div class="section-head">
+    <div class="reference-item">
 
-        <div class="section-title">
-            Quick references
+        <div class="reference-title">
+            Weight-based dosing
         </div>
 
-        <div class="section-hint">
-            Handy reminders
+        <div class="reference-text">
+            Always verify the drug, indication,
+            maximum dose, concentration and local
+            prescribing protocol before administration.
         </div>
 
     </div>
 
 
+    <div class="reference-item">
 
-    <div class="reference-grid">
-
-
-        <div class="reference-card">
-
-            <div class="reference-card-title">
-                Pediatric red flags
-            </div>
-
-            <div class="reference-card-text">
-
-                Consider respiratory distress,
-                altered consciousness,
-                poor perfusion,
-                severe dehydration,
-                seizures,
-                cyanosis and rapidly worsening
-                clinical status.
-
-            </div>
-
+        <div class="reference-title">
+            Fluids
         </div>
 
-
-
-        <div class="reference-card">
-
-            <div class="reference-card-title">
-                Medication safety
-            </div>
-
-            <div class="reference-card-text">
-
-                Verify weight, concentration,
-                route, frequency, maximum dose
-                and local formulary before
-                administration.
-
-            </div>
-
+        <div class="reference-text">
+            Fluid calculations are reference estimates.
+            Assess hydration status, comorbidities,
+            ongoing losses and clinical response.
         </div>
 
+    </div>
 
 
-        <div class="reference-card">
+    <div class="reference-item">
 
-            <div class="reference-card-title">
-                Weight matters
-            </div>
-
-            <div class="reference-card-text">
-
-                Use the most clinically appropriate
-                current weight and independently
-                verify the measurement before dosing.
-
-            </div>
-
+        <div class="reference-title">
+            Respiratory tools
         </div>
 
-
-
-        <div class="reference-card">
-
-            <div class="reference-card-title">
-                Emergency calculations
-            </div>
-
-            <div class="reference-card-text">
-
-                During emergencies, use institutional
-                protocols and established pediatric
-                resuscitation references.
-
-            </div>
-
+        <div class="reference-text">
+            ETT size and respiratory calculations
+            should always be confirmed against age,
+            anatomy and local airway protocols.
         </div>
 
+    </div>
+
+
+    <div class="reference-item">
+
+        <div class="reference-title">
+            Growth
+        </div>
+
+        <div class="reference-text">
+            BMI, BSA and weight calculations are
+            mathematical tools and should be interpreted
+            using appropriate pediatric growth references.
+        </div>
 
     </div>
 
@@ -1579,18 +1583,18 @@ button{
      FOOTER
 ====================================================== -->
 
-<div class="footer">
+<footer class="footer">
 
-    Built as a personal clinical utility interface
-    for Vaishnavi.
+    Personal clinical utility interface for
+    <strong>Vaishuu</strong> ♡
 
     <br>
 
-    Calculations are reference tools and do not replace
-    clinical judgement, local protocols or prescribing
-    references.
+    Calculations are reference tools only and are not
+    a substitute for clinical judgement, local protocols
+    or prescribing references.
 
-</div>
+</footer>
 
 
 </div>
@@ -1600,7 +1604,303 @@ button{
 <script>
 
 /* =========================================================
-   DYNAMIC GREETING + PERSONAL MESSAGE
+   MORNING MESSAGES
+========================================================= */
+
+const morningMessages = [
+
+    "Good morning, Doctor. May today's tiny patients be cute and today's parents be merciful. 😂🌸",
+
+    "New day, fresh coffee, same Doctor energy. You've got this. ☕🩺",
+
+    "Good morning! Your brain has officially been promoted to pediatric mode. Please proceed carefully. 😂",
+
+    "Today's plan: help tiny humans, stay hydrated, and pretend the coffee is optional. 💗",
+
+    "Good morning, Vaishuu. One little patient at a time — you've got more than enough magic for today. ✨",
+
+    "Rise and shine, Doctor. Somewhere a child is about to ask you a question that absolutely no textbook prepared you for. 😂",
+
+    "Good morning! May the OPD be calm, the calculations be easy, and your coffee remain within reach. ☕",
+
+    "Doctor mode: ON. Overthinking mode: hopefully OFF. Let's have a good day. 😌🩺",
+
+    "Another morning of making medicine look effortless. We both know the caffeine deserves some credit. 😂",
+
+    "Good morning, Doctor. Go make someone's tiny day a little better. 🌷",
+
+    "Good morning! May your first patient smile, your second patient cooperate, and your third patient not require a 20-minute history. 😂",
+
+    "Morning, Doctor. The tiny humans have assembled. Your coffee has been notified. ☕👶",
+
+    "Good morning, Vaishuu. Today is another opportunity to save the day one tiny human at a time. 🩺✨",
+
+    "May today's OPD be peaceful, your notes be short, and your patients be surprisingly cooperative. 😂",
+
+    "Good morning! Remember: hydration first, pediatric chaos second. 💧😂",
+
+    "Doctor, today's mission is simple — diagnose wisely, smile occasionally, and survive the paperwork. 😌📋",
+
+    "Good morning! Somewhere out there, a child is already preparing their most unexpected clinical question for you. 😂",
+
+    "New morning, new patients, new stories, same brilliant Doctor. 🌸",
+
+    "Good morning, Doctor. May your stethoscope cooperate and your calculator never betray you. 🩺😂",
+
+    "Rise and shine! Your pediatric superpowers are required once again. 🦸‍♀️🩺",
+
+    "Good morning. May today bring more smiles than stress and more coffee than paperwork. ☕💗",
+
+    "Morning, Doctor! Tiny patients, big responsibilities, and hopefully one peaceful lunch break. 😂",
+
+    "Good morning, Vaishuu. You've got brains, patience and a stethoscope. What more could the OPD possibly ask for? 😌",
+
+    "Today's forecast: 80% chance of pediatric chaos with a strong possibility of coffee. ☕😂",
+
+    "Good morning! May every calculation be easy and every prescription decision be crystal clear. 🩺✨",
+
+    "Another beautiful morning to make parents feel reassured and children feel a little less scared. 🌷",
+
+    "Good morning, Doctor. Your coffee may be small, but your responsibilities definitely aren't. 😂☕",
+
+    "Morning reminder: you're allowed to take a breath between patients. Yes, really. 😌",
+
+    "Good morning! Let's hope today's most complicated thing is choosing what to eat for lunch. 😂",
+
+    "Doctor Vaishuu has entered the morning shift. Tiny humans have been warned. 👶😂",
+
+    "Good morning! May your OPD queue move faster than your phone battery disappears. 📱😂",
+
+    "Today's goal: excellent medicine, kind words, and minimum unnecessary chaos. 💗🩺",
+
+    "Good morning, Doctor. One patient, one problem, one solution at a time. You've got this. ✨",
+
+    "Morning! May your brain be sharp, your coffee strong, and your patients adorable. ☕👶",
+
+    "Good morning. The day may be busy, but remember — you don't have to solve the entire universe before breakfast. 😂",
+
+    "Doctor, your shift has officially started. Please keep your coffee and clinical judgement close. ☕🩺",
+
+    "Good morning, Vaishuu. Another day to turn pediatric chaos into organized clinical decisions. 😌",
+
+    "Morning, Doctor. May today's parents Google less and listen more. 😂📱",
+
+    "Good morning! Be kind, stay calm, and remember that even Doctors deserve a snack break. 🌸",
+
+    "Good morning, Doctor. May the first child you see arrive with a smile instead of a mystery symptom. 😂",
+
+    "Morning! Your brain has had approximately zero meetings but somehow already has a full OPD agenda. 😭🩺",
+
+    "Good morning. May today be clinically interesting but emotionally peaceful. 💗",
+
+    "Morning, Doctor! The tiny patients are ready. Hopefully your caffeine is too. ☕",
+
+    "Good morning, Vaishuu. May your day be productive enough to feel good and calm enough to enjoy. 🌷",
+
+    "Another morning, another chance to prove that tiny humans can create very large amounts of chaos. 😂👶",
+
+    "Good morning! May your handwriting remain readable and your calculations remain correct. 😌",
+
+    "Doctor, wake up. The pediatric universe needs you. 🩺✨",
+
+    "Good morning! Today deserves your calmest mind and your kindest smile. 💗",
+
+    "May your morning coffee be strong enough to survive the OPD with you. 😂☕"
+
+];
+
+
+/* =========================================================
+   AFTERNOON MESSAGES
+========================================================= */
+
+const afternoonMessages = [
+
+    "Good afternoon, Doctor. Half the day survived. The remaining half has been warned. 😂",
+
+    "Afternoon check: hydrate yourself before calculating fluids for everyone else. 💧",
+
+    "Still going, Doctor? Respect. Your brain deserves a tiny coffee break. ☕😂",
+
+    "Good afternoon! Somewhere between patients, paperwork and calculations, you're still doing pretty great. 💗",
+
+    "The afternoon slump has arrived. Kindly inform it that Doctor Vaishuu has patients to handle. 😌",
+
+    "Good afternoon, Doctor. Tiny patients, big responsibilities, surprisingly small lunch breaks. 😂",
+
+    "Reminder: even superheroes need water, food and approximately five minutes of peace. 🌸",
+
+    "You've made it this far today. Keep going — you're handling more than you probably realise. ✨",
+
+    "Good afternoon! May your next patient be cooperative and your next calculation be embarrassingly easy. 😂",
+
+    "Doctor, breathe. You've got this. And yes, that includes whatever is waiting in the next room. 🩺💗",
+
+    "Good afternoon! If you've forgotten to drink water, consider this your official reminder. 💧",
+
+    "Half the day is gone. Your coffee may be finished, but your Doctor energy apparently isn't. 😂",
+
+    "Afternoon, Doctor. May the queue move quickly and the paperwork mysteriously disappear. 😌📋",
+
+    "Good afternoon, Vaishuu. You're doing better than the number of tabs currently open in your brain. 😂",
+
+    "The afternoon shift has entered the chat. Please remain calm and keep the stethoscope nearby. 🩺",
+
+    "Good afternoon! One more patient, one more calculation, one more tiny victory. 🌷",
+
+    "Doctor, this is your friendly reminder that lunch is also a clinical necessity. 😂🍱",
+
+    "Good afternoon. May today's remaining patients arrive with clear histories and cooperative parents. 🙏😂",
+
+    "Your afternoon mission: stay hydrated, stay patient, and don't let the paperwork win. 💗",
+
+    "Good afternoon, Doctor. The day isn't over yet, but you've already accomplished plenty. ✨",
+
+    "Afternoon status: Doctor functioning, caffeine questionable, pediatric chaos ongoing. 😂",
+
+    "Good afternoon! Somewhere between two patients, you deserve at least one peaceful breath. 😌",
+
+    "Doctor Vaishuu, please report to the OPD. Your tiny fan club is waiting. 👶😂",
+
+    "Good afternoon. May the next patient be straightforward and the next parent ask only one question. 😂",
+
+    "Half-day reminder: you're a Doctor, not a machine. Eat something. Drink something. Breathe. 💗",
+
+    "Good afternoon! May the rest of today's work be lighter than the morning's workload. 🌸",
+
+    "The afternoon sun is doing its best. You should too — but without forgetting your water bottle. ☀️💧",
+
+    "Doctor, your brain has completed several missions today. It deserves a tiny recharge. 🔋😂",
+
+    "Good afternoon, Vaishuu. Keep going. Small progress still counts on busy days. ✨",
+
+    "May your afternoon be full of good decisions and suspiciously empty waiting rooms. 😂",
+
+    "Good afternoon! Pediatric medicine: where tiny people somehow create enormous stories. 👶😂",
+
+    "Doctor, you've survived the morning. The afternoon doesn't stand a chance. 😌🩺",
+
+    "Good afternoon. May your next clinical calculation take five seconds and not five attempts. 😂",
+
+    "Afternoon reminder: kindness costs nothing, but it can mean everything to a worried parent. 💗",
+
+    "Good afternoon! Keep your standards high and your coffee within arm's reach. ☕",
+
+    "Doctor, if today feels long, remember that every patient you helped is one less worry for a family. 🌷",
+
+    "Good afternoon, Doctor. You're allowed to smile even when the OPD queue doesn't. 😂",
+
+    "The afternoon is still yours. Take it one patient at a time. 🩺✨",
+
+    "Good afternoon! May the remaining hours bring fewer surprises and more satisfying clinical decisions. 💗"
+
+];
+
+
+/* =========================================================
+   EVENING MESSAGES
+========================================================= */
+
+const eveningMessages = [
+
+    "Good evening, Doctor. The pediatric battlefield is finally beginning to quiet down. 😂🌙",
+
+    "Another day survived. Tiny humans helped. Doctor still standing. I'd call that progress. 💗",
+
+    "Good evening! Your brain has officially earned permission to stop calculating for a while. 😌",
+
+    "The day is almost done, Doctor. Whatever wasn't finished can meet tomorrow's version of you. 🌙",
+
+    "Good evening, Vaishuu. You did enough today. Now let your brain breathe a little. ✨",
+
+    "OPD: hopefully done. Brain: questionable. Coffee: still loyal. 😂☕",
+
+    "Another day of being the calm person in rooms full of tiny chaos. Well done, Doctor. 🌸",
+
+    "Good evening! Time to exchange clinical calculations for absolutely unnecessary scrolling. 😂",
+
+    "Doctor's orders for tonight: food, water, rest and zero guilt about doing nothing for a while. 💗",
+
+    "You made it through another day. That's worth a little smile before you switch off. 🌷",
+
+    "Good evening, Doctor. The stethoscope can rest now. Your brain deserves the same privilege. 😌🩺",
+
+    "Another shift complete. Somewhere today, a worried parent left feeling a little more reassured because of you. 💗",
+
+    "Good evening! If your brain is asking for silence, perhaps don't argue with it. 😂",
+
+    "Doctor, today's clinical calculations are officially closed. Please try not to calculate anything at dinner. 😂",
+
+    "Good evening, Vaishuu. The day may have been chaotic, but you made it through. That's enough. 🌙",
+
+    "Time to put the Doctor brain on low-power mode. 🔋😌",
+
+    "Good evening! You handled tiny patients all day. Now it's time to handle your own dinner. 😂🍽️",
+
+    "The OPD is ending, but your need for rest is just beginning. Take it seriously. 💗",
+
+    "Good evening, Doctor. No more differential diagnoses tonight — unless you're choosing what to order for dinner. 😂",
+
+    "Another day, another collection of stories that only a pediatrician could understand. 🌸",
+
+    "Good evening! May tonight be quieter than today's waiting room. 😂🌙",
+
+    "Doctor, your shift may be ending, but congratulations — your brain survived another round of pediatric chaos. 🩺",
+
+    "Good evening, Vaishuu. You've done enough for today. Tomorrow can wait its turn. ✨",
+
+    "Tonight's prescription: comfortable clothes, good food, water and absolutely no unnecessary stress. 💗",
+
+    "Good evening! If someone asks you to calculate something tonight, kindly prescribe them a calculator. 😂",
+
+    "Another day of making difficult things look easier than they actually are. Well done, Doctor. 🌷",
+
+    "Good evening, Doctor. The tiny humans have been cared for. Now take care of yourself. 💗",
+
+    "The day is done. Your mistakes can become lessons tomorrow; tonight can simply be tonight. 🌙",
+
+    "Good evening! Close the clinical tabs in your brain one by one. 😌",
+
+    "Doctor Vaishuu has successfully completed another episode of Pediatric Chaos. Season finale tomorrow. 😂",
+
+    "Good evening. Your stethoscope has had enough social interaction for one day. 😂🩺",
+
+    "Tonight, may your sleep be uninterrupted and your alarm feel slightly less offensive tomorrow. 😂",
+
+    "Good evening! You don't need to be productive every minute. Rest is part of the job too. 🌸",
+
+    "Another day finished. Another reminder that you are doing meaningful work, even on ordinary days. ✨",
+
+    "Good evening, Doctor. The best thing you can calculate tonight is how much rest you need. 😂",
+
+    "OPD closed. Doctor mode slowly shutting down. Human mode loading... 🌙😂",
+
+    "Good evening, Vaishuu. Let today's little victories be enough for tonight. 💗",
+
+    "The day may not have gone perfectly. It still mattered. Rest well, Doctor. 🌷",
+
+    "Good evening. Tomorrow's patients can wait. Tonight belongs to you. ✨"
+
+];
+
+
+/* =========================================================
+   RANDOM MESSAGE
+========================================================= */
+
+function randomItem(array){
+
+    return array[
+        Math.floor(
+            Math.random() * array.length
+        )
+    ];
+
+}
+
+
+/* =========================================================
+   DYNAMIC GREETING
 ========================================================= */
 
 function updateGreeting(){
@@ -1613,132 +1913,66 @@ function updateGreeting(){
     let messages;
 
 
-    /* -----------------------------------------------------
-       MORNING
-    ----------------------------------------------------- */
-
     if(hour < 12){
 
         greeting = "Good Morning";
-
-        messages = [
-
-            "One tiny human at a time. You’ve got this. 💛",
-
-            "Coffee first. Saving the day second. Pediatrician mode: ON. ☕🩺",
-
-            "New day, new little patients, same superhuman energy. ✨",
-
-            "Today’s prescription: confidence, patience and a little coffee. 😌",
-
-            "Small patients, big responsibilities. Go show them who's boss. 😎",
-
-            "May your coffee be strong and your OPD surprisingly calm. 😂",
-
-            "Another day of making tiny humans feel better. You’ve got this, Doctor. 🌸",
-
-            "Your first patient hasn't even arrived yet and you're already doing great. 😌"
-
-        ];
+        messages = morningMessages;
 
     }
-
-
-    /* -----------------------------------------------------
-       AFTERNOON
-    ----------------------------------------------------- */
 
     else if(hour < 17){
 
         greeting = "Good Afternoon";
-
-        messages = [
-
-            "Half the day survived. The remaining half has no idea who it’s dealing with. 😎",
-
-            "Small patients, big responsibilities… and somehow you still make it look easy. ✨",
-
-            "Afternoon check: still fabulous, still saving tiny humans. 🩺💜",
-
-            "If the OPD gets chaotic, remember: you have officially handled worse. Probably. 😂",
-
-            "Keep going, Doctor. Somewhere out there, a tiny patient thinks you’re basically a superhero. 🦸‍♀️",
-
-            "Hydrate. Breathe. Smile. Then go defeat the next round of tiny humans. 😄",
-
-            "The afternoon may be busy, but so are you. And somehow you're still winning. 💪",
-
-            "Reminder: you are a pediatrician, not a magician… although some days the difference is questionable. 😂",
-
-            "Tiny humans. Tiny shoes. Surprisingly huge amounts of chaos. You've got this. 😌"
-
-        ];
+        messages = afternoonMessages;
 
     }
-
-
-    /* -----------------------------------------------------
-       EVENING
-    ----------------------------------------------------- */
 
     else{
 
         greeting = "Good Evening";
-
-        messages = [
-
-            "You made it through another day of tiny humans and giant responsibilities. Respect. 🫡",
-
-            "Doctor mode: slowly powering down… unless someone says ‘just one more patient.’ 😂",
-
-            "Another day conquered. Now you officially deserve some peace and absolutely no medical questions. 😌",
-
-            "The little patients survived. You survived. That's a successful day. 💜",
-
-            "Time to exchange the stethoscope for some well-earned relaxation. 🌙",
-
-            "You did enough today, Doctor. Now let your brain stop calculating doses for five minutes. 😂",
-
-            "Today's shift is almost over. Your brain has officially earned a recharge. 🔋✨",
-
-            "No more vitals. No more doses. Just vibes. You earned them. 😌",
-
-            "Another day of being everyone's favourite pediatrician. Now go be someone's favourite person. 💜"
-
-        ];
+        messages = eveningMessages;
 
     }
 
 
-    /* -----------------------------------------------------
-       RANDOM MESSAGE
-    ----------------------------------------------------- */
-
-    const randomMessage =
-        messages[
-            Math.floor(
-                Math.random() * messages.length
-            )
-        ];
+    const messageElement =
+        document.getElementById(
+            "heroMessage"
+        );
 
 
-    /* -----------------------------------------------------
-       UPDATE UI
-    ----------------------------------------------------- */
-
-    document
-        .getElementById("greeting")
-        .textContent = greeting;
+    messageElement.style.opacity = "0";
 
 
-    document
-        .getElementById("heroMessage")
-        .textContent = randomMessage;
+    setTimeout(() => {
+
+        document.getElementById(
+            "greeting"
+        ).textContent = greeting;
 
 
-    document
-        .getElementById("todayDate")
-        .textContent =
+        messageElement.textContent =
+            randomItem(messages);
+
+
+        messageElement.style.opacity = "1";
+
+    },120);
+
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+function updateDate(){
+
+    const now = new Date();
+
+    document.getElementById(
+        "todayDate"
+    ).textContent =
 
         now.toLocaleDateString(
             "en-IN",
@@ -1753,13 +1987,12 @@ function updateGreeting(){
 }
 
 
-/* Run when page opens */
-
 updateGreeting();
+updateDate();
 
 
 /* =========================================================
-   CALCULATOR DATABASE
+   CALCULATORS
 ========================================================= */
 
 const calculators = {
@@ -1769,29 +2002,26 @@ const calculators = {
         category:"dose",
         icon:"💊",
         title:"Pediatric Drug Dose",
-        description:
-            "Calculate a weight-based dose from a known dose per kg.",
+        description:"Calculate a weight-based dose from a known dose per kg.",
         render:renderDrugDose
     },
 
 
     doseVolume:{
         category:"dose",
-        icon:"💉",
+        icon:"🧴",
         title:"Dose Volume",
-        description:
-            "Convert a calculated dose into the volume of liquid medication.",
+        description:"Calculate the volume required from dose and concentration.",
         render:renderDoseVolume
     },
 
 
-    dailyDose:{
+    dailyDoseSplit:{
         category:"dose",
-        icon:"🧴",
+        icon:"📅",
         title:"Daily Dose Split",
-        description:
-            "Calculate total daily dose and divide it across doses.",
-        render:renderDailyDose
+        description:"Calculate individual doses when a total daily dose is divided into multiple doses.",
+        render:renderDailyDoseSplit
     },
 
 
@@ -1799,19 +2029,17 @@ const calculators = {
         category:"fluid",
         icon:"💧",
         title:"Maintenance Fluids",
-        description:
-            "Calculate pediatric maintenance fluid rate using the 4-2-1 method.",
+        description:"Calculate hourly maintenance fluid using the 4-2-1 rule.",
         render:renderMaintenance
     },
 
 
-    dailyFluid:{
+    dailyMaintenance:{
         category:"fluid",
-        icon:"💦",
+        icon:"💧",
         title:"Daily Maintenance Fluid",
-        description:
-            "Estimate the 24-hour maintenance fluid requirement.",
-        render:renderDailyFluid
+        description:"Calculate estimated daily maintenance fluid using the 100-50-20 rule.",
+        render:renderDailyMaintenance
     },
 
 
@@ -1819,8 +2047,7 @@ const calculators = {
         category:"fluid",
         icon:"🚑",
         title:"Fluid Bolus",
-        description:
-            "Calculate a volume from weight and selected bolus volume.",
+        description:"Calculate a fluid bolus volume from weight and selected bolus size.",
         render:renderBolus
     },
 
@@ -1829,8 +2056,7 @@ const calculators = {
         category:"fluid",
         icon:"💧",
         title:"Dehydration Deficit",
-        description:
-            "Estimate fluid deficit from weight and dehydration percentage.",
+        description:"Estimate fluid deficit from body weight and dehydration percentage.",
         render:renderDeficit
     },
 
@@ -1839,28 +2065,25 @@ const calculators = {
         category:"resp",
         icon:"🫁",
         title:"ETT Size & Depth",
-        description:
-            "Estimate cuffed/uncuffed tube size and insertion depth from age.",
+        description:"Estimate pediatric uncuffed/cuffed ETT size and insertion depth.",
         render:renderETT
     },
 
 
     respiratoryRate:{
         category:"resp",
-        icon:"🌬️",
+        icon:"🫁",
         title:"Respiratory Rate",
-        description:
-            "Record and interpret the observed respiratory rate.",
-        render:renderRespRate
+        description:"Record and interpret a measured respiratory rate.",
+        render:renderRespiratoryRate
     },
 
 
     oxygen:{
         category:"resp",
-        icon:"🫁",
+        icon:"🫧",
         title:"Oxygen / SpO₂ Notes",
-        description:
-            "Simple bedside oxygen assessment helper.",
+        description:"Quick clinical note for documenting oxygen and SpO₂.",
         render:renderOxygen
     },
 
@@ -1869,8 +2092,7 @@ const calculators = {
         category:"growth",
         icon:"📏",
         title:"BMI",
-        description:
-            "Calculate BMI from height and weight.",
+        description:"Calculate body mass index from weight and height.",
         render:renderBMI
     },
 
@@ -1879,8 +2101,7 @@ const calculators = {
         category:"growth",
         icon:"📐",
         title:"Body Surface Area",
-        description:
-            "Calculate BSA using the Mosteller formula.",
+        description:"Calculate BSA using the Mosteller formula.",
         render:renderBSA
     },
 
@@ -1889,8 +2110,7 @@ const calculators = {
         category:"growth",
         icon:"⚖️",
         title:"Ideal Body Weight",
-        description:
-            "Estimate adult ideal body weight using height-based formulas.",
+        description:"Estimate ideal body weight using height and sex.",
         render:renderIBW
     },
 
@@ -1899,8 +2119,7 @@ const calculators = {
         category:"growth",
         icon:"👶",
         title:"Corrected Age",
-        description:
-            "Estimate corrected age for a child born preterm.",
+        description:"Calculate corrected age for a preterm infant.",
         render:renderCorrectedAge
     },
 
@@ -1909,18 +2128,16 @@ const calculators = {
         category:"lab",
         icon:"🧪",
         title:"Anion Gap",
-        description:
-            "Calculate the serum anion gap.",
+        description:"Calculate anion gap from sodium, chloride and bicarbonate.",
         render:renderAnionGap
     },
 
 
     correctedSodium:{
         category:"lab",
-        icon:"🧂",
+        icon:"🧪",
         title:"Corrected Sodium",
-        description:
-            "Estimate corrected sodium in hyperglycemia.",
+        description:"Estimate corrected sodium in hyperglycemia.",
         render:renderCorrectedSodium
     },
 
@@ -1929,29 +2146,26 @@ const calculators = {
         category:"lab",
         icon:"🧪",
         title:"Corrected Calcium",
-        description:
-            "Estimate corrected calcium from albumin.",
+        description:"Estimate corrected calcium based on albumin.",
         render:renderCorrectedCalcium
     },
 
 
     osmolality:{
         category:"lab",
-        icon:"🔬",
+        icon:"🧪",
         title:"Calculated Osmolality",
-        description:
-            "Estimate serum osmolality from common laboratory values.",
+        description:"Calculate estimated serum osmolality.",
         render:renderOsmolality
     },
 
 
-    creatinineClearance:{
+    schwartz:{
         category:"lab",
-        icon:"🫘",
-        title:"Creatinine Clearance",
-        description:
-            "Estimate pediatric eGFR using the Schwartz equation.",
-        render:renderCreatinineClearance
+        icon:"🧪",
+        title:"Creatinine Clearance / Schwartz",
+        description:"Estimate pediatric eGFR using the bedside Schwartz equation.",
+        render:renderSchwartz
     },
 
 
@@ -1959,28 +2173,25 @@ const calculators = {
         category:"general",
         icon:"❤️",
         title:"Shock Index",
-        description:
-            "Calculate heart rate divided by systolic blood pressure.",
+        description:"Calculate heart rate divided by systolic blood pressure.",
         render:renderShockIndex
     },
 
 
     map:{
         category:"general",
-        icon:"🩺",
-        title:"Mean Arterial Pressure",
-        description:
-            "Calculate MAP from systolic and diastolic blood pressure.",
+        icon:"❤️",
+        title:"MAP",
+        description:"Calculate mean arterial pressure from systolic and diastolic BP.",
         render:renderMAP
     },
 
 
-    unitConvert:{
+    weightConverter:{
         category:"general",
-        icon:"↔️",
+        icon:"⚖️",
         title:"Weight Converter",
-        description:
-            "Convert kilograms, grams and pounds.",
+        description:"Convert between kilograms, grams and pounds.",
         render:renderWeightConverter
     },
 
@@ -1989,25 +2200,19 @@ const calculators = {
         category:"general",
         icon:"🌡️",
         title:"Temperature Converter",
-        description:
-            "Convert Celsius and Fahrenheit.",
+        description:"Convert Celsius and Fahrenheit.",
         render:renderTemperature
     }
 
 };
 
 
-/* =========================================================
-   CALCULATOR STATE
-========================================================= */
-
+let currentCalculator = "drugDose";
 let currentCategory = "all";
 
-let currentCalculator = "drugDose";
-
 
 /* =========================================================
-   POPULATE CALCULATOR SELECT
+   NAVIGATION
 ========================================================= */
 
 function populateSelect(){
@@ -2021,89 +2226,82 @@ function populateSelect(){
 
 
     Object.entries(calculators)
-        .forEach(
-            ([key,calc]) => {
+    .forEach(([key,calc]) => {
 
-                if(
-                    currentCategory !== "all" &&
-                    calc.category !== currentCategory
-                ){
-                    return;
-                }
+        if(
+            currentCategory !== "all" &&
+            calc.category !== currentCategory
+        ){
 
+            return;
 
-                const option =
-                    document.createElement(
-                        "option"
-                    );
+        }
 
 
-                option.value = key;
+        const option =
+            document.createElement(
+                "option"
+            );
 
-                option.textContent =
-                    calc.title;
+        option.value = key;
 
+        option.textContent =
+            `${calc.icon} ${calc.title}`;
 
-                select.appendChild(option);
+        select.appendChild(option);
 
-            }
-        );
+    });
 
 
     if(
         !calculators[currentCalculator] ||
-
         (
             currentCategory !== "all" &&
-
-            calculators[
-                currentCalculator
-            ].category !== currentCategory
+            calculators[currentCalculator].category !== currentCategory
         )
     ){
 
-        currentCalculator =
+        const first =
             Object.keys(calculators)
-                .find(
-                    key =>
-                        currentCategory === "all" ||
-                        calculators[key].category ===
-                        currentCategory
-                );
+            .find(key =>
+                currentCategory === "all" ||
+                calculators[key].category === currentCategory
+            );
+
+        currentCalculator = first;
 
     }
 
 
-    select.value =
-        currentCalculator;
+    select.value = currentCalculator;
 
+}
+
+
+function changeCalculator(key){
+
+    if(!calculators[key]){
+        return;
+    }
+
+    currentCalculator = key;
 
     renderCurrentCalculator();
 
 }
 
 
-/* =========================================================
-   CATEGORY FILTER
-========================================================= */
+function filterCategory(category,button){
 
-function filterCategory(
-    category,
-    button
-){
-
-    currentCategory =
-        category;
+    currentCategory = category;
 
 
-    document
-        .querySelectorAll(".category")
-        .forEach(
-            el =>
-                el.classList.remove(
-                    "active"
-                )
-        );
+    document.querySelectorAll(
+        ".category"
+    )
+    .forEach(item =>
+        item.classList.remove("active")
+    );
 
 
     button.classList.add("active");
@@ -2111,125 +2309,96 @@ function filterCategory(
 
     populateSelect();
 
-}
-
-
-/* =========================================================
-   CHANGE CALCULATOR
-========================================================= */
-
-function changeCalculator(key){
-
-    currentCalculator =
-        key;
-
-
     renderCurrentCalculator();
 
 }
 
 
-/* =========================================================
-   OPEN CALCULATOR
-========================================================= */
-
 function openCalculator(key){
 
-    currentCategory =
-        "all";
+    if(!calculators[key]){
+        return;
+    }
 
 
-    document
-        .querySelectorAll(".category")
-        .forEach(
-            el =>
-                el.classList.remove(
-                    "active"
-                )
-        );
+    currentCategory = "all";
 
 
-    document
-        .querySelector(".category")
-        .classList.add("active");
+    document.querySelectorAll(
+        ".category"
+    )
+    .forEach(item =>
+        item.classList.remove("active")
+    );
 
 
-    currentCalculator =
-        key;
+    document.querySelector(
+        '[data-category="all"]'
+    ).classList.add("active");
 
+
+    currentCalculator = key;
 
     populateSelect();
 
+    renderCurrentCalculator();
 
-    document
-        .getElementById(
-            "calculatorSection"
-        )
-        .scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-        });
+
+    document.querySelector(
+        ".calculator-card"
+    ).scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"start"
+
+    });
 
 }
 
-
-/* =========================================================
-   RENDER CURRENT CALCULATOR
-========================================================= */
 
 function renderCurrentCalculator(){
 
     const calc =
-        calculators[
-            currentCalculator
-        ];
+        calculators[currentCalculator];
+
+    if(!calc){
+        return;
+    }
 
 
-    if(!calc) return;
+    document.getElementById(
+        "calculatorTitle"
+    ).textContent = calc.title;
 
 
-    document
-        .getElementById(
-            "calculatorTitle"
-        )
-        .textContent =
-            calc.title;
+    document.getElementById(
+        "calculatorDescription"
+    ).textContent = calc.description;
 
 
-    document
-        .getElementById(
-            "calculatorDescription"
-        )
-        .textContent =
-            calc.description;
-
-
-    document
-        .getElementById(
-            "calculatorIcon"
-        )
-        .textContent =
-            calc.icon;
-
-
-    calc.render(
+    const body =
         document.getElementById(
             "calculatorBody"
-        )
-    );
+        );
+
+
+    body.innerHTML = "";
+
+    calc.render(body);
 
 }
 
 
 /* =========================================================
-   FIELD HELPER
+   HELPERS
 ========================================================= */
 
 function field(
-    id,
     label,
-    unit,
-    placeholder=""
+    id,
+    placeholder="",
+    type="number"
 ){
 
     return `
@@ -2237,41 +2406,22 @@ function field(
         <div class="field">
 
             <label
-                class="field-label">
-
+                class="field-label"
+                for="${id}"
+            >
                 ${label}
-
             </label>
 
-
-            <div class="input-wrap">
-
-
-                <input
-                    id="${id}"
-                    class="input"
-                    type="number"
-                    inputmode="decimal"
-                    placeholder="${placeholder}"
-                >
-
-
-                ${
-                    unit
-
-                    ?
-
-                    `<span class="unit">
-                        ${unit}
-                    </span>`
-
-                    :
-
-                    ""
-                }
-
-
-            </div>
+            <input
+                id="${id}"
+                type="${type}"
+                placeholder="${placeholder}"
+                inputmode="${
+                    type === "number"
+                    ? "decimal"
+                    : "text"
+                }"
+            >
 
         </div>
 
@@ -2280,45 +2430,64 @@ function field(
 }
 
 
-/* =========================================================
-   NUMBER HELPER
-========================================================= */
-
 function num(id){
 
-    const element =
-        document.getElementById(id);
-
-
-    if(!element){
-        return 0;
-    }
-
-
-    const value =
-        parseFloat(
-            element.value
-        );
-
-
-    return isFinite(value)
-        ? value
-        : 0;
+    return parseFloat(
+        document.getElementById(id).value
+    );
 
 }
 
 
-/* =========================================================
-   RESULT HELPER
-========================================================= */
-
-function showResult(html){
+function showResult(
+    html,
+    note=""
+){
 
     return `
 
-        <div class="result">
+        <div class="result-card">
 
-            ${html}
+            <div class="result-label">
+                Result
+            </div>
+
+            <div class="result-value">
+                ${html}
+            </div>
+
+            ${
+                note
+                ?
+                `
+                <div class="result-note">
+                    ${note}
+                </div>
+                `
+                :
+                ""
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+function warningNote(text){
+
+    return `
+
+        <div class="note warning">
+
+            <div class="note-icon">
+                ⚠
+            </div>
+
+            <div>
+                ${text}
+            </div>
 
         </div>
 
@@ -2331,45 +2500,36 @@ function showResult(html){
    DRUG DOSE
 ========================================================= */
 
-function renderDrugDose(el){
+function renderDrugDose(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Weight (kg)",
             "doseWeight",
-            "Patient weight",
-            "kg",
-            "e.g. 12"
+            "e.g. 18"
         )}
 
-
         ${field(
+            "Dose (mg/kg/dose)",
             "dosePerKg",
-            "Recommended dose",
-            "mg/kg",
             "e.g. 10"
         )}
 
+        ${field(
+            "Number of doses",
+            "doseFrequency",
+            "e.g. 3"
+        )}
 
         <button
-            class="button"
-            onclick="calculateDrugDose()">
-
+            class="calculate-btn"
+            onclick="calculateDrugDose()"
+        >
             Calculate dose
-
         </button>
 
-
-        <div id="drugResult"></div>
-
-
-        <div class="safe-note">
-
-            Enter the dose from the appropriate drug reference.
-            This calculator performs arithmetic only and does not
-            provide drug-specific prescribing recommendations.
-
-        </div>
+        <div id="doseResult"></div>
 
     `;
 
@@ -2378,60 +2538,35 @@ function renderDrugDose(el){
 
 function calculateDrugDose(){
 
-    const weight =
-        num("doseWeight");
+    const weight = num("doseWeight");
+    const dose = num("dosePerKg");
+    const frequency = num("doseFrequency");
 
 
-    const mgKg =
-        num("dosePerKg");
+    if(!weight || !dose || !frequency){
 
-
-    if(
-        weight <= 0 ||
-        mgKg <= 0
-    ){
-
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "doseResult"
+        ).innerHTML =
+            warningNote(
+                "Enter weight, dose per kg and number of doses."
+            );
 
         return;
-
     }
 
 
-    const total =
-        weight * mgKg;
+    const single = weight * dose;
+    const daily = single * frequency;
 
 
-    document
-        .getElementById(
-            "drugResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Calculated dose
-            </div>
-
-
-            <div class="result-value">
-                ${round(total)} mg
-            </div>
-
-
-            <div class="result-sub">
-
-                ${round(mgKg)}
-                mg/kg ×
-                ${round(weight)}
-                kg
-
-            </div>
-
-        `);
+    document.getElementById(
+        "doseResult"
+    ).innerHTML =
+        showResult(
+            `${single.toFixed(2)} mg/dose`,
+            `Estimated total daily amount: ${daily.toFixed(2)} mg/day.`
+        );
 
 }
 
@@ -2440,41 +2575,30 @@ function calculateDrugDose(){
    DOSE VOLUME
 ========================================================= */
 
-function renderDoseVolume(el){
+function renderDoseVolume(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Required dose (mg)",
             "volumeDose",
-            "Required dose",
-            "mg"
+            "e.g. 125"
         )}
-
 
         ${field(
-            "medicineAmount",
-            "Medication strength",
-            "mg"
+            "Available concentration (mg/mL)",
+            "volumeConcentration",
+            "e.g. 250"
         )}
-
-
-        ${field(
-            "medicineVolume",
-            "Volume containing strength",
-            "mL"
-        )}
-
 
         <button
-            class="button"
-            onclick="calculateDoseVolume()">
-
+            class="calculate-btn"
+            onclick="calculateDoseVolume()"
+        >
             Calculate volume
-
         </button>
 
-
-        <div id="doseVolumeResult"></div>
+        <div id="volumeResult"></div>
 
     `;
 
@@ -2483,201 +2607,100 @@ function renderDoseVolume(el){
 
 function calculateDoseVolume(){
 
-    const required =
-        num("volumeDose");
+    const dose = num("volumeDose");
+    const concentration = num("volumeConcentration");
 
 
-    const strength =
-        num("medicineAmount");
+    if(!dose || !concentration){
 
-
-    const volume =
-        num("medicineVolume");
-
-
-    if(
-        required <= 0 ||
-        strength <= 0 ||
-        volume <= 0
-    ){
-
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "volumeResult"
+        ).innerHTML =
+            warningNote(
+                "Enter both dose and concentration."
+            );
 
         return;
-
     }
 
 
-    const result =
-        required /
-        strength *
-        volume;
+    const volume = dose / concentration;
 
 
-    document
-        .getElementById(
-            "doseVolumeResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Volume to administer
-            </div>
-
-
-            <div class="result-value">
-                ${round(result)} mL
-            </div>
-
-
-            <div class="result-sub">
-
-                Arithmetic conversion only —
-                verify concentration and route.
-
-            </div>
-
-        `);
+    document.getElementById(
+        "volumeResult"
+    ).innerHTML =
+        showResult(
+            `${volume.toFixed(2)} mL`,
+            "Verify the actual product concentration before administration."
+        );
 
 }
 
 
 /* =========================================================
-   DAILY DOSE
+   DAILY DOSE SPLIT
 ========================================================= */
 
-function renderDailyDose(el){
+function renderDailyDoseSplit(body){
 
-    el.innerHTML = `
-
-        ${field(
-            "dailyWeight",
-            "Patient weight",
-            "kg"
-        )}
-
+    body.innerHTML = `
 
         ${field(
-            "dailyDoseKg",
-            "Total daily dose",
-            "mg/kg/day"
+            "Total daily dose (mg/day)",
+            "splitTotal",
+            "e.g. 600"
         )}
-
 
         ${field(
-            "numberDoses",
-            "Doses per day",
-            "doses"
+            "Number of doses per day",
+            "splitFrequency",
+            "e.g. 3"
         )}
-
 
         <button
-            class="button"
-            onclick="calculateDailyDose()">
-
-            Calculate
-
+            class="calculate-btn"
+            onclick="calculateDailySplit()"
+        >
+            Split dose
         </button>
 
-
-        <div id="dailyDoseResult"></div>
+        <div id="splitResult"></div>
 
     `;
 
 }
 
 
-function calculateDailyDose(){
+function calculateDailySplit(){
 
-    const weight =
-        num("dailyWeight");
-
-
-    const dose =
-        num("dailyDoseKg");
+    const total = num("splitTotal");
+    const frequency = num("splitFrequency");
 
 
-    const frequency =
-        num("numberDoses");
+    if(!total || !frequency){
 
-
-    if(
-        weight <= 0 ||
-        dose <= 0 ||
-        frequency <= 0
-    ){
-
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "splitResult"
+        ).innerHTML =
+            warningNote(
+                "Enter the total daily dose and frequency."
+            );
 
         return;
-
     }
 
 
-    const daily =
-        weight * dose;
+    const dose = total / frequency;
 
 
-    const each =
-        daily / frequency;
-
-
-    document
-        .getElementById(
-            "dailyDoseResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Total daily dose
-            </div>
-
-
-            <div class="result-value">
-                ${round(daily)} mg/day
-            </div>
-
-
-            <div class="result-grid">
-
-
-                <div class="mini-result">
-
-                    <div class="mini-label">
-                        Each dose
-                    </div>
-
-                    <div class="mini-value">
-                        ${round(each)} mg
-                    </div>
-
-                </div>
-
-
-                <div class="mini-result">
-
-                    <div class="mini-label">
-                        Frequency
-                    </div>
-
-                    <div class="mini-value">
-                        ${frequency} /day
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        `);
+    document.getElementById(
+        "splitResult"
+    ).innerHTML =
+        showResult(
+            `${dose.toFixed(2)} mg/dose`,
+            `Calculated from ${total.toFixed(2)} mg/day divided into ${frequency} doses.`
+        );
 
 }
 
@@ -2686,37 +2709,24 @@ function calculateDailyDose(){
    MAINTENANCE FLUIDS
 ========================================================= */
 
-function renderMaintenance(el){
+function renderMaintenance(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Weight (kg)",
             "fluidWeight",
-            "Patient weight",
-            "kg",
-            "e.g. 18"
+            "e.g. 20"
         )}
 
-
         <button
-            class="button"
-            onclick="calculateMaintenance()">
-
+            class="calculate-btn"
+            onclick="calculateMaintenance()"
+        >
             Calculate maintenance
-
         </button>
 
-
-        <div id="maintenanceResult"></div>
-
-
-        <div class="safe-note">
-
-            Standard 4-2-1 hourly maintenance calculation.
-            Adjust fluid strategy according to clinical status
-            and local protocol.
-
-        </div>
+        <div id="fluidResult"></div>
 
     `;
 
@@ -2725,36 +2735,36 @@ function renderMaintenance(el){
 
 function calculateMaintenance(){
 
-    const w =
-        num("fluidWeight");
+    const weight = num("fluidWeight");
 
 
-    if(w <= 0){
+    if(!weight){
 
-        alert(
-            "Please enter a valid weight."
-        );
+        document.getElementById(
+            "fluidResult"
+        ).innerHTML =
+            warningNote(
+                "Enter the patient's weight."
+            );
 
         return;
-
     }
 
 
     let rate;
 
 
-    if(w <= 10){
+    if(weight <= 10){
 
-        rate =
-            w * 4;
+        rate = weight * 4;
 
     }
 
-    else if(w <= 20){
+    else if(weight <= 20){
 
         rate =
             40 +
-            (w - 10) * 2;
+            ((weight - 10) * 2);
 
     }
 
@@ -2762,92 +2772,42 @@ function calculateMaintenance(){
 
         rate =
             60 +
-            (w - 20);
+            ((weight - 20) * 1);
 
     }
 
 
-    const daily =
-        rate * 24;
-
-
-    document
-        .getElementById(
-            "maintenanceResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Hourly maintenance
-            </div>
-
-
-            <div class="result-value">
-                ${round(rate)} mL/hr
-            </div>
-
-
-            <div class="result-grid">
-
-
-                <div class="mini-result">
-
-                    <div class="mini-label">
-                        Approx. 24 hr
-                    </div>
-
-                    <div class="mini-value">
-                        ${round(daily)} mL
-                    </div>
-
-                </div>
-
-
-                <div class="mini-result">
-
-                    <div class="mini-label">
-                        Weight
-                    </div>
-
-                    <div class="mini-value">
-                        ${round(w)} kg
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        `);
+    document.getElementById(
+        "fluidResult"
+    ).innerHTML =
+        showResult(
+            `${rate.toFixed(1)} mL/hr`,
+            "Based on the 4-2-1 hourly maintenance rule."
+        );
 
 }
 
 
 /* =========================================================
-   DAILY FLUID
+   DAILY MAINTENANCE
 ========================================================= */
 
-function renderDailyFluid(el){
+function renderDailyMaintenance(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Weight (kg)",
             "dailyFluidWeight",
-            "Patient weight",
-            "kg"
+            "e.g. 20"
         )}
 
-
         <button
-            class="button"
-            onclick="calculateDailyFluid()">
-
-            Calculate 24-hour fluid
-
+            class="calculate-btn"
+            onclick="calculateDailyMaintenance()"
+        >
+            Calculate daily fluid
         </button>
-
 
         <div id="dailyFluidResult"></div>
 
@@ -2856,38 +2816,38 @@ function renderDailyFluid(el){
 }
 
 
-function calculateDailyFluid(){
+function calculateDailyMaintenance(){
 
-    const w =
-        num("dailyFluidWeight");
+    const weight = num("dailyFluidWeight");
 
 
-    if(w <= 0){
+    if(!weight){
 
-        alert(
-            "Please enter a valid weight."
-        );
+        document.getElementById(
+            "dailyFluidResult"
+        ).innerHTML =
+            warningNote(
+                "Enter the patient's weight."
+            );
 
         return;
-
     }
 
 
     let daily;
 
 
-    if(w <= 10){
+    if(weight <= 10){
 
-        daily =
-            w * 100;
+        daily = weight * 100;
 
     }
 
-    else if(w <= 20){
+    else if(weight <= 20){
 
         daily =
             1000 +
-            (w - 10) * 50;
+            ((weight - 10) * 50);
 
     }
 
@@ -2895,64 +2855,62 @@ function calculateDailyFluid(){
 
         daily =
             1500 +
-            (w - 20) * 20;
+            ((weight - 20) * 20);
 
     }
 
 
-    document
-        .getElementById(
-            "dailyFluidResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                24-hour maintenance
-            </div>
-
-
-            <div class="result-value">
-                ${round(daily)} mL/day
-            </div>
-
-        `);
+    document.getElementById(
+        "dailyFluidResult"
+    ).innerHTML =
+        showResult(
+            `${daily.toFixed(0)} mL/day`,
+            "Based on the 100-50-20 daily maintenance rule."
+        );
 
 }
 
 
 /* =========================================================
-   FLUID BOLUS
+   BOLUS
 ========================================================= */
 
-function renderBolus(el){
+function renderBolus(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Weight (kg)",
             "bolusWeight",
-            "Patient weight",
-            "kg"
+            "e.g. 15"
         )}
 
+        <div class="field">
 
-        ${field(
-            "bolusMlKg",
-            "Bolus volume",
-            "mL/kg",
-            "e.g. 10"
-        )}
+            <label class="field-label">
+                Bolus volume (mL/kg)
+            </label>
 
+            <select id="bolusRate">
+
+                <option value="10">
+                    10 mL/kg
+                </option>
+
+                <option value="20">
+                    20 mL/kg
+                </option>
+
+            </select>
+
+        </div>
 
         <button
-            class="button"
-            onclick="calculateBolus()">
-
-            Calculate volume
-
+            class="calculate-btn"
+            onclick="calculateBolus()"
+        >
+            Calculate bolus
         </button>
-
 
         <div id="bolusResult"></div>
 
@@ -2963,63 +2921,33 @@ function renderBolus(el){
 
 function calculateBolus(){
 
-    const w =
-        num("bolusWeight");
+    const weight = num("bolusWeight");
+    const rate = num("bolusRate");
 
 
-    const mlkg =
-        num("bolusMlKg");
+    if(!weight){
 
-
-    if(
-        w <= 0 ||
-        mlkg <= 0
-    ){
-
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "bolusResult"
+        ).innerHTML =
+            warningNote(
+                "Enter the patient's weight."
+            );
 
         return;
-
     }
 
 
-    const total =
-        w * mlkg;
+    const volume = weight * rate;
 
 
-    document
-        .getElementById(
-            "bolusResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Calculated volume
-            </div>
-
-
-            <div class="result-value">
-                ${round(total)} mL
-            </div>
-
-
-            <div class="result-sub">
-
-                ${round(mlkg)}
-                mL/kg ×
-                ${round(w)}
-                kg.
-
-                Assess response and follow
-                local protocol.
-
-            </div>
-
-        `);
+    document.getElementById(
+        "bolusResult"
+    ).innerHTML =
+        showResult(
+            `${volume.toFixed(0)} mL`,
+            `${rate} mL/kg bolus volume. Reassess clinically after administration.`
+        );
 
 }
 
@@ -3028,32 +2956,28 @@ function calculateBolus(){
    DEHYDRATION DEFICIT
 ========================================================= */
 
-function renderDeficit(el){
+function renderDeficit(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Weight (kg)",
             "deficitWeight",
-            "Current weight",
-            "kg"
+            "e.g. 10"
         )}
-
 
         ${field(
+            "Dehydration (%)",
             "dehydrationPercent",
-            "Estimated dehydration",
-            "%"
+            "e.g. 8"
         )}
-
 
         <button
-            class="button"
-            onclick="calculateDeficit()">
-
+            class="calculate-btn"
+            onclick="calculateDeficit()"
+        >
             Calculate deficit
-
         </button>
-
 
         <div id="deficitResult"></div>
 
@@ -3064,66 +2988,36 @@ function renderDeficit(el){
 
 function calculateDeficit(){
 
-    const w =
-        num("deficitWeight");
+    const weight = num("deficitWeight");
+    const percent = num("dehydrationPercent");
 
 
-    const pct =
-        num("dehydrationPercent");
+    if(!weight || !percent){
 
-
-    if(
-        w <= 0 ||
-        pct < 0
-    ){
-
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "deficitResult"
+        ).innerHTML =
+            warningNote(
+                "Enter weight and dehydration percentage."
+            );
 
         return;
-
     }
 
 
-    const litres =
-        w * pct / 100;
+    const deficit =
+        weight *
+        percent *
+        10;
 
 
-    const ml =
-        litres * 1000;
-
-
-    document
-        .getElementById(
-            "deficitResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Estimated deficit
-            </div>
-
-
-            <div class="result-value">
-                ${round(ml)} mL
-            </div>
-
-
-            <div class="result-sub">
-
-                Equivalent to
-                ${round(litres,2)}
-                L.
-
-                Replacement strategy requires
-                clinical assessment.
-
-            </div>
-
-        `);
+    document.getElementById(
+        "deficitResult"
+    ).innerHTML =
+        showResult(
+            `${deficit.toFixed(0)} mL`,
+            "Estimated fluid deficit. Replacement strategy depends on clinical assessment and protocol."
+        );
 
 }
 
@@ -3132,38 +3026,44 @@ function calculateDeficit(){
    ETT
 ========================================================= */
 
-function renderETT(el){
+function renderETT(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Age (years)",
             "ettAge",
-            "Age",
-            "years",
-            "Use age in years"
+            "e.g. 4"
         )}
 
+        <div class="field">
 
-        <button
-            class="button"
-            onclick="calculateETT()">
+            <label class="field-label">
+                Tube type
+            </label>
 
-            Estimate ETT
+            <select id="ettType">
 
-        </button>
+                <option value="uncuffed">
+                    Uncuffed
+                </option>
 
+                <option value="cuffed">
+                    Cuffed
+                </option>
 
-        <div id="ettResult"></div>
-
-
-        <div class="warning">
-
-            These are age-based estimates only.
-            Always confirm tube size, depth, placement
-            and cuff considerations with the relevant
-            pediatric airway/resuscitation protocol.
+            </select>
 
         </div>
+
+        <button
+            class="calculate-btn"
+            onclick="calculateETT()"
+        >
+            Calculate ETT
+        </button>
+
+        <div id="ettResult"></div>
 
     `;
 
@@ -3172,125 +3072,55 @@ function renderETT(el){
 
 function calculateETT(){
 
-    const age =
-        num("ettAge");
+    const age = num("ettAge");
+
+    const type =
+        document.getElementById(
+            "ettType"
+        ).value;
 
 
-    if(age < 0){
+    if(isNaN(age)){
 
-        alert(
-            "Please enter a valid age."
-        );
-
-        return;
-
-    }
-
-
-    if(age < 1){
-
-        document
-            .getElementById(
-                "ettResult"
-            )
-            .innerHTML =
-
-            showResult(`
-
-                <div class="result-label">
-                    Infant
-                </div>
-
-
-                <div class="result-value">
-                    Use neonatal/infant airway reference
-                </div>
-
-
-                <div class="result-sub">
-
-                    Age-based formulas are less reliable
-                    in very young infants.
-
-                </div>
-
-            `);
-
-        return;
-
-    }
-
-
-    const uncuffed =
-        4 + age / 4;
-
-
-    const cuffed =
-        3.5 + age / 4;
-
-
-    const depth =
-        3 * cuffed;
-
-
-    document
-        .getElementById(
+        document.getElementById(
             "ettResult"
-        )
-        .innerHTML =
+        ).innerHTML =
+            warningNote(
+                "Enter age in years."
+            );
 
-        showResult(`
-
-            <div class="result-label">
-                Estimated tube sizes
-            </div>
-
-
-            <div class="result-grid">
+        return;
+    }
 
 
-                <div class="mini-result">
-
-                    <div class="mini-label">
-                        Uncuffed ID
-                    </div>
-
-                    <div class="mini-value">
-                        ${round(uncuffed,1)} mm
-                    </div>
-
-                </div>
+    let size;
 
 
-                <div class="mini-result">
+    if(type === "cuffed"){
 
-                    <div class="mini-label">
-                        Cuffed ID
-                    </div>
+        size =
+            (age / 4) + 3.5;
 
-                    <div class="mini-value">
-                        ${round(cuffed,1)} mm
-                    </div>
+    }
 
-                </div>
+    else{
 
+        size =
+            (age / 4) + 4;
 
-                <div class="mini-result">
-
-                    <div class="mini-label">
-                        Approx depth
-                    </div>
-
-                    <div class="mini-value">
-                        ${round(depth,1)} cm
-                    </div>
-
-                </div>
+    }
 
 
-            </div>
+    const depth = size * 3;
 
-        `);
+
+    document.getElementById(
+        "ettResult"
+    ).innerHTML =
+        showResult(
+            `${size.toFixed(1)} mm`,
+            `Estimated oral depth: approximately ${depth.toFixed(1)} cm. Confirm clinically and with local airway guidance.`
+        );
 
 }
 
@@ -3299,36 +3129,30 @@ function calculateETT(){
    RESPIRATORY RATE
 ========================================================= */
 
-function renderRespRate(el){
+function renderRespiratoryRate(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
-            "rrValue",
-            "Observed respiratory rate",
-            "breaths/min"
+            "Age (years)",
+            "rrAge",
+            "e.g. 3"
         )}
 
+        ${field(
+            "Measured RR (breaths/min)",
+            "rrValue",
+            "e.g. 38"
+        )}
 
         <button
-            class="button"
-            onclick="calculateRR()">
-
-            Assess
-
+            class="calculate-btn"
+            onclick="calculateRR()"
+        >
+            Review RR
         </button>
 
-
         <div id="rrResult"></div>
-
-
-        <div class="safe-note">
-
-            Interpretation depends strongly on age,
-            state, temperature, activity and clinical context.
-            Use age-specific reference ranges.
-
-        </div>
 
     `;
 
@@ -3337,56 +3161,30 @@ function renderRespRate(el){
 
 function calculateRR(){
 
-    const rr =
-        num("rrValue");
+    const age = num("rrAge");
+    const rr = num("rrValue");
 
 
-    if(rr <= 0){
+    if(isNaN(age) || !rr){
 
-        alert(
-            "Please enter a valid respiratory rate."
-        );
+        document.getElementById(
+            "rrResult"
+        ).innerHTML =
+            warningNote(
+                "Enter age and measured respiratory rate."
+            );
 
         return;
-
     }
 
 
-    let message =
-        "Compare with the child's age-specific normal range.";
-
-
-    if(rr >= 60){
-
-        message =
-            "Marked tachypnea — assess the child clinically.";
-
-    }
-
-
-    document
-        .getElementById(
-            "rrResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Observed rate
-            </div>
-
-
-            <div class="result-value">
-                ${round(rr)} /min
-            </div>
-
-
-            <div class="result-sub">
-                ${message}
-            </div>
-
-        `);
+    document.getElementById(
+        "rrResult"
+    ).innerHTML =
+        showResult(
+            `${rr} /min`,
+            "Interpret the respiratory rate in relation to age, fever, distress, oxygenation and the complete clinical picture."
+        );
 
 }
 
@@ -3395,32 +3193,28 @@ function calculateRR(){
    OXYGEN
 ========================================================= */
 
-function renderOxygen(el){
+function renderOxygen(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "SpO₂ (%)",
             "spo2",
-            "SpO₂",
-            "%"
+            "e.g. 96"
         )}
-
 
         ${field(
+            "Oxygen flow (L/min)",
             "oxygenFlow",
-            "Oxygen flow",
-            "L/min"
+            "e.g. 2"
         )}
-
 
         <button
-            class="button"
-            onclick="calculateOxygen()">
-
+            class="calculate-btn"
+            onclick="reviewOxygen()"
+        >
             Review
-
         </button>
-
 
         <div id="oxygenResult"></div>
 
@@ -3429,57 +3223,32 @@ function renderOxygen(el){
 }
 
 
-function calculateOxygen(){
+function reviewOxygen(){
 
-    const spo2 =
-        num("spo2");
-
-
-    const flow =
-        num("oxygenFlow");
+    const spo2 = num("spo2");
+    const flow = num("oxygenFlow");
 
 
-    if(spo2 <= 0){
+    if(!spo2 || isNaN(flow)){
 
-        alert(
-            "Please enter SpO₂."
-        );
+        document.getElementById(
+            "oxygenResult"
+        ).innerHTML =
+            warningNote(
+                "Enter SpO₂ and oxygen flow."
+            );
 
         return;
-
     }
 
 
-    document
-        .getElementById(
-            "oxygenResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Bedside observation
-            </div>
-
-
-            <div class="result-value">
-                SpO₂ ${round(spo2)}%
-            </div>
-
-
-            <div class="result-sub">
-
-                Oxygen flow entered:
-                ${round(flow)}
-                L/min.
-
-                Interpret according to clinical
-                condition and oxygen protocol.
-
-            </div>
-
-        `);
+    document.getElementById(
+        "oxygenResult"
+    ).innerHTML =
+        showResult(
+            `${spo2}% SpO₂`,
+            `Documented oxygen flow: ${flow} L/min. Interpret according to the child's condition and prescribed target range.`
+        );
 
 }
 
@@ -3488,43 +3257,30 @@ function calculateOxygen(){
    BMI
 ========================================================= */
 
-function renderBMI(el){
+function renderBMI(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Weight (kg)",
             "bmiWeight",
-            "Weight",
-            "kg"
+            "e.g. 25"
         )}
-
 
         ${field(
+            "Height (cm)",
             "bmiHeight",
-            "Height",
-            "cm"
+            "e.g. 125"
         )}
-
 
         <button
-            class="button"
-            onclick="calculateBMI()">
-
+            class="calculate-btn"
+            onclick="calculateBMI()"
+        >
             Calculate BMI
-
         </button>
 
-
         <div id="bmiResult"></div>
-
-
-        <div class="safe-note">
-
-            In children, BMI should be interpreted
-            using age- and sex-specific BMI-for-age
-            references rather than adult BMI cutoffs.
-
-        </div>
 
     `;
 
@@ -3533,63 +3289,37 @@ function renderBMI(el){
 
 function calculateBMI(){
 
-    const w =
-        num("bmiWeight");
+    const weight = num("bmiWeight");
+    const height = num("bmiHeight");
 
 
-    const h =
-        num("bmiHeight");
+    if(!weight || !height){
 
-
-    if(
-        w <= 0 ||
-        h <= 0
-    ){
-
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "bmiResult"
+        ).innerHTML =
+            warningNote(
+                "Enter weight and height."
+            );
 
         return;
-
     }
 
 
-    const metres =
-        h / 100;
-
+    const meters = height / 100;
 
     const bmi =
-        w /
-        (metres * metres);
+        weight /
+        (meters * meters);
 
 
-    document
-        .getElementById(
-            "bmiResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                BMI
-            </div>
-
-
-            <div class="result-value">
-                ${round(bmi,1)} kg/m²
-            </div>
-
-
-            <div class="result-sub">
-
-                For pediatric interpretation,
-                use an appropriate BMI-for-age chart.
-
-            </div>
-
-        `);
+    document.getElementById(
+        "bmiResult"
+    ).innerHTML =
+        showResult(
+            bmi.toFixed(2),
+            "For children, BMI should be interpreted using age- and sex-specific pediatric growth references."
+        );
 
 }
 
@@ -3598,32 +3328,28 @@ function calculateBMI(){
    BSA
 ========================================================= */
 
-function renderBSA(el){
+function renderBSA(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Weight (kg)",
             "bsaWeight",
-            "Weight",
-            "kg"
+            "e.g. 20"
         )}
-
 
         ${field(
+            "Height (cm)",
             "bsaHeight",
-            "Height",
-            "cm"
+            "e.g. 110"
         )}
-
 
         <button
-            class="button"
-            onclick="calculateBSA()">
-
+            class="calculate-btn"
+            onclick="calculateBSA()"
+        >
             Calculate BSA
-
         </button>
-
 
         <div id="bsaResult"></div>
 
@@ -3634,57 +3360,36 @@ function renderBSA(el){
 
 function calculateBSA(){
 
-    const w =
-        num("bsaWeight");
+    const weight = num("bsaWeight");
+    const height = num("bsaHeight");
 
 
-    const h =
-        num("bsaHeight");
+    if(!weight || !height){
 
-
-    if(
-        w <= 0 ||
-        h <= 0
-    ){
-
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "bsaResult"
+        ).innerHTML =
+            warningNote(
+                "Enter weight and height."
+            );
 
         return;
-
     }
 
 
     const bsa =
         Math.sqrt(
-            (h * w) / 3600
+            (height * weight) / 3600
         );
 
 
-    document
-        .getElementById(
-            "bsaResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Body surface area
-            </div>
-
-
-            <div class="result-value">
-                ${round(bsa,2)} m²
-            </div>
-
-
-            <div class="result-sub">
-                Mosteller formula.
-            </div>
-
-        `);
+    document.getElementById(
+        "bsaResult"
+    ).innerHTML =
+        showResult(
+            `${bsa.toFixed(2)} m²`,
+            "Calculated using the Mosteller formula."
+        );
 
 }
 
@@ -3693,36 +3398,44 @@ function calculateBSA(){
    IDEAL BODY WEIGHT
 ========================================================= */
 
-function renderIBW(el){
+function renderIBW(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Height (cm)",
             "ibwHeight",
-            "Height",
-            "cm"
+            "e.g. 165"
         )}
 
+        <div class="field">
 
-        <button
-            class="button"
-            onclick="calculateIBW()">
+            <label class="field-label">
+                Sex
+            </label>
 
-            Calculate
+            <select id="ibwSex">
 
-        </button>
+                <option value="female">
+                    Female
+                </option>
 
+                <option value="male">
+                    Male
+                </option>
 
-        <div id="ibwResult"></div>
-
-
-        <div class="safe-note">
-
-            This height-based estimate is not a pediatric
-            dosing standard. Do not substitute it for an
-            age-appropriate clinical weight.
+            </select>
 
         </div>
+
+        <button
+            class="calculate-btn"
+            onclick="calculateIBW()"
+        >
+            Calculate IBW
+        </button>
+
+        <div id="ibwResult"></div>
 
     `;
 
@@ -3731,88 +3444,63 @@ function renderIBW(el){
 
 function calculateIBW(){
 
-    const h =
-        num("ibwHeight");
+    const height = num("ibwHeight");
+
+    const sex =
+        document.getElementById(
+            "ibwSex"
+        ).value;
 
 
-    if(h <= 0){
+    if(!height){
 
-        alert(
-            "Please enter a valid height."
+        document.getElementById(
+            "ibwResult"
+        ).innerHTML =
+            warningNote(
+                "Enter height."
+            );
+
+        return;
+    }
+
+
+    const inches = height / 2.54;
+
+    const over5ft =
+        Math.max(
+            0,
+            inches - 60
         );
 
-        return;
+
+    let ibw;
+
+
+    if(sex === "male"){
+
+        ibw =
+            50 +
+            (2.3 * over5ft);
+
+    }
+
+    else{
+
+        ibw =
+            45.5 +
+            (2.3 * over5ft);
 
     }
 
 
-    const inches =
-        h / 2.54;
-
-
-    if(inches < 60){
-
-        document
-            .getElementById(
-                "ibwResult"
-            )
-            .innerHTML =
-
-            showResult(`
-
-                <div class="result-label">
-                    Height
-                </div>
-
-
-                <div class="result-value">
-                    ${round(inches,1)} in
-                </div>
-
-
-                <div class="result-sub">
-
-                    Height-based adult IBW formulas
-                    are not intended for pediatric use.
-
-                </div>
-
-            `);
-
-        return;
-
-    }
-
-
-    const ibw =
-        50 +
-        2.3 *
-        (inches - 60);
-
-
-    document
-        .getElementById(
-            "ibwResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Estimated IBW
-            </div>
-
-
-            <div class="result-value">
-                ${round(ibw,1)} kg
-            </div>
-
-
-            <div class="result-sub">
-                Height-based adult estimate.
-            </div>
-
-        `);
+    document.getElementById(
+        "ibwResult"
+    ).innerHTML =
+        showResult(
+            `${ibw.toFixed(1)} kg`,
+            "This is an adult-style Devine estimate and is not a pediatric growth standard."
+        );
 
 }
 
@@ -3821,45 +3509,30 @@ function calculateIBW(){
    CORRECTED AGE
 ========================================================= */
 
-function renderCorrectedAge(el){
+function renderCorrectedAge(body){
 
-    el.innerHTML = `
-
-        ${field(
-            "gestAge",
-            "Gestational age at birth",
-            "weeks",
-            "e.g. 30"
-        )}
-
+    body.innerHTML = `
 
         ${field(
+            "Chronological age (months)",
             "chronAge",
-            "Chronological age",
-            "weeks",
-            "e.g. 20"
+            "e.g. 4"
         )}
 
+        ${field(
+            "Gestational age at birth (weeks)",
+            "gestAge",
+            "e.g. 32"
+        )}
 
         <button
-            class="button"
-            onclick="calculateCorrectedAge()">
-
+            class="calculate-btn"
+            onclick="calculateCorrectedAge()"
+        >
             Calculate corrected age
-
         </button>
 
-
         <div id="correctedAgeResult"></div>
-
-
-        <div class="safe-note">
-
-            Commonly calculated as chronological age
-            minus weeks born before 40 weeks.
-            Clinical use varies by context.
-
-        </div>
 
     `;
 
@@ -3868,73 +3541,49 @@ function renderCorrectedAge(el){
 
 function calculateCorrectedAge(){
 
-    const gest =
+    const chronological =
+        num("chronAge");
+
+    const gestational =
         num("gestAge");
 
 
-    const chron =
-        num("chronAge");
-
-
     if(
-        gest <= 0 ||
-        chron < 0
+        isNaN(chronological) ||
+        isNaN(gestational)
     ){
 
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "correctedAgeResult"
+        ).innerHTML =
+            warningNote(
+                "Enter both ages."
+            );
 
         return;
-
     }
 
 
-    const prematurity =
+    const weeksEarly =
         Math.max(
             0,
-            40 - gest
+            40 - gestational
+        );
+
+    const correctedMonths =
+        chronological -
+        (
+            weeksEarly / 4.345
         );
 
 
-    const corrected =
-        Math.max(
-            0,
-            chron - prematurity
+    document.getElementById(
+        "correctedAgeResult"
+    ).innerHTML =
+        showResult(
+            `${Math.max(0,correctedMonths).toFixed(1)} months`,
+            "Approximation using 40 weeks as term gestation. Use appropriate neonatal/pediatric references."
         );
-
-
-    const months =
-        corrected / 4.345;
-
-
-    document
-        .getElementById(
-            "correctedAgeResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Corrected age
-            </div>
-
-
-            <div class="result-value">
-                ${round(months,1)} months
-            </div>
-
-
-            <div class="result-sub">
-
-                Approximately
-                ${round(corrected,1)}
-                weeks corrected age.
-
-            </div>
-
-        `);
 
 }
 
@@ -3943,110 +3592,75 @@ function calculateCorrectedAge(){
    ANION GAP
 ========================================================= */
 
-function renderAnionGap(el){
+function renderAnionGap(body){
 
-    el.innerHTML = `
-
-        ${field(
-            "na",
-            "Sodium",
-            "mEq/L"
-        )}
-
+    body.innerHTML = `
 
         ${field(
-            "cl",
-            "Chloride",
-            "mEq/L"
+            "Sodium (mEq/L)",
+            "agNa",
+            "e.g. 140"
         )}
-
 
         ${field(
-            "hco3",
-            "Bicarbonate",
-            "mEq/L"
+            "Chloride (mEq/L)",
+            "agCl",
+            "e.g. 104"
         )}
 
+        ${field(
+            "Bicarbonate (mEq/L)",
+            "agHco3",
+            "e.g. 24"
+        )}
 
         <button
-            class="button"
-            onclick="calculateAnionGap()">
-
-            Calculate
-
+            class="calculate-btn"
+            onclick="calculateAG()"
+        >
+            Calculate anion gap
         </button>
 
-
-        <div id="anionResult"></div>
+        <div id="agResult"></div>
 
     `;
 
 }
 
 
-function calculateAnionGap(){
+function calculateAG(){
 
-    const na =
-        num("na");
-
-
-    const cl =
-        num("cl");
+    const na = num("agNa");
+    const cl = num("agCl");
+    const hco3 = num("agHco3");
 
 
-    const hco3 =
-        num("hco3");
+    if(!na || !cl || !hco3){
 
-
-    if(
-        na <= 0 ||
-        cl <= 0 ||
-        hco3 <= 0
-    ){
-
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "agResult"
+        ).innerHTML =
+            warningNote(
+                "Enter all three electrolyte values."
+            );
 
         return;
-
     }
 
 
-    const ag =
+    const gap =
         na -
-        (cl + hco3);
+        cl -
+        hco3;
 
 
-    document
-        .getElementById(
-            "anionResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Anion gap
-            </div>
-
-
-            <div class="result-value">
-                ${round(ag)} mEq/L
-            </div>
-
-
-            <div class="result-sub">
-
-                Formula:
-                Na − (Cl + HCO₃).
-
-                Interpret using the laboratory's
-                reference range and clinical context.
-
-            </div>
-
-        `);
+    document.getElementById(
+        "agResult"
+    ).innerHTML =
+        showResult(
+            `${gap.toFixed(1)} mEq/L`,
+            "Formula: Na − (Cl + HCO₃). Reference interpretation depends on laboratory method and clinical context."
+        );
 
 }
 
@@ -4055,96 +3669,70 @@ function calculateAnionGap(){
    CORRECTED SODIUM
 ========================================================= */
 
-function renderCorrectedSodium(el){
+function renderCorrectedSodium(body){
 
-    el.innerHTML = `
-
-        ${field(
-            "measuredNa",
-            "Measured sodium",
-            "mEq/L"
-        )}
-
+    body.innerHTML = `
 
         ${field(
-            "glucose",
-            "Glucose",
-            "mg/dL"
+            "Measured sodium (mEq/L)",
+            "corrNa",
+            "e.g. 130"
         )}
 
+        ${field(
+            "Glucose (mg/dL)",
+            "corrGlucose",
+            "e.g. 300"
+        )}
 
         <button
-            class="button"
-            onclick="calculateCorrectedSodium()">
-
-            Calculate
-
+            class="calculate-btn"
+            onclick="calculateCorrectedNa()"
+        >
+            Calculate corrected sodium
         </button>
 
-
-        <div id="correctedNaResult"></div>
+        <div id="corrNaResult"></div>
 
     `;
 
 }
 
 
-function calculateCorrectedSodium(){
+function calculateCorrectedNa(){
 
-    const na =
-        num("measuredNa");
-
-
-    const glucose =
-        num("glucose");
+    const na = num("corrNa");
+    const glucose = num("corrGlucose");
 
 
-    if(
-        na <= 0 ||
-        glucose <= 0
-    ){
+    if(!na || !glucose){
 
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "corrNaResult"
+        ).innerHTML =
+            warningNote(
+                "Enter sodium and glucose."
+            );
 
         return;
-
     }
 
 
     const corrected =
         na +
-        0.016 *
-        (glucose - 100);
+        0.024 *
+        (
+            glucose - 100
+        );
 
 
-    document
-        .getElementById(
-            "correctedNaResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Estimated corrected sodium
-            </div>
-
-
-            <div class="result-value">
-                ${round(corrected,1)} mEq/L
-            </div>
-
-
-            <div class="result-sub">
-
-                Using a commonly used correction factor.
-                Different references may use different factors.
-
-            </div>
-
-        `);
+    document.getElementById(
+        "corrNaResult"
+    ).innerHTML =
+        showResult(
+            `${corrected.toFixed(1)} mEq/L`,
+            "Uses an approximate correction factor of 2.4 mEq/L sodium per 100 mg/dL glucose above 100."
+        );
 
 }
 
@@ -4153,32 +3741,28 @@ function calculateCorrectedSodium(){
    CORRECTED CALCIUM
 ========================================================= */
 
-function renderCorrectedCalcium(el){
+function renderCorrectedCalcium(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Measured calcium (mg/dL)",
             "calcium",
-            "Total calcium",
-            "mg/dL"
+            "e.g. 7.8"
         )}
-
 
         ${field(
+            "Albumin (g/dL)",
             "albumin",
-            "Albumin",
-            "g/dL"
+            "e.g. 2.5"
         )}
-
 
         <button
-            class="button"
-            onclick="calculateCorrectedCalcium()">
-
-            Calculate
-
+            class="calculate-btn"
+            onclick="calculateCorrectedCa()"
+        >
+            Calculate corrected calcium
         </button>
-
 
         <div id="correctedCaResult"></div>
 
@@ -4187,63 +3771,43 @@ function renderCorrectedCalcium(el){
 }
 
 
-function calculateCorrectedCalcium(){
+function calculateCorrectedCa(){
 
-    const ca =
-        num("calcium");
-
-
-    const albumin =
-        num("albumin");
+    const calcium = num("calcium");
+    const albumin = num("albumin");
 
 
     if(
-        ca <= 0 ||
-        albumin <= 0
+        isNaN(calcium) ||
+        isNaN(albumin)
     ){
 
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "correctedCaResult"
+        ).innerHTML =
+            warningNote(
+                "Enter calcium and albumin."
+            );
 
         return;
-
     }
 
 
     const corrected =
-        ca +
+        calcium +
         0.8 *
-        (4 - albumin);
+        (
+            4 - albumin
+        );
 
 
-    document
-        .getElementById(
-            "correctedCaResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Estimated corrected calcium
-            </div>
-
-
-            <div class="result-value">
-                ${round(corrected,2)} mg/dL
-            </div>
-
-
-            <div class="result-sub">
-
-                Formula-based estimate.
-                Ionized calcium may be more clinically
-                informative in appropriate settings.
-
-            </div>
-
-        `);
+    document.getElementById(
+        "correctedCaResult"
+    ).innerHTML =
+        showResult(
+            `${corrected.toFixed(2)} mg/dL`,
+            "Approximate correction formula. Consider ionized calcium when clinically appropriate."
+        );
 
 }
 
@@ -4252,39 +3816,34 @@ function calculateCorrectedCalcium(){
    OSMOLALITY
 ========================================================= */
 
-function renderOsmolality(el){
+function renderOsmolality(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Sodium (mEq/L)",
             "osmNa",
-            "Sodium",
-            "mEq/L"
+            "e.g. 140"
         )}
 
-
         ${field(
+            "Glucose (mg/dL)",
             "osmGlucose",
-            "Glucose",
-            "mg/dL"
+            "e.g. 100"
         )}
-
 
         ${field(
+            "BUN (mg/dL)",
             "osmBun",
-            "BUN",
-            "mg/dL"
+            "e.g. 15"
         )}
-
 
         <button
-            class="button"
-            onclick="calculateOsmolality()">
-
-            Calculate
-
+            class="calculate-btn"
+            onclick="calculateOsm()"
+        >
+            Calculate osmolality
         </button>
-
 
         <div id="osmResult"></div>
 
@@ -4293,59 +3852,39 @@ function renderOsmolality(el){
 }
 
 
-function calculateOsmolality(){
+function calculateOsm(){
 
-    const na =
-        num("osmNa");
-
-
-    const glucose =
-        num("osmGlucose");
+    const na = num("osmNa");
+    const glucose = num("osmGlucose");
+    const bun = num("osmBun");
 
 
-    const bun =
-        num("osmBun");
+    if(!na || !glucose || !bun){
 
-
-    if(
-        na <= 0 ||
-        glucose <= 0 ||
-        bun < 0
-    ){
-
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "osmResult"
+        ).innerHTML =
+            warningNote(
+                "Enter sodium, glucose and BUN."
+            );
 
         return;
-
     }
 
 
     const osm =
-        2 * na +
-        glucose / 18 +
-        bun / 2.8;
+        (2 * na) +
+        (glucose / 18) +
+        (bun / 2.8);
 
 
-    document
-        .getElementById(
-            "osmResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Calculated serum osmolality
-            </div>
-
-
-            <div class="result-value">
-                ${round(osm)} mOsm/kg
-            </div>
-
-        `);
+    document.getElementById(
+        "osmResult"
+    ).innerHTML =
+        showResult(
+            `${osm.toFixed(1)} mOsm/kg`,
+            "Calculated serum osmolality estimate."
+        );
 
 }
 
@@ -4354,43 +3893,30 @@ function calculateOsmolality(){
    SCHWARTZ
 ========================================================= */
 
-function renderCreatinineClearance(el){
+function renderSchwartz(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Height (cm)",
             "schwartzHeight",
-            "Height",
-            "cm"
+            "e.g. 110"
         )}
-
 
         ${field(
-            "schwartzCreatinine",
-            "Serum creatinine",
-            "mg/dL"
+            "Serum creatinine (mg/dL)",
+            "schwartzCr",
+            "e.g. 0.6"
         )}
-
 
         <button
-            class="button"
-            onclick="calculateSchwartz()">
-
+            class="calculate-btn"
+            onclick="calculateSchwartz()"
+        >
             Calculate eGFR
-
         </button>
 
-
         <div id="schwartzResult"></div>
-
-
-        <div class="warning">
-
-            Confirm the equation and coefficient appropriate
-            to the patient's age, assay and clinical setting
-            before using the result.
-
-        </div>
 
     `;
 
@@ -4399,61 +3925,36 @@ function renderCreatinineClearance(el){
 
 function calculateSchwartz(){
 
-    const h =
-        num("schwartzHeight");
+    const height = num("schwartzHeight");
+    const creatinine = num("schwartzCr");
 
 
-    const cr =
-        num("schwartzCreatinine");
+    if(!height || !creatinine){
 
-
-    if(
-        h <= 0 ||
-        cr <= 0
-    ){
-
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "schwartzResult"
+        ).innerHTML =
+            warningNote(
+                "Enter height and creatinine."
+            );
 
         return;
-
     }
 
 
     const egfr =
         0.413 *
-        h /
-        cr;
+        height /
+        creatinine;
 
 
-    document
-        .getElementById(
-            "schwartzResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Estimated GFR
-            </div>
-
-
-            <div class="result-value">
-                ${round(egfr)}
-                mL/min/1.73m²
-            </div>
-
-
-            <div class="result-sub">
-
-                Updated bedside Schwartz-style equation
-                using coefficient 0.413.
-
-            </div>
-
-        `);
+    document.getElementById(
+        "schwartzResult"
+    ).innerHTML =
+        showResult(
+            `${egfr.toFixed(1)} mL/min/1.73 m²`,
+            "Bedside Schwartz estimate using k = 0.413. Interpret with the appropriate clinical and laboratory context."
+        );
 
 }
 
@@ -4462,43 +3963,30 @@ function calculateSchwartz(){
    SHOCK INDEX
 ========================================================= */
 
-function renderShockIndex(el){
+function renderShockIndex(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Heart rate (bpm)",
             "shockHR",
-            "Heart rate",
-            "bpm"
+            "e.g. 120"
         )}
-
 
         ${field(
+            "Systolic BP (mmHg)",
             "shockSBP",
-            "Systolic BP",
-            "mmHg"
+            "e.g. 90"
         )}
-
 
         <button
-            class="button"
-            onclick="calculateShockIndex()">
-
-            Calculate
-
+            class="calculate-btn"
+            onclick="calculateShockIndex()"
+        >
+            Calculate shock index
         </button>
 
-
         <div id="shockResult"></div>
-
-
-        <div class="safe-note">
-
-            Pediatric shock index interpretation is
-            age-dependent. Use this as a calculation aid,
-            not as a standalone diagnostic tool.
-
-        </div>
 
     `;
 
@@ -4507,59 +3995,33 @@ function renderShockIndex(el){
 
 function calculateShockIndex(){
 
-    const hr =
-        num("shockHR");
+    const hr = num("shockHR");
+    const sbp = num("shockSBP");
 
 
-    const sbp =
-        num("shockSBP");
+    if(!hr || !sbp){
 
-
-    if(
-        hr <= 0 ||
-        sbp <= 0
-    ){
-
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "shockResult"
+        ).innerHTML =
+            warningNote(
+                "Enter heart rate and systolic blood pressure."
+            );
 
         return;
-
     }
 
 
-    const si =
-        hr / sbp;
+    const si = hr / sbp;
 
 
-    document
-        .getElementById(
-            "shockResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Shock index
-            </div>
-
-
-            <div class="result-value">
-                ${round(si,2)}
-            </div>
-
-
-            <div class="result-sub">
-
-                HR ÷ systolic BP.
-                Interpret using age-specific
-                pediatric context.
-
-            </div>
-
-        `);
+    document.getElementById(
+        "shockResult"
+    ).innerHTML =
+        showResult(
+            si.toFixed(2),
+            "Pediatric interpretation should be age-specific and based on the overall clinical picture."
+        );
 
 }
 
@@ -4568,32 +4030,28 @@ function calculateShockIndex(){
    MAP
 ========================================================= */
 
-function renderMAP(el){
+function renderMAP(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
+            "Systolic BP (mmHg)",
             "mapSBP",
-            "Systolic BP",
-            "mmHg"
+            "e.g. 100"
         )}
-
 
         ${field(
+            "Diastolic BP (mmHg)",
             "mapDBP",
-            "Diastolic BP",
-            "mmHg"
+            "e.g. 60"
         )}
-
 
         <button
-            class="button"
-            onclick="calculateMAP()">
-
+            class="calculate-btn"
+            onclick="calculateMAP()"
+        >
             Calculate MAP
-
         </button>
-
 
         <div id="mapResult"></div>
 
@@ -4604,61 +4062,37 @@ function renderMAP(el){
 
 function calculateMAP(){
 
-    const sbp =
-        num("mapSBP");
+    const sbp = num("mapSBP");
+    const dbp = num("mapDBP");
 
 
-    const dbp =
-        num("mapDBP");
+    if(!sbp || !dbp){
 
-
-    if(
-        sbp <= 0 ||
-        dbp <= 0
-    ){
-
-        alert(
-            "Please enter valid values."
-        );
+        document.getElementById(
+            "mapResult"
+        ).innerHTML =
+            warningNote(
+                "Enter systolic and diastolic blood pressure."
+            );
 
         return;
-
     }
 
 
     const map =
         (
             sbp +
-            2 * dbp
+            (2 * dbp)
         ) / 3;
 
 
-    document
-        .getElementById(
-            "mapResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Mean arterial pressure
-            </div>
-
-
-            <div class="result-value">
-                ${round(map)} mmHg
-            </div>
-
-
-            <div class="result-sub">
-
-                Approximation using
-                MAP = (SBP + 2×DBP) / 3.
-
-            </div>
-
-        `);
+    document.getElementById(
+        "mapResult"
+    ).innerHTML =
+        showResult(
+            `${map.toFixed(1)} mmHg`,
+            "Formula: (SBP + 2 × DBP) / 3."
+        );
 
 }
 
@@ -4667,25 +4101,46 @@ function calculateMAP(){
    WEIGHT CONVERTER
 ========================================================= */
 
-function renderWeightConverter(el){
+function renderWeightConverter(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
-            "convertKg",
             "Weight",
-            "kg"
+            "weightValue",
+            "e.g. 10"
         )}
 
+        <div class="field">
+
+            <label class="field-label">
+                Convert from
+            </label>
+
+            <select id="weightUnit">
+
+                <option value="kg">
+                    Kilograms
+                </option>
+
+                <option value="g">
+                    Grams
+                </option>
+
+                <option value="lb">
+                    Pounds
+                </option>
+
+            </select>
+
+        </div>
 
         <button
-            class="button"
-            onclick="calculateWeightConversion()">
-
-            Convert
-
+            class="calculate-btn"
+            onclick="convertWeight()"
+        >
+            Convert weight
         </button>
-
 
         <div id="weightResult"></div>
 
@@ -4694,77 +4149,60 @@ function renderWeightConverter(el){
 }
 
 
-function calculateWeightConversion(){
+function convertWeight(){
 
-    const kg =
-        num("convertKg");
+    const value = num("weightValue");
+
+    const unit =
+        document.getElementById(
+            "weightUnit"
+        ).value;
 
 
-    if(kg < 0){
+    if(isNaN(value)){
 
-        alert(
-            "Please enter a valid weight."
-        );
+        document.getElementById(
+            "weightResult"
+        ).innerHTML =
+            warningNote(
+                "Enter a weight value."
+            );
 
         return;
+    }
+
+
+    let kg;
+
+
+    if(unit === "kg"){
+
+        kg = value;
+
+    }
+
+    else if(unit === "g"){
+
+        kg = value / 1000;
+
+    }
+
+    else{
+
+        kg =
+            value *
+            0.45359237;
 
     }
 
 
-    const grams =
-        kg * 1000;
-
-
-    const pounds =
-        kg *
-        2.2046226218;
-
-
-    document
-        .getElementById(
-            "weightResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Converted weight
-            </div>
-
-
-            <div class="result-grid">
-
-
-                <div class="mini-result">
-
-                    <div class="mini-label">
-                        Grams
-                    </div>
-
-                    <div class="mini-value">
-                        ${round(grams)} g
-                    </div>
-
-                </div>
-
-
-                <div class="mini-result">
-
-                    <div class="mini-label">
-                        Pounds
-                    </div>
-
-                    <div class="mini-value">
-                        ${round(pounds,2)} lb
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        `);
+    document.getElementById(
+        "weightResult"
+    ).innerHTML =
+        showResult(
+            `${kg.toFixed(3)} kg`,
+            `${(kg * 1000).toFixed(0)} g • ${(kg * 2.20462).toFixed(2)} lb`
+        );
 
 }
 
@@ -4773,112 +4211,137 @@ function calculateWeightConversion(){
    TEMPERATURE
 ========================================================= */
 
-function renderTemperature(el){
+function renderTemperature(body){
 
-    el.innerHTML = `
+    body.innerHTML = `
 
         ${field(
-            "tempC",
             "Temperature",
-            "°C"
+            "temperatureValue",
+            "e.g. 37"
         )}
 
+        <div class="field">
+
+            <label class="field-label">
+                Convert from
+            </label>
+
+            <select id="temperatureUnit">
+
+                <option value="c">
+                    Celsius
+                </option>
+
+                <option value="f">
+                    Fahrenheit
+                </option>
+
+            </select>
+
+        </div>
 
         <button
-            class="button"
-            onclick="calculateTemperature()">
-
-            Convert
-
+            class="calculate-btn"
+            onclick="convertTemperature()"
+        >
+            Convert temperature
         </button>
 
-
-        <div id="tempResult"></div>
+        <div id="temperatureResult"></div>
 
     `;
 
 }
 
 
-function calculateTemperature(){
+function convertTemperature(){
 
-    const c =
-        num("tempC");
+    const value =
+        num("temperatureValue");
 
-
-    const f =
-        c *
-        9 / 5 +
-        32;
-
-
-    document
-        .getElementById(
-            "tempResult"
-        )
-        .innerHTML =
-
-        showResult(`
-
-            <div class="result-label">
-                Fahrenheit
-            </div>
+    const unit =
+        document.getElementById(
+            "temperatureUnit"
+        ).value;
 
 
-            <div class="result-value">
-                ${round(f,1)} °F
-            </div>
+    if(isNaN(value)){
+
+        document.getElementById(
+            "temperatureResult"
+        ).innerHTML =
+            warningNote(
+                "Enter a temperature."
+            );
+
+        return;
+    }
 
 
-            <div class="result-sub">
-                ${round(c,1)} °C
-            </div>
-
-        `);
-
-}
+    let celsius;
+    let fahrenheit;
 
 
-/* =========================================================
-   ROUNDING
-========================================================= */
+    if(unit === "c"){
 
-function round(
-    value,
-    decimals=1
-){
+        celsius = value;
 
-    return Number(
-        value.toFixed(
-            decimals
-        )
-    );
+        fahrenheit =
+            (value * 9 / 5) + 32;
 
-}
+    }
+
+    else{
+
+        fahrenheit = value;
+
+        celsius =
+            (value - 32) * 5 / 9;
+
+    }
 
 
-/* =========================================================
-   SCROLL
-========================================================= */
-
-function scrollToSection(id){
-
-    document
-        .getElementById(id)
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+    document.getElementById(
+        "temperatureResult"
+    ).innerHTML =
+        showResult(
+            `${celsius.toFixed(1)} °C`,
+            `${fahrenheit.toFixed(1)} °F`
+        );
 
 }
 
 
 /* =========================================================
-   INITIALIZE
+   INITIALISE
 ========================================================= */
 
 populateSelect();
 
+renderCurrentCalculator();
+
+
+/* =========================================================
+   KEEP DATE + GREETING CURRENT
+========================================================= */
+
+setInterval(
+
+    () => {
+
+        updateGreeting();
+        updateDate();
+
+    },
+
+    60 * 1000
+
+);
+
 </script>
 
+
 </body>
+
 </html>
