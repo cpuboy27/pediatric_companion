@@ -1,76 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
->
+<title>Vaishnavi • Pediatric Companion</title>
 
-<meta
-    name="theme-color"
-    content="#fffafd"
->
+<meta name="theme-color" content="#f8fbff">
+<meta name="description" content="A personal pediatric clinical calculation companion for Vaishnavi.">
 
-<meta
-    name="description"
-    content="A personal pediatric clinical calculation companion for Vaishuu."
->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<title>Vaishuu • Pediatric Companion</title>
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================================================
-   ROOT
-========================================================= */
-
 :root{
-
-    --bg:#fffafd;
+    --bg:#f8fbff;
     --surface:#ffffff;
-    --surface-2:#fffefe;
+    --surface-2:#fbfdff;
 
-    --navy:#4b3340;
-    --navy-2:#684655;
+    --navy:#30445f;
+    --navy-2:#47627f;
 
-    --pink:#ee9fba;
-    --pink-dark:#d982a2;
+    --blue:#86a9d6;
+    --blue-dark:#6f92c2;
+    --blue-soft:#eef5ff;
+
+    --pink:#eea8bf;
+    --pink-dark:#d989a8;
     --pink-soft:#fff1f6;
 
-    --rose:#f3b7ca;
-    --rose-soft:#fff5f8;
+    --rose:#f3c1d2;
+    --rose-soft:#fff6f9;
 
-    --purple:#b294bb;
-    --purple-dark:#98769f;
-    --purple-soft:#f8f1fa;
+    --purple:#a89bc9;
+    --purple-dark:#9486b8;
+    --purple-soft:#f5f1fb;
 
-    --blue:#91a6d1;
-    --blue-soft:#f1f4fb;
-
-    --green:#76b9a2;
+    --green:#78b7a1;
     --green-soft:#eef9f5;
 
-    --orange:#e2b17c;
+    --orange:#ddb07d;
     --orange-soft:#fff8ef;
 
-    --red:#df929d;
+    --red:#d9959f;
     --red-soft:#fff4f5;
 
-    --text:#55424b;
-    --muted:#98858e;
+    --text:#46576a;
+    --muted:#8b99a8;
 
-    --border:#f2e3e9;
+    --border:#e7edf5;
 
-    --shadow:
-        0 12px 35px rgba(126,70,94,.065);
-
-    --shadow-soft:
-        0 6px 20px rgba(126,70,94,.045);
+    --shadow:0 12px 35px rgba(67,91,120,.07);
+    --shadow-soft:0 6px 20px rgba(67,91,120,.05);
 
     --radius-xl:26px;
     --radius-lg:20px;
@@ -78,14 +62,8 @@
     --radius-sm:11px;
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
-
 *{
     box-sizing:border-box;
-    -webkit-tap-highlight-color:transparent;
 }
 
 html{
@@ -93,13 +71,10 @@ html{
 }
 
 body{
-
     margin:0;
-
     min-height:100vh;
 
-    font-family:
-        Inter,
+    font-family:"DM Sans",
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
@@ -108,25 +83,21 @@ body{
     color:var(--text);
 
     background:
-
         radial-gradient(
             circle at 5% 0%,
-            rgba(243,183,202,.16),
+            rgba(238,168,191,.18),
             transparent 30%
         ),
-
         radial-gradient(
             circle at 95% 8%,
-            rgba(178,148,187,.10),
-            transparent 27%
+            rgba(134,169,214,.16),
+            transparent 28%
         ),
-
         radial-gradient(
             circle at 50% 100%,
-            rgba(238,159,186,.08),
+            rgba(243,193,210,.10),
             transparent 32%
         ),
-
         var(--bg);
 
     padding-bottom:30px;
@@ -134,420 +105,521 @@ body{
 
 button,
 input,
-select{
-    font:inherit;
+select,
+textarea{
+    font-family:inherit;
 }
 
 button{
-    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
 }
-
-
-/* =========================================================
-   APP
-========================================================= */
 
 .app{
-
     width:min(100%,900px);
-
     margin:0 auto;
-
-    padding:18px;
+    padding:18px 18px 60px;
 }
 
-
-/* =========================================================
-   TOP BAR
-========================================================= */
+/* ---------------- TOP BAR ---------------- */
 
 .topbar{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
-    gap:14px;
-
-    margin-bottom:14px;
+    margin-bottom:15px;
 }
 
 .brand{
-
     display:flex;
-
     align-items:center;
-
     gap:11px;
 }
 
 .brand-icon{
+    width:40px;
+    height:40px;
 
-    width:42px;
-    height:42px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
+    display:grid;
+    place-items:center;
 
     border-radius:14px;
+
+    color:var(--pink-dark);
+    font-size:21px;
 
     background:
         linear-gradient(
             135deg,
             var(--pink-soft),
-            var(--purple-soft)
+            var(--blue-soft)
         );
 
-    color:var(--pink-dark);
-
-    font-size:24px;
+    border:1px solid var(--border);
 
     box-shadow:var(--shadow-soft);
 }
 
 .brand-title{
-
-    font-size:15px;
-
-    font-weight:800;
-
-    letter-spacing:-.2px;
-
+    font-size:14px;
+    font-weight:700;
     color:var(--navy);
+    letter-spacing:.1px;
 }
 
 .brand-subtitle{
-
     margin-top:2px;
-
-    font-size:11px;
-
+    font-size:10px;
     color:var(--muted);
 }
 
 .info-btn{
-
-    width:40px;
-    height:40px;
+    width:37px;
+    height:37px;
 
     border:1px solid var(--border);
+    border-radius:12px;
 
-    border-radius:13px;
-
-    background:rgba(255,255,255,.82);
+    background:rgba(255,255,255,.78);
 
     color:var(--navy-2);
 
-    font-weight:800;
+    font-size:16px;
+    font-weight:700;
+
+    cursor:pointer;
 
     box-shadow:var(--shadow-soft);
 
     transition:
-        transform .2s ease,
-        background .2s ease;
+        transform .18s ease,
+        box-shadow .18s ease;
 }
 
-.info-btn:active{
-    transform:scale(.94);
+.info-btn:hover{
+    transform:translateY(-1px);
+    box-shadow:0 9px 25px rgba(67,91,120,.09);
 }
 
-
-/* =========================================================
-   HERO
-========================================================= */
+/* ---------------- HERO ---------------- */
 
 .hero{
-
     position:relative;
-
     overflow:hidden;
 
+    padding:30px 25px 24px;
+
     border:1px solid var(--border);
-
     border-radius:var(--radius-xl);
-
-    padding:28px 24px;
 
     background:
         linear-gradient(
             135deg,
-            #ffffff,
-            #fff9fb
+            #ffffff 0%,
+            #fff8fb 48%,
+            #f5f9ff 100%
         );
 
     box-shadow:var(--shadow);
 
-    margin-bottom:22px;
+    margin-bottom:12px;
 }
 
 .hero::before{
-
     content:"";
 
     position:absolute;
 
-    width:170px;
-    height:170px;
+    width:180px;
+    height:180px;
+
+    right:-80px;
+    top:-95px;
 
     border-radius:50%;
 
-    right:-65px;
-    top:-70px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(238,159,186,.22),
-            transparent 68%
-        );
+    background:rgba(134,169,214,.10);
 }
 
 .hero::after{
-
     content:"";
 
     position:absolute;
 
-    width:140px;
-    height:140px;
+    width:150px;
+    height:150px;
+
+    left:-90px;
+    bottom:-100px;
 
     border-radius:50%;
 
-    left:-65px;
-    bottom:-75px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(178,148,187,.13),
-            transparent 68%
-        );
+    background:rgba(238,168,191,.10);
 }
 
 .hero-content{
-
     position:relative;
-
     z-index:1;
 }
 
-.greeting{
-
-    font-size:14px;
-
+.hero-kicker{
+    font-size:9px;
     font-weight:700;
 
+    letter-spacing:1.8px;
+
+    color:var(--blue-dark);
+
+    margin-bottom:7px;
+}
+
+.greeting{
+    font-size:18px;
+    line-height:1.2;
+
     color:var(--pink-dark);
+
+    font-weight:600;
+
+    margin-bottom:2px;
 
     transition:opacity .2s ease;
 }
 
 .hero-name{
+    font-family:"Playfair Display",serif;
 
-    margin-top:3px;
-
-    font-size:34px;
-
-    line-height:1.08;
-
-    font-weight:850;
-
-    letter-spacing:-1.4px;
+    font-size:38px;
+    line-height:1.1;
 
     color:var(--navy);
+
+    font-weight:700;
+
+    letter-spacing:-.7px;
 }
 
 .hero-message{
+    margin-top:9px;
 
-    max-width:650px;
+    max-width:690px;
 
-    margin-top:10px;
-
-    font-size:14px;
-
+    font-size:13px;
     line-height:1.65;
 
     color:var(--muted);
 
+    min-height:22px;
+
     transition:opacity .2s ease;
 }
 
-.date-pill{
+/* ---------------- DATE + FEEDBACK ---------------- */
 
-    display:inline-flex;
+.hero-meta{
+    display:grid;
+    grid-template-columns:1fr 1fr;
 
-    align-items:center;
+    gap:10px;
 
-    margin-top:17px;
-
-    padding:7px 11px;
-
-    border-radius:999px;
-
-    background:var(--pink-soft);
-
-    border:1px solid #f8dce6;
-
-    color:var(--pink-dark);
-
-    font-size:11px;
-
-    font-weight:700;
+    margin-top:19px;
 }
 
+.meta-box{
+    min-height:58px;
 
-/* =========================================================
-   SECTIONS
-========================================================= */
+    border:1px solid var(--border);
+    border-radius:17px;
 
-.section{
-    margin-top:22px;
-}
+    background:rgba(255,255,255,.72);
 
-.section-heading{
+    box-shadow:var(--shadow-soft);
 
     display:flex;
+    align-items:center;
 
-    align-items:end;
+    gap:10px;
 
-    justify-content:space-between;
+    padding:11px 13px;
 
-    margin-bottom:12px;
+    text-align:left;
+
+    backdrop-filter:blur(10px);
 }
 
-.section-kicker{
+button.meta-box{
+    width:100%;
 
-    font-size:9px;
+    color:inherit;
+    font:inherit;
 
-    font-weight:850;
+    cursor:pointer;
 
-    letter-spacing:1.25px;
-
-    color:var(--pink-dark);
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        border-color .18s ease;
 }
 
-.section h2{
+button.meta-box:hover{
+    transform:translateY(-1px);
+    box-shadow:0 9px 24px rgba(67,91,120,.08);
+}
 
-    margin:4px 0 0;
+.meta-icon{
+    width:32px;
+    height:32px;
 
-    font-size:20px;
+    border-radius:11px;
 
-    line-height:1.2;
+    display:grid;
+    place-items:center;
 
-    letter-spacing:-.5px;
+    flex:0 0 32px;
+
+    font-size:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink-soft),
+            var(--blue-soft)
+        );
+
+    color:var(--navy-2);
+}
+
+.meta-value{
+    font-size:12px;
+    line-height:1.35;
+
+    font-weight:700;
 
     color:var(--navy);
 }
 
+/* ---------------- FEEDBACK ---------------- */
 
-/* =========================================================
-   QUICK TOOLS
-========================================================= */
+.feedback-panel{
+    margin:0 0 14px;
 
-.quick-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:10px;
-}
-
-.quick-tool{
-
-    min-width:0;
-
-    text-align:left;
-
-    padding:15px 13px;
+    padding:18px;
 
     border:1px solid var(--border);
+    border-radius:22px;
 
-    border-radius:18px;
-
-    background:rgba(255,255,255,.9);
+    background:rgba(255,255,255,.94);
 
     box-shadow:var(--shadow-soft);
 
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease,
-        border-color .2s ease;
+    animation:panelIn .22s ease both;
 }
 
-.quick-tool:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:var(--shadow);
-
-    border-color:#ecd1dc;
-}
-
-.quick-tool:active{
-    transform:scale(.98);
-}
-
-.quick-icon{
-
-    width:35px;
-    height:35px;
-
+.feedback-head{
     display:flex;
+    justify-content:space-between;
+    gap:12px;
+    align-items:flex-start;
+}
 
-    align-items:center;
+.feedback-head h3{
+    margin:2px 0 5px;
 
-    justify-content:center;
+    font-size:18px;
 
-    border-radius:11px;
+    color:var(--navy);
+}
 
-    background:var(--pink-soft);
+.feedback-head p{
+    margin:0;
 
-    font-size:17px;
+    color:var(--muted);
+
+    font-size:12px;
+    line-height:1.55;
+}
+
+.feedback-close{
+    border:0;
+
+    background:var(--blue-soft);
+
+    color:var(--navy);
+
+    width:32px;
+    height:32px;
+
+    border-radius:10px;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+.feedback-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+    margin-top:14px;
+}
+
+.feedback-note{
+    margin-top:9px;
+
+    font-size:10px;
+    line-height:1.5;
+
+    color:var(--muted);
+}
+
+.feedback-note strong{
+    color:var(--navy-2);
+}
+
+@keyframes panelIn{
+    from{
+        opacity:0;
+        transform:translateY(-5px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ---------------- SECTIONS ---------------- */
+
+.section{
+    margin-top:14px;
+}
+
+.section-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+
+    gap:15px;
 
     margin-bottom:10px;
 }
 
+.section-kicker{
+    font-size:9px;
+
+    letter-spacing:1.5px;
+
+    font-weight:700;
+
+    color:var(--blue-dark);
+}
+
+.section-title{
+    margin:3px 0 0;
+
+    font-size:18px;
+
+    color:var(--navy);
+}
+
+.section-description{
+    margin:4px 0 0;
+
+    font-size:11px;
+
+    color:var(--muted);
+}
+
+/* ---------------- QUICK TOOLS ---------------- */
+
+.quick-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:10px;
+}
+
+.quick-card{
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.83);
+
+    padding:14px 10px;
+
+    cursor:pointer;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-soft);
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        border-color .18s ease;
+}
+
+.quick-card:hover{
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(67,91,120,.09);
+
+    border-color:#dce5f0;
+}
+
+.quick-icon{
+    width:36px;
+    height:36px;
+
+    margin:0 auto 8px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:12px;
+
+    font-size:17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue-soft),
+            var(--pink-soft)
+        );
+}
+
 .quick-title{
+    font-size:11px;
 
-    font-size:13px;
-
-    font-weight:800;
+    font-weight:700;
 
     color:var(--navy);
 }
 
 .quick-subtitle{
-
     margin-top:3px;
 
-    font-size:10px;
-
-    line-height:1.35;
+    font-size:9px;
 
     color:var(--muted);
 }
 
-
-/* =========================================================
-   CATEGORY
-========================================================= */
+/* ---------------- CATEGORY FILTER ---------------- */
 
 .category-row{
-
     display:flex;
 
     gap:7px;
 
     overflow-x:auto;
 
-    padding:2px 1px 10px;
+    padding:2px 1px 7px;
 
     scrollbar-width:none;
 }
@@ -557,200 +629,199 @@ button{
 }
 
 .category{
-
     flex:0 0 auto;
 
     border:1px solid var(--border);
 
     border-radius:999px;
 
-    padding:8px 12px;
-
-    background:#fff;
+    background:rgba(255,255,255,.82);
 
     color:var(--muted);
 
-    font-size:11px;
+    padding:8px 13px;
 
-    font-weight:750;
+    font-size:10px;
+
+    font-weight:600;
+
+    cursor:pointer;
 
     transition:
-        background .2s ease,
-        color .2s ease,
-        transform .2s ease;
-}
-
-.category:active{
-    transform:scale(.97);
+        background .18s ease,
+        color .18s ease,
+        border-color .18s ease;
 }
 
 .category.active{
+    background:var(--navy);
 
-    background:var(--pink-soft);
+    border-color:var(--navy);
 
-    border-color:#f3d4df;
-
-    color:var(--pink-dark);
+    color:#fff;
 }
 
-
-/* =========================================================
-   CALCULATOR
-========================================================= */
+/* ---------------- CALCULATOR ---------------- */
 
 .calculator-card{
+    margin-top:8px;
 
     border:1px solid var(--border);
 
     border-radius:var(--radius-xl);
 
-    padding:18px;
-
     background:
         linear-gradient(
             145deg,
             #ffffff,
-            #fffafd
+            #fbfdff
         );
 
     box-shadow:var(--shadow);
 
-    scroll-margin-top:14px;
+    padding:19px;
 }
 
-.calculator-header{
+.calculator-top{
     margin-bottom:15px;
 }
 
-.calculator-header h2{
-    font-size:21px;
+.calculator-title-row{
+    display:flex;
+
+    align-items:flex-start;
+
+    justify-content:space-between;
+
+    gap:12px;
 }
 
-.calculator-header p{
+.calculator-title{
+    margin:0;
 
-    margin:7px 0 0;
-
-    font-size:12px;
-
-    line-height:1.55;
-
-    color:var(--muted);
-}
-
-#calculatorSelect{
-
-    width:100%;
-
-    min-height:50px;
-
-    border:1px solid var(--border);
-
-    border-radius:15px;
-
-    background:#fff;
+    font-size:20px;
 
     color:var(--navy);
 
-    padding:0 14px;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    outline:none;
-
-    box-shadow:
-        0 4px 15px rgba(126,70,94,.035);
-
-    margin-bottom:17px;
+    letter-spacing:-.2px;
 }
 
-#calculatorSelect:focus{
+.calculator-description{
+    margin:5px 0 0;
 
-    border-color:#e8b8ca;
+    font-size:11px;
 
-    box-shadow:
-        0 0 0 4px rgba(238,159,186,.10);
+    color:var(--muted);
+
+    line-height:1.55;
 }
 
-
-/* =========================================================
-   FORMS
-========================================================= */
-
-.form-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:12px;
-
-    margin-bottom:14px;
+.selector-wrap{
+    margin-top:15px;
 }
 
-.field{
-    min-width:0;
-}
-
-.field-label{
-
+.selector-label{
     display:block;
 
     margin-bottom:6px;
 
-    font-size:11px;
+    font-size:9px;
 
-    font-weight:750;
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    color:var(--muted);
+
+    font-weight:700;
+}
+
+select,
+input,
+textarea{
+    width:100%;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:#fff;
+
+    color:var(--text);
+
+    outline:none;
+
+    transition:
+        border-color .18s ease,
+        box-shadow .18s ease;
+}
+
+select,
+input{
+    min-height:46px;
+
+    padding:11px 12px;
+
+    font-size:13px;
+}
+
+select{
+    cursor:pointer;
+}
+
+textarea{
+    min-height:100px;
+
+    padding:12px;
+
+    resize:vertical;
+
+    font-size:13px;
+
+    line-height:1.5;
+}
+
+select:focus,
+input:focus,
+textarea:focus{
+    border-color:var(--pink);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(238,168,191,.13);
+}
+
+.form-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:11px;
+}
+
+.field{
+    margin-bottom:1px;
+}
+
+.field-label{
+    display:block;
+
+    margin:0 0 6px;
+
+    font-size:10px;
+
+    font-weight:700;
 
     color:var(--navy-2);
 }
 
-.field input,
-.field select{
-
+.calculate-btn{
     width:100%;
+
+    margin-top:14px;
 
     min-height:47px;
-
-    border:1px solid var(--border);
-
-    border-radius:13px;
-
-    background:#fff;
-
-    color:var(--navy);
-
-    padding:0 12px;
-
-    outline:none;
-
-    font-size:13px;
-
-    transition:
-        border-color .2s ease,
-        box-shadow .2s ease;
-}
-
-.field input::placeholder{
-    color:#c0afb6;
-}
-
-.field input:focus,
-.field select:focus{
-
-    border-color:#e7b7c9;
-
-    box-shadow:
-        0 0 0 4px rgba(238,159,186,.09);
-}
-
-.calculate-btn{
-
-    width:100%;
-
-    min-height:48px;
 
     border:0;
 
@@ -759,213 +830,218 @@ button{
     background:
         linear-gradient(
             135deg,
-            var(--pink),
-            var(--pink-dark)
+            var(--navy),
+            var(--navy-2)
         );
 
-    color:white;
+    color:#fff;
 
-    font-size:13px;
+    font-size:12px;
 
-    font-weight:800;
+    font-weight:700;
+
+    cursor:pointer;
 
     box-shadow:
-        0 9px 20px rgba(217,130,162,.18);
+        0 8px 20px
+        rgba(48,68,95,.13);
 
     transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+        transform .18s ease,
+        box-shadow .18s ease;
 }
 
 .calculate-btn:hover{
+    transform:translateY(-1px);
 
     box-shadow:
-        0 11px 25px rgba(217,130,162,.23);
+        0 11px 25px
+        rgba(48,68,95,.17);
 }
 
 .calculate-btn:active{
-    transform:scale(.985);
+    transform:translateY(0);
 }
 
-
-/* =========================================================
-   RESULTS
-========================================================= */
+/* ---------------- RESULTS ---------------- */
 
 .result-card{
-
     margin-top:14px;
 
-    padding:17px;
-
-    border:1px solid #f3dce5;
+    padding:16px;
 
     border-radius:17px;
 
     background:
         linear-gradient(
             135deg,
-            #fff8fb,
-            #ffffff
+            var(--blue-soft),
+            var(--pink-soft)
         );
+
+    border:1px solid #e4ebf4;
 }
 
 .result-label{
-
     font-size:9px;
 
-    font-weight:850;
-
-    letter-spacing:1px;
-
-    color:var(--pink-dark);
-
     text-transform:uppercase;
+
+    letter-spacing:1.2px;
+
+    font-weight:700;
+
+    color:var(--muted);
+
+    margin-bottom:5px;
 }
 
 .result-value{
+    font-size:23px;
 
-    margin-top:6px;
-
-    font-size:24px;
-
-    line-height:1.2;
-
-    font-weight:850;
+    font-weight:700;
 
     color:var(--navy);
+
+    letter-spacing:-.3px;
 }
 
 .result-note{
+    margin-top:5px;
 
-    margin-top:6px;
-
-    font-size:11px;
+    font-size:10px;
 
     line-height:1.5;
 
     color:var(--muted);
 }
 
-
-/* =========================================================
-   NOTES
-========================================================= */
-
 .note{
-
     display:flex;
 
-    gap:10px;
+    gap:9px;
 
-    margin-top:12px;
+    align-items:flex-start;
 
-    padding:12px 13px;
+    margin-top:10px;
+
+    padding:11px 12px;
 
     border-radius:14px;
 
-    font-size:11px;
+    font-size:10px;
 
     line-height:1.55;
 }
 
 .note-icon{
+    width:20px;
+    height:20px;
 
-    flex:0 0 auto;
+    flex:0 0 20px;
 
-    width:23px;
-    height:23px;
+    display:grid;
+    place-items:center;
 
-    display:flex;
+    border-radius:7px;
 
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:8px;
-
-    font-size:12px;
-
-    font-weight:850;
+    font-size:10px;
 }
 
 .note.safe{
-
     background:var(--green-soft);
 
-    border:1px solid #d8eee6;
+    color:#537d70;
 
-    color:#527c6d;
+    border:1px solid #dcefe8;
 }
 
 .note.safe .note-icon{
-
-    background:#dff2ea;
-
-    color:#4f947b;
+    background:#dff2eb;
 }
 
 .note.warning{
-
     background:var(--orange-soft);
 
-    border:1px solid #f3e3d0;
+    color:#8b704f;
 
-    color:#886d4e;
+    border:1px solid #f2e5d2;
 }
 
 .note.warning .note-icon{
-
-    background:#f8ead9;
-
-    color:#a27643;
+    background:#f7e8d1;
 }
 
+/* ---------------- REFERENCES ---------------- */
 
-/* =========================================================
-   REFERENCES
-========================================================= */
+.references{
+    margin-top:15px;
 
-.reference-card{
+    padding:19px;
 
     border:1px solid var(--border);
 
-    border-radius:var(--radius-xl);
+    border-radius:22px;
 
-    padding:20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #fffafd
-        );
+    background:rgba(255,255,255,.82);
 
     box-shadow:var(--shadow-soft);
 }
 
-.reference-card h2{
-    margin-top:4px;
-}
-
-.reference-card p{
-
-    margin:9px 0 0;
-
-    font-size:12px;
-
-    line-height:1.65;
+.reference-list{
+    margin:12px 0 0;
+    padding-left:17px;
 
     color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.7;
 }
 
+.reference-list li{
+    margin-bottom:4px;
+}
 
-/* =========================================================
-   QUIET VISIT COUNTER
-========================================================= */
+.disclaimer{
+    margin-top:12px;
+
+    padding:12px;
+
+    border-radius:14px;
+
+    background:var(--red-soft);
+
+    border:1px solid #f1dfe2;
+
+    color:#87666d;
+
+    font-size:10px;
+
+    line-height:1.6;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+.footer{
+    text-align:center;
+
+    padding:20px 5px 4px;
+
+    font-size:9px;
+
+    line-height:1.6;
+
+    color:rgba(120,139,160,.65);
+}
+
+.footer strong{
+    color:rgba(71,98,127,.72);
+}
+
+/* ---------------- QUIET VISIT COUNTER ---------------- */
 
 .quiet-visit-counter{
-
     width:100%;
 
     text-align:center;
@@ -976,7 +1052,7 @@ button{
 
     line-height:1;
 
-    color:rgba(152,133,142,.25);
+    color:rgba(120,139,160,.24);
 
     letter-spacing:.35px;
 
@@ -987,112 +1063,111 @@ button{
     opacity:.72;
 }
 
-.quiet-visit-counter span:first-child{
-
-    margin-right:4px;
-
-    opacity:.6;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.footer{
-
-    text-align:center;
-
-    padding:13px 10px 4px;
-
-    font-size:9px;
-
-    line-height:1.7;
-
-    color:#b3a1a8;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+/* ---------------- MOBILE ---------------- */
 
 @media(max-width:700px){
 
     .app{
-        padding:14px;
+        padding:13px 12px 55px;
+    }
+
+    .hero{
+        padding:25px 18px 19px;
+    }
+
+    .hero-name{
+        font-size:34px;
     }
 
     .quick-grid{
-
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2,minmax(0,1fr));
     }
 
 }
 
-
 @media(max-width:520px){
 
-    .app{
-        padding:12px;
+    .topbar{
+        margin-bottom:11px;
     }
 
-    .topbar{
-        margin-bottom:12px;
+    .brand-icon{
+        width:38px;
+        height:38px;
     }
 
     .hero{
-
-        padding:23px 19px;
-
         border-radius:22px;
+
+        padding:23px 16px 17px;
+    }
+
+    .hero-kicker{
+        font-size:8px;
+    }
+
+    .greeting{
+        font-size:16px;
     }
 
     .hero-name{
-        font-size:31px;
+        font-size:32px;
     }
 
     .hero-message{
-        font-size:13px;
+        font-size:12px;
     }
 
-    .section{
-        margin-top:19px;
+    .hero-meta{
+        grid-template-columns:1fr 1fr;
+
+        gap:8px;
+    }
+
+    .meta-box{
+        min-height:54px;
+
+        padding:10px;
+    }
+
+    .meta-icon{
+        width:29px;
+        height:29px;
+
+        flex-basis:29px;
+    }
+
+    .meta-value{
+        font-size:10px;
     }
 
     .calculator-card{
-
         padding:15px;
 
         border-radius:21px;
     }
 
+    .calculator-title{
+        font-size:18px;
+    }
+
     .form-grid{
         grid-template-columns:1fr;
+
         gap:10px;
     }
 
-    .quick-grid{
-        gap:8px;
+    .feedback-grid{
+        grid-template-columns:1fr;
     }
 
-    .quick-tool{
-        padding:13px 12px;
-    }
-
-    .quick-title{
-        font-size:12px;
-    }
-
-    .quick-subtitle{
-        font-size:9px;
+    .feedback-panel{
+        padding:15px;
     }
 
     .quiet-visit-counter{
-
         margin-top:5px;
-
         margin-bottom:11px;
 
         font-size:7px;
@@ -1100,906 +1175,1031 @@ button{
 
 }
 
-
 @media(prefers-reduced-motion:reduce){
 
     *,
     *::before,
     *::after{
-
         scroll-behavior:auto !important;
 
-        transition:none !important;
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
 
-        animation:none !important;
+        transition-duration:.01ms !important;
     }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="app">
 
+    <!-- ================= TOP BAR ================= -->
 
-<!-- =======================================================
-     HEADER
-======================================================= -->
+    <header class="topbar">
 
-<header class="topbar">
+        <div class="brand">
 
-    <div class="brand">
+            <div class="brand-icon">♡</div>
 
-        <div class="brand-icon">
-            ♡
-        </div>
+            <div>
+                <div class="brand-title">
+                    Pediatric Companion
+                </div>
 
-        <div>
-
-            <div class="brand-title">
-                Pediatric Companion
-            </div>
-
-            <div class="brand-subtitle">
-                A quiet clinical toolkit
+                <div class="brand-subtitle">
+                    A quiet clinical toolkit
+                </div>
             </div>
 
         </div>
 
-    </div>
-
-
-    <button
-        class="info-btn"
-        onclick="document.getElementById('references').scrollIntoView({behavior:'smooth'})"
-        aria-label="Information"
-    >
-        ℹ
-    </button>
-
-</header>
-
-
-<!-- =======================================================
-     HERO
-======================================================= -->
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div
-            class="greeting"
-            id="greeting"
-        >
-            Good Morning
-        </div>
-
-
-        <div class="hero-name">
-            Vaishuu
-        </div>
-
-
-        <div
-            class="hero-message"
-            id="heroMessage"
-        >
-            Hope your day goes smoothly. Your little clinical toolkit is ready.
-        </div>
-
-
-        <div
-            class="date-pill"
-            id="todayDate"
-        >
-            Today
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     QUICK TOOLS
-======================================================= -->
-
-<section class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <div class="section-kicker">
-                QUICK ACCESS
-            </div>
-
-            <h2>
-                Quick tools
-            </h2>
-
-        </div>
-
-    </div>
-
-
-    <div class="quick-grid">
-
-
         <button
-            class="quick-tool"
-            onclick="openCalculator('drugDose')"
-        >
+            class="info-btn"
+            type="button"
+            onclick="document.getElementById('references').scrollIntoView({behavior:'smooth'})"
+            aria-label="Information">
 
-            <div class="quick-icon">
-                💊
-            </div>
-
-            <div class="quick-title">
-                Drug dose
-            </div>
-
-            <div class="quick-subtitle">
-                Weight-based dose
-            </div>
+            ℹ
 
         </button>
 
+    </header>
 
-        <button
-            class="quick-tool"
-            onclick="openCalculator('maintenance')"
-        >
 
-            <div class="quick-icon">
-                💧
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-kicker">
+                PEDIATRIC COMPANION
             </div>
 
-            <div class="quick-title">
-                Fluids
+            <!-- Dynamic Good Morning / Afternoon / Evening -->
+            <div class="greeting" id="greeting">
+                Good Evening
             </div>
 
-            <div class="quick-subtitle">
-                Maintenance
+            <!-- Main heading -->
+            <div class="hero-name">
+                Vaishnavi
             </div>
 
-        </button>
+            <!-- Dynamic motivational message -->
+            <div
+                class="hero-message"
+                id="heroMessage">
 
+                Your little clinical toolkit is ready. 🩷
 
-        <button
-            class="quick-tool"
-            onclick="openCalculator('ett')"
-        >
-
-            <div class="quick-icon">
-                🫁
             </div>
 
-            <div class="quick-title">
-                ETT
+
+            <!-- Date + Feedback -->
+
+            <div class="hero-meta">
+
+                <div class="meta-box date-box">
+
+                    <div class="meta-icon">
+                        ♡
+                    </div>
+
+                    <div
+                        class="meta-value"
+                        id="todayDate">
+
+                        Monday, 28 September 2026
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="meta-box feedback-box"
+                    type="button"
+                    onclick="toggleFeedback()"
+                    aria-expanded="false"
+                    aria-controls="feedbackPanel">
+
+                    <div class="meta-icon">
+                        ✉
+                    </div>
+
+                    <div class="meta-value">
+                        Feedback for CPU Boy
+                    </div>
+
+                </button>
+
             </div>
-
-            <div class="quick-subtitle">
-                Size & depth
-            </div>
-
-        </button>
-
-
-        <button
-            class="quick-tool"
-            onclick="openCalculator('bmi')"
-        >
-
-            <div class="quick-icon">
-                📏
-            </div>
-
-            <div class="quick-title">
-                BMI / BSA
-            </div>
-
-            <div class="quick-subtitle">
-                Growth tools
-            </div>
-
-        </button>
-
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     CALCULATOR
-======================================================= -->
-
-<section class="section">
-
-
-    <div class="section-heading">
-
-        <div>
-
-            <div class="section-kicker">
-                CLINICAL TOOLS
-            </div>
-
-            <h2>
-                Calculator
-            </h2>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <div class="category-row">
+    <!-- ================= FEEDBACK PANEL ================= -->
 
+    <div
+        class="feedback-panel"
+        id="feedbackPanel"
+        hidden>
 
-        <button
-            class="category active"
-            data-category="all"
-            onclick="filterCategory('all',this)"
-        >
-            All
-        </button>
-
-
-        <button
-            class="category"
-            data-category="dose"
-            onclick="filterCategory('dose',this)"
-        >
-            Dosing
-        </button>
-
-
-        <button
-            class="category"
-            data-category="fluid"
-            onclick="filterCategory('fluid',this)"
-        >
-            Fluids
-        </button>
-
-
-        <button
-            class="category"
-            data-category="resp"
-            onclick="filterCategory('resp',this)"
-        >
-            Respiratory
-        </button>
-
-
-        <button
-            class="category"
-            data-category="growth"
-            onclick="filterCategory('growth',this)"
-        >
-            Growth
-        </button>
-
-
-        <button
-            class="category"
-            data-category="lab"
-            onclick="filterCategory('lab',this)"
-        >
-            Labs
-        </button>
-
-
-        <button
-            class="category"
-            data-category="general"
-            onclick="filterCategory('general',this)"
-        >
-            General
-        </button>
-
-
-    </div>
-
-
-    <div class="calculator-card">
-
-
-        <div class="calculator-header">
-
-            <div class="section-kicker">
-                SELECT TOOL
-            </div>
-
-            <h2 id="calculatorTitle">
-                Pediatric Drug Dose
-            </h2>
-
-            <p id="calculatorDescription">
-                Calculate a weight-based dose from a known dose per kg.
-            </p>
-
-        </div>
-
-
-        <select
-            id="calculatorSelect"
-            onchange="changeCalculator(this.value)"
-            aria-label="Select calculator"
-        ></select>
-
-
-        <div id="calculatorBody"></div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     REFERENCES
-======================================================= -->
-
-<section
-    class="section"
-    id="references"
->
-
-
-    <div class="reference-card">
-
-
-        <div class="section-kicker">
-            REFERENCE
-        </div>
-
-
-        <h2>
-            Clinical note
-        </h2>
-
-
-        <p>
-
-            These tools are intended for quick reference and calculation support.
-            Always verify doses, fluid plans, airway choices, laboratory corrections
-            and treatment decisions against current pediatric references,
-            local protocols and clinical context.
-
-        </p>
-
-
-        <div class="note warning">
-
-            <div class="note-icon">
-                ⚠
-            </div>
+        <div class="feedback-head">
 
             <div>
 
-                This app does not store patient records.
-                Calculations should not replace clinical judgement
-                or institutional guidelines.
+                <div class="section-kicker">
+                    A LITTLE NOTE
+                </div>
+
+                <h3>
+                    Feedback for CPU Boy
+                </h3>
+
+                <p>
+                    Tell me what you liked, what could be better,
+                    or what you would like added.
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                class="feedback-close"
+                onclick="toggleFeedback(false)"
+                aria-label="Close feedback">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="feedback-grid">
+
+            <div class="field">
+
+                <label
+                    class="field-label"
+                    for="feedbackName">
+
+                    Your name (optional)
+
+                </label>
+
+                <input
+                    id="feedbackName"
+                    type="text"
+                    placeholder="e.g. Dr. ...">
+
+            </div>
+
+
+            <div class="field">
+
+                <label
+                    class="field-label"
+                    for="feedbackEmail">
+
+                    Your email (optional)
+
+                </label>
+
+                <input
+                    id="feedbackEmail"
+                    type="email"
+                    placeholder="e.g. you@example.com">
 
             </div>
 
         </div>
 
 
+        <div class="field">
+
+            <label
+                class="field-label"
+                for="feedbackMessage">
+
+                Your feedback
+
+            </label>
+
+            <textarea
+                id="feedbackMessage"
+                rows="4"
+                placeholder="Write your feedback here..."></textarea>
+
+        </div>
+
+
+        <button
+            class="calculate-btn"
+            type="button"
+            onclick="sendFeedback()">
+
+            Send Feedback ✉
+
+        </button>
+
+
+        <div class="feedback-note">
+
+            Your email app will open with the feedback addressed to
+            <strong>cpuboy27@gmail.com</strong>.
+
+        </div>
+
     </div>
 
 
-</section>
+    <!-- ================= QUICK TOOLS ================= -->
+
+    <section class="section">
+
+        <div class="section-head">
+
+            <div>
+
+                <div class="section-kicker">
+                    QUICK ACCESS
+                </div>
+
+                <h2 class="section-title">
+                    Everyday tools
+                </h2>
+
+                <p class="section-description">
+                    Jump directly to the tools you use most.
+                </p>
+
+            </div>
+
+        </div>
 
 
-<!-- =======================================================
-     QUIET VISIT COUNTER
-======================================================= -->
+        <div class="quick-grid">
 
-<div
-    class="quiet-visit-counter"
-    aria-hidden="true"
->
+            <button
+                class="quick-card"
+                type="button"
+                onclick="openCalculator('drugDose')">
 
-    <span>•</span>
+                <div class="quick-icon">
+                    💊
+                </div>
 
-    <span id="visitCount">
-        —
-    </span>
+                <div class="quick-title">
+                    Drug dose
+                </div>
 
-    <span>
-        visits
-    </span>
+                <div class="quick-subtitle">
+                    mg/kg
+                </div>
+
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="openCalculator('maintenance')">
+
+                <div class="quick-icon">
+                    💧
+                </div>
+
+                <div class="quick-title">
+                    Fluids
+                </div>
+
+                <div class="quick-subtitle">
+                    4-2-1
+                </div>
+
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="openCalculator('ett')">
+
+                <div class="quick-icon">
+                    🫁
+                </div>
+
+                <div class="quick-title">
+                    ETT
+                </div>
+
+                <div class="quick-subtitle">
+                    size & depth
+                </div>
+
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="openCalculator('bmi')">
+
+                <div class="quick-icon">
+                    📏
+                </div>
+
+                <div class="quick-title">
+                    BMI / BSA
+                </div>
+
+                <div class="quick-subtitle">
+                    growth
+                </div>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CALCULATOR ================= -->
+
+    <section class="section">
+
+        <div class="section-head">
+
+            <div>
+
+                <div class="section-kicker">
+                    CLINICAL CALCULATOR
+                </div>
+
+                <h2 class="section-title">
+                    Pediatric tools
+                </h2>
+
+                <p class="section-description">
+                    Select a category or choose a calculator below.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CATEGORY FILTER -->
+
+        <div class="category-row">
+
+            <button
+                class="category active"
+                data-category="all"
+                type="button"
+                onclick="filterCategory('all',this)">
+
+                All
+
+            </button>
+
+            <button
+                class="category"
+                data-category="dose"
+                type="button"
+                onclick="filterCategory('dose',this)">
+
+                Dosing
+
+            </button>
+
+            <button
+                class="category"
+                data-category="fluid"
+                type="button"
+                onclick="filterCategory('fluid',this)">
+
+                Fluids
+
+            </button>
+
+            <button
+                class="category"
+                data-category="resp"
+                type="button"
+                onclick="filterCategory('resp',this)">
+
+                Respiratory
+
+            </button>
+
+            <button
+                class="category"
+                data-category="growth"
+                type="button"
+                onclick="filterCategory('growth',this)">
+
+                Growth
+
+            </button>
+
+            <button
+                class="category"
+                data-category="lab"
+                type="button"
+                onclick="filterCategory('lab',this)">
+
+                Labs
+
+            </button>
+
+            <button
+                class="category"
+                data-category="general"
+                type="button"
+                onclick="filterCategory('general',this)">
+
+                General
+
+            </button>
+
+        </div>
+
+
+        <!-- CALCULATOR CARD -->
+
+        <div class="calculator-card">
+
+            <div class="calculator-top">
+
+                <div class="calculator-title-row">
+
+                    <div>
+
+                        <h2
+                            class="calculator-title"
+                            id="calculatorTitle">
+
+                            Pediatric Drug Dose
+
+                        </h2>
+
+                        <p
+                            class="calculator-description"
+                            id="calculatorDescription">
+
+                            Calculate a weight-based dose from a known dose per kg.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="selector-wrap">
+
+                    <label
+                        class="selector-label"
+                        for="calculatorSelect">
+
+                        Select calculator
+
+                    </label>
+
+                    <select
+                        id="calculatorSelect"
+                        onchange="changeCalculator(this.value)">
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div id="calculatorBody"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REFERENCES ================= -->
+
+    <section
+        class="references"
+        id="references">
+
+        <div class="section-kicker">
+            CLINICAL NOTES
+        </div>
+
+        <h2 class="section-title">
+            References & safety
+        </h2>
+
+
+        <ul class="reference-list">
+
+            <li>
+                Calculations are intended as quick clinical aids,
+                not as substitutes for clinical judgement.
+            </li>
+
+            <li>
+                Always verify medication-specific maximum doses,
+                concentrations, intervals and local prescribing guidance.
+            </li>
+
+            <li>
+                Pediatric interpretation often depends on age,
+                sex, growth charts and the complete clinical context.
+            </li>
+
+            <li>
+                Fluid calculations should be adjusted according to
+                hydration, perfusion, renal function, cardiac status,
+                electrolytes and ongoing losses.
+            </li>
+
+            <li>
+                Airway formulas are estimates and tube placement must
+                always be clinically confirmed.
+            </li>
+
+            <li>
+                Laboratory reference intervals can vary by laboratory,
+                analyzer and patient population.
+            </li>
+
+        </ul>
+
+
+        <div class="disclaimer">
+
+            <strong>Important:</strong>
+            This website is a calculation companion only.
+            It does not diagnose disease, replace clinical examination,
+            or provide patient-specific medical advice.
+            Always use current institutional protocols and appropriate
+            professional judgement.
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= QUIET VISIT COUNTER ================= -->
+
+    <div
+        class="quiet-visit-counter"
+        aria-hidden="true">
+
+        <span>•</span>
+        <span id="visitCount">—</span>
+        <span>visits</span>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        Built quietly for
+        <strong>Vaishnavi</strong>
+        · with a little help from
+        <strong>CPU Boy</strong>
+
+        <br>
+
+        Pediatric Companion · 2026
+
+    </footer>
 
 </div>
 
 
-<!-- =======================================================
-     FOOTER
-======================================================= -->
-
-<footer class="footer">
-
-    <div>
-        Made as a quiet little clinical companion ✦
-    </div>
-
-    <div>
-        For reference only • Always verify clinically
-    </div>
-
-</footer>
-
-
-</div>
-
-
-<!-- =======================================================
-     COUNTER API
-======================================================= -->
-
+<!-- CounterAPI library -->
 <script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
 
 
 <script>
 
-
 /* =========================================================
-   CALCULATOR REGISTRY
-========================================================= */
+   DYNAMIC GREETING + MESSAGES
+   ========================================================= */
 
-const calculators = {
+const morningMessages = [
 
+    "One tiny patient at a time. 💗",
+    "Coffee first, tiny humans next. ☕👶",
+    "May your rounds be smooth and your patients cooperative. 😌",
+    "New day, new cases, same amazing Doctor. ✨",
+    "Vaishuu, your little clinical toolkit is ready. 🩷",
+    "May today bring fewer surprises and more smiles. 🌸",
+    "You've got this — even before the second coffee. ☕",
+    "Tiny patients, big responsibility, calm Doctor. 💗",
+    "Breathe, think, then prescribe. 🌷",
+    "May your stethoscope hear only good news today. 🩺",
+    "Another day of saving tiny humans and surviving paperwork. 😄",
+    "May your first patient smile and your last patient say thank you. 💕",
+    "Your pediatric superpowers are officially activated. 🦸‍♀️",
+    "May your rounds be short and your tea remain warm. ☕",
+    "One diagnosis at a time. ✨",
+    "Today’s forecast: 100% chance of tiny patients. 👶",
+    "Stay calm, stay kind, and keep the calculator handy. 😌",
+    "May the charts be readable and the parents relaxed today. 🌸",
+    "Mission: help little humans, one at a time. 💗",
+    "Your brain has officially entered clinical mode. 🧠",
+    "Another beautiful day to be the doctor everyone trusts. 🌷",
+    "May today be clinically satisfying and emotionally peaceful. ✨",
+    "Tiny shoes, tiny hands, huge responsibility. 👶",
+    "May every difficult case come with a clear answer. 💕",
+    "Remember: hydration is for doctors too. 😄",
+    "May your patients cooperate better than your phone notifications. 😂",
+    "One deep breath before the first round. 🌸",
+    "Today is another chance to make someone’s little world better. 💗",
+    "Your calm is somebody else’s comfort. ✨",
+    "May your differential diagnosis be short and your day even shorter. 😌",
+    "No panic, only pediatric precision. 🩺",
+    "May your coffee be strong and your clinical reasoning stronger. ☕",
+    "Another morning, another opportunity to be someone's favorite doctor. 💕",
+    "The tiny humans are waiting. 👶",
+    "May your morning rounds come with more smiles than complaints. 🌷",
+    "You've survived harder days than this one. ✨",
+    "Today: diagnose gently, explain patiently, and smile often. 💗",
+    "Keep calm and trust your training. 🩷",
+    "May every little patient leave a little happier. 🌸",
+    "Your clinical brain is loading... 100%. 🧠",
+    "May the day be kind to you, Doctor. 💕",
+    "Tiny patients, tiny socks, very serious medicine. 😂",
+    "Another day, another chance to make a difference. ✨",
+    "Let’s keep the chaos clinically controlled. 😄",
+    "May your rounds run on time for once. 😂",
+    "Be kind to yourself between cases. 🌷",
+    "May today have more solved problems than new ones. 💗",
+    "Your little toolkit is ready when you are. 🩺",
+    "Today looks like a good day to save some tiny humans. 👶"
 
-    drugDose:{
-        category:"dose",
-        icon:"💊",
-        title:"Pediatric Drug Dose",
-        description:"Calculate a weight-based dose from a known dose per kg.",
-        render:renderDrugDose
-    },
-
-
-    doseVolume:{
-        category:"dose",
-        icon:"🧴",
-        title:"Dose Volume",
-        description:"Calculate the volume required from dose and concentration.",
-        render:renderDoseVolume
-    },
-
-
-    dailyDoseSplit:{
-        category:"dose",
-        icon:"📅",
-        title:"Daily Dose Split",
-        description:"Calculate individual doses when a total daily dose is divided into multiple doses.",
-        render:renderDailyDoseSplit
-    },
-
-
-    maintenance:{
-        category:"fluid",
-        icon:"💧",
-        title:"Maintenance Fluids",
-        description:"Calculate hourly maintenance fluid using the 4-2-1 rule.",
-        render:renderMaintenance
-    },
-
-
-    dailyMaintenance:{
-        category:"fluid",
-        icon:"💧",
-        title:"Daily Maintenance Fluid",
-        description:"Calculate estimated daily maintenance fluid using the 100-50-20 rule.",
-        render:renderDailyMaintenance
-    },
-
-
-    bolus:{
-        category:"fluid",
-        icon:"🚑",
-        title:"Fluid Bolus",
-        description:"Calculate a fluid bolus volume from weight and selected bolus size.",
-        render:renderBolus
-    },
+];
 
 
-    deficit:{
-        category:"fluid",
-        icon:"💧",
-        title:"Dehydration Deficit",
-        description:"Estimate fluid deficit from body weight and dehydration percentage.",
-        render:renderDeficit
-    },
+const afternoonMessages = [
+
+    "Still going strong. 💗",
+    "Half the day done, but your pediatric superpowers aren't. ✨",
+    "Time for another round of tiny humans and big decisions. 👶",
+    "You survived the morning. That deserves a snack. 😄",
+    "Vaishuu, keep going — you're doing beautifully. 🌷",
+    "May your afternoon be calmer than your morning rounds. 😌",
+    "One case at a time, no need to fight the whole hospital at once. 😂",
+    "Tiny patients, big smiles, steady Doctor. 💕",
+    "Afternoon reminder: drink some water too. 💧",
+    "Your brain has survived the morning and is still operational. 🧠",
+    "May your next patient bring a smile instead of another puzzle. 🌸",
+    "Clinical mode: still ON. 🩺",
+    "You’ve made it this far. Keep going, Doctor. ✨",
+    "May your charts be short and your tea be hot. ☕",
+    "Another few hours of helping little humans. You've got this. 💗",
+    "Pause, breathe, continue. 🌷",
+    "May the afternoon bring fewer emergencies and more easy cases. 😌",
+    "Your stethoscope deserves a break, but apparently it won't get one. 😂",
+    "Halfway through the day and still making a difference. 💕",
+    "Tiny patients don't care what time it is. 👶",
+    "May your afternoon be productive without being exhausting. ✨",
+    "Remember: calm is contagious. 💗",
+    "One more case, one more little life helped. 🌸",
+    "The clinical brain is still running on premium mode. 🧠",
+    "May someone thank you today for something you thought was small. 💕",
+    "You've got enough experience to handle today's chaos. 😄",
+    "May your afternoon rounds be surprisingly peaceful. 🌷",
+    "Keep your kindness louder than the chaos. ✨",
+    "You’re doing important work, even on the ordinary days. 💗",
+    "Less panic, more pediatric precision. 🩺",
+    "May your next coffee arrive exactly when needed. ☕",
+    "Tiny humans, giant responsibility, excellent Doctor. 💕",
+    "Keep going, Doctor. The day isn't finished yet. 🌸",
+    "Your patience deserves an award today. 😂",
+    "May the rest of your shift feel lighter than the first half. ✨",
+    "One breath, one patient, one decision at a time. 💗",
+    "Your calm voice might be the best medicine in the room. 🌷",
+    "Don't forget that doctors need breaks too. 💕",
+    "May the rest of today be kinder to you. 😌"
+
+];
 
 
-    ett:{
-        category:"resp",
-        icon:"🫁",
-        title:"ETT Size & Depth",
-        description:"Estimate pediatric uncuffed/cuffed ETT size and insertion depth.",
-        render:renderETT
-    },
+const eveningMessages = [
+
+    "You made it through another day. 💗",
+    "Time to slowly switch from clinical mode to human mode. 😌",
+    "Another day of helping tiny humans — well done, Doctor. ✨",
+    "Vaishuu, you survived the chaos beautifully. 🌷",
+    "May tonight bring you the rest you deserve. 💕",
+    "The stethoscope can finally take a little break. 🩺",
+    "Another day, another collection of stories, cases and tiny victories. 🌸",
+    "Be proud of the little things you helped today. 💗",
+    "You did enough today. Now breathe. 😌",
+    "Even doctors deserve quiet evenings. ✨",
+    "May your dinner be warm and your phone stay silent for a while. 😂",
+    "Pediatric mode: slowly powering down. 🔋",
+    "Another day completed. One more reason to be proud. 💕",
+    "Rest is part of the treatment plan — for you. 🌷",
+    "May tonight be softer than today's rounds. 🌸",
+    "Your clinical brain deserves a timeout. 🧠",
+    "You helped someone today. That's enough reason to smile. 💗",
+    "Leave today's difficult cases where they belong: in today. 😌",
+    "The little patients are okay. Now take care of yourself too. 💕",
+    "Time to trade the white coat mindset for comfy clothes. 😂",
+    "May your evening contain zero surprise calls. ✨",
+    "You survived another pediatric adventure. 👶",
+    "Tonight’s prescription: food, water, rest and absolutely no unnecessary overthinking. 😄",
+    "Tomorrow can wait a little. 🌷",
+    "You did your best today. That matters. 💗",
+    "Vaishuu, the day is done — let yourself slow down. ✨",
+    "May your mind become quieter with every passing hour. 🌸",
+    "Even superheroes need sleep. 🦸‍♀️",
+    "Another day of medicine completed. Now comes the important part: recovery. 💕",
+    "Close the charts and open some peace. 😌",
+    "May tonight be calm, comfortable and completely yours. 🌷",
+    "The tiny humans can wait until tomorrow. 👶",
+    "You've carried enough today. Put some of it down. 💗",
+    "No more diagnoses for the next few hours — hopefully. 😂",
+    "May your evening have more laughter than alarms. ✨",
+    "Rest your brain; it worked hard today. 🧠",
+    "Today is complete. Tomorrow gets its own story. 🌸",
+    "You've done enough. Now breathe and relax. 💕",
+    "Sleep well when the day finally lets you. 🌷"
+
+];
 
 
-    respiratoryRate:{
-        category:"resp",
-        icon:"🫁",
-        title:"Respiratory Rate",
-        description:"Record and interpret a measured respiratory rate.",
-        render:renderRespiratoryRate
-    },
+let lastMessage = "";
 
 
-    oxygen:{
-        category:"resp",
-        icon:"🫧",
-        title:"Oxygen / SpO₂ Notes",
-        description:"Quick clinical note for documenting oxygen and SpO₂.",
-        render:renderOxygen
-    },
+function randomItem(array){
 
-
-    bmi:{
-        category:"growth",
-        icon:"📏",
-        title:"BMI",
-        description:"Calculate body mass index from weight and height.",
-        render:renderBMI
-    },
-
-
-    bsa:{
-        category:"growth",
-        icon:"📐",
-        title:"Body Surface Area",
-        description:"Calculate BSA using the Mosteller formula.",
-        render:renderBSA
-    },
-
-
-    ibw:{
-        category:"growth",
-        icon:"⚖️",
-        title:"Ideal Body Weight",
-        description:"Estimate ideal body weight using height and sex.",
-        render:renderIBW
-    },
-
-
-    correctedAge:{
-        category:"growth",
-        icon:"👶",
-        title:"Corrected Age",
-        description:"Calculate corrected age for a preterm infant.",
-        render:renderCorrectedAge
-    },
-
-
-    anionGap:{
-        category:"lab",
-        icon:"🧪",
-        title:"Anion Gap",
-        description:"Calculate anion gap from sodium, chloride and bicarbonate.",
-        render:renderAnionGap
-    },
-
-
-    correctedSodium:{
-        category:"lab",
-        icon:"🧪",
-        title:"Corrected Sodium",
-        description:"Estimate corrected sodium in hyperglycemia.",
-        render:renderCorrectedSodium
-    },
-
-
-    correctedCalcium:{
-        category:"lab",
-        icon:"🧪",
-        title:"Corrected Calcium",
-        description:"Estimate corrected calcium based on albumin.",
-        render:renderCorrectedCalcium
-    },
-
-
-    osmolality:{
-        category:"lab",
-        icon:"🧪",
-        title:"Calculated Osmolality",
-        description:"Calculate estimated serum osmolality.",
-        render:renderOsmolality
-    },
-
-
-    schwartz:{
-        category:"lab",
-        icon:"🧪",
-        title:"Creatinine Clearance / Schwartz",
-        description:"Estimate pediatric eGFR using the bedside Schwartz equation.",
-        render:renderSchwartz
-    },
-
-
-    shockIndex:{
-        category:"general",
-        icon:"❤️",
-        title:"Shock Index",
-        description:"Calculate heart rate divided by systolic blood pressure.",
-        render:renderShockIndex
-    },
-
-
-    map:{
-        category:"general",
-        icon:"❤️",
-        title:"MAP",
-        description:"Calculate mean arterial pressure from systolic and diastolic BP.",
-        render:renderMAP
-    },
-
-
-    weightConverter:{
-        category:"general",
-        icon:"⚖️",
-        title:"Weight Converter",
-        description:"Convert between kilograms, grams and pounds.",
-        render:renderWeightConverter
-    },
-
-
-    temperature:{
-        category:"general",
-        icon:"🌡️",
-        title:"Temperature Converter",
-        description:"Convert Celsius and Fahrenheit.",
-        render:renderTemperature
+    if(!array || !array.length){
+        return "";
     }
 
-};
+    let message;
+
+    do{
+        message =
+            array[Math.floor(Math.random() * array.length)];
+    }
+    while(
+        array.length > 1 &&
+        message === lastMessage
+    );
+
+    lastMessage = message;
+
+    return message;
+}
+
+
+/*
+    THIS FUNCTION CONTROLS BOTH:
+    1. Good Morning / Good Afternoon / Good Evening
+    2. The corresponding motivational message
+*/
+
+function updateGreeting(){
+
+    const now = new Date();
+
+    const hour = now.getHours();
+
+    let greetingText;
+    let messages;
+
+
+    if(hour < 12){
+
+        greetingText = "Good Morning";
+        messages = morningMessages;
+
+    }
+    else if(hour < 17){
+
+        greetingText = "Good Afternoon";
+        messages = afternoonMessages;
+
+    }
+    else{
+
+        greetingText = "Good Evening";
+        messages = eveningMessages;
+
+    }
+
+
+    const greetingElement =
+        document.getElementById("greeting");
+
+    const messageElement =
+        document.getElementById("heroMessage");
+
+
+    /*
+        Smoothly change the message
+        instead of suddenly replacing it.
+    */
+
+    greetingElement.style.opacity = "0";
+    messageElement.style.opacity = "0";
+
+
+    setTimeout(() => {
+
+        greetingElement.textContent =
+            greetingText;
+
+        messageElement.textContent =
+            randomItem(messages);
+
+        greetingElement.style.opacity = "1";
+        messageElement.style.opacity = "1";
+
+    },120);
+
+}
 
 
 /* =========================================================
-   NAVIGATION
-========================================================= */
+   DATE
+   ========================================================= */
 
-let currentCalculator = "drugDose";
+function updateDate(){
 
-let currentCategory = "all";
+    const now = new Date();
 
-
-function populateSelect(){
-
-    const select =
-        document.getElementById(
-            "calculatorSelect"
-        );
-
-    select.innerHTML = "";
-
-
-    Object.entries(calculators)
-        .forEach(
-            ([key,calc]) => {
-
-
-                if(
-                    currentCategory !== "all" &&
-                    calc.category !== currentCategory
-                ){
-                    return;
-                }
-
-
-                const option =
-                    document.createElement(
-                        "option"
-                    );
-
-
-                option.value =
-                    key;
-
-
-                option.textContent =
-                    `${calc.icon} ${calc.title}`;
-
-
-                select.appendChild(option);
-
+    document.getElementById("todayDate").textContent =
+        now.toLocaleDateString(
+            "en-IN",
+            {
+                weekday:"long",
+                day:"numeric",
+                month:"long",
+                year:"numeric"
             }
         );
 
-
-    if(
-        !calculators[currentCalculator] ||
-        (
-            currentCategory !== "all" &&
-            calculators[currentCalculator].category !== currentCategory
-        )
-    ){
-
-        const first =
-            Object.keys(calculators)
-                .find(
-                    key =>
-                        currentCategory === "all" ||
-                        calculators[key].category === currentCategory
-                );
-
-        currentCalculator =
-            first;
-
-    }
-
-
-    select.value =
-        currentCalculator;
-
 }
 
 
-function changeCalculator(key){
+/* =========================================================
+   FEEDBACK
+   ========================================================= */
 
-    if(!calculators[key]){
-        return;
-    }
+function toggleFeedback(force){
 
-    currentCalculator =
-        key;
+    const panel =
+        document.getElementById("feedbackPanel");
 
-    renderCurrentCalculator();
-
-}
-
-
-function filterCategory(
-    category,
-    button
-){
-
-    currentCategory =
-        category;
+    const button =
+        document.querySelector(".feedback-box");
 
 
-    document
-        .querySelectorAll(".category")
-        .forEach(
-            item =>
-                item.classList.remove(
-                    "active"
-                )
-        );
+    const shouldOpen =
+        typeof force === "boolean"
+            ? force
+            : panel.hidden;
 
 
-    button.classList.add(
-        "active"
+    panel.hidden = !shouldOpen;
+
+    button.setAttribute(
+        "aria-expanded",
+        String(shouldOpen)
     );
 
 
-    populateSelect();
+    if(shouldOpen){
 
-    renderCurrentCalculator();
+        setTimeout(() => {
+
+            panel.scrollIntoView({
+                behavior:"smooth",
+                block:"nearest"
+            });
+
+        },60);
+
+    }
 
 }
 
 
-function openCalculator(key){
+function sendFeedback(){
 
-    if(!calculators[key]){
+    const name =
+        document
+            .getElementById("feedbackName")
+            .value
+            .trim();
+
+
+    const email =
+        document
+            .getElementById("feedbackEmail")
+            .value
+            .trim();
+
+
+    const message =
+        document
+            .getElementById("feedbackMessage")
+            .value
+            .trim();
+
+
+    if(!message){
+
+        document
+            .getElementById("feedbackMessage")
+            .focus();
+
+        alert(
+            "Please write your feedback before sending."
+        );
+
         return;
+
     }
 
 
-    currentCategory =
-        "all";
+    if(
+        email &&
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    ){
 
+        document
+            .getElementById("feedbackEmail")
+            .focus();
 
-    document
-        .querySelectorAll(".category")
-        .forEach(
-            item =>
-                item.classList.remove(
-                    "active"
-                )
+        alert(
+            "Please enter a valid email address."
         );
 
-
-    document
-        .querySelector(
-            '[data-category="all"]'
-        )
-        .classList.add(
-            "active"
-        );
-
-
-    currentCalculator =
-        key;
-
-
-    populateSelect();
-
-    renderCurrentCalculator();
-
-
-    document
-        .querySelector(
-            ".calculator-card"
-        )
-        .scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-        });
-
-}
-
-
-function renderCurrentCalculator(){
-
-    const calc =
-        calculators[
-            currentCalculator
-        ];
-
-
-    if(!calc){
         return;
+
     }
 
 
-    document
-        .getElementById(
-            "calculatorTitle"
-        )
-        .textContent =
-            calc.title;
-
-
-    document
-        .getElementById(
-            "calculatorDescription"
-        )
-        .textContent =
-            calc.description;
+    const subject =
+        "Feedback for Vaishnavi Pediatric Companion";
 
 
     const body =
-        document.getElementById(
-            "calculatorBody"
-        );
+`Hello CPU Boy,
+
+I would like to share some feedback about the Vaishnavi Pediatric Companion.
+
+Name: ${name || "Not provided"}
+Email: ${email || "Not provided"}
+
+Feedback:
+${message}
+
+Thank you.`;
 
 
-    body.innerHTML =
-        "";
+    const mailto =
+        "mailto:cpuboy27@gmail.com" +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
 
 
-    calc.render(
-        body
-    );
+    window.location.href = mailto;
 
 }
 
 
 /* =========================================================
-   HELPERS
-========================================================= */
+   CALCULATOR HELPERS
+   ========================================================= */
 
 function field(
     label,
     id,
-    placeholder="",
-    type="number"
+    placeholder = "",
+    type = "number"
 ){
 
     return `
@@ -2008,9 +2208,10 @@ function field(
 
             <label
                 class="field-label"
-                for="${id}"
-            >
+                for="${id}">
+
                 ${label}
+
             </label>
 
             <input
@@ -2019,10 +2220,9 @@ function field(
                 placeholder="${placeholder}"
                 inputmode="${
                     type === "number"
-                    ? "decimal"
-                    : "text"
-                }"
-            >
+                        ? "decimal"
+                        : "text"
+                }">
 
         </div>
 
@@ -2033,17 +2233,10 @@ function field(
 
 function num(id){
 
-    const element =
-        document.getElementById(id);
-
-
-    if(!element){
-        return NaN;
-    }
-
-
     return parseFloat(
-        element.value
+        document
+            .getElementById(id)
+            .value
     );
 
 }
@@ -2051,7 +2244,7 @@ function num(id){
 
 function showResult(
     html,
-    note=""
+    note = ""
 ){
 
     return `
@@ -2068,10 +2261,12 @@ function showResult(
 
             ${
                 note
-                ?
-                `<div class="result-note">${note}</div>`
-                :
-                ""
+                    ? `
+                        <div class="result-note">
+                            ${note}
+                        </div>
+                    `
+                    : ""
             }
 
         </div>
@@ -2124,8 +2319,8 @@ function warningNote(text){
 
 
 /* =========================================================
-   1. DRUG DOSE
-========================================================= */
+   1. PEDIATRIC DRUG DOSE
+   ========================================================= */
 
 function renderDrugDose(container){
 
@@ -2156,9 +2351,10 @@ function renderDrugDose(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateDrugDose()"
-        >
+            onclick="calculateDrugDose()">
+
             Calculate dose
+
         </button>
 
 
@@ -2171,68 +2367,55 @@ function renderDrugDose(container){
 
 function calculateDrugDose(){
 
-    const weight =
-        num("doseWeight");
-
-    const dose =
-        num("dosePerKg");
-
-    const frequency =
-        num("doseFrequency");
+    const weight = num("doseWeight");
+    const dose = num("dosePerKg");
+    const frequency = num("doseFrequency");
 
 
     if(
-        ![weight,dose,frequency]
-            .every(Number.isFinite) ||
+        ![weight,dose,frequency].every(Number.isFinite) ||
         weight <= 0 ||
         dose <= 0 ||
         frequency <= 0
     ){
 
-        document
-            .getElementById(
-                "drugDoseResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter valid positive values."
-                );
+        document.getElementById(
+            "drugDoseResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter valid positive values."
+            );
 
         return;
+
     }
 
 
-    const single =
-        weight * dose;
+    const single = weight * dose;
+    const daily = single * frequency;
 
 
-    const daily =
-        single * frequency;
+    document.getElementById(
+        "drugDoseResult"
+    ).innerHTML =
 
-
-    document
-        .getElementById(
-            "drugDoseResult"
+        showResult(
+            `${single.toFixed(2)} mg per dose`,
+            `Approximate total daily dose: ${daily.toFixed(2)} mg/day`
         )
-        .innerHTML =
 
-            showResult(
-                `${single.toFixed(2)} mg per dose`,
-                `Approximate total daily dose: ${daily.toFixed(2)} mg/day`
-            )
+        +
 
-            +
-
-            safeNote(
-                "Verify the drug-specific maximum dose, interval, formulation and local prescribing guidance."
-            );
+        safeNote(
+            "Verify the drug-specific maximum dose, interval, formulation and local prescribing guidance."
+        );
 
 }
 
 
 /* =========================================================
    2. DOSE VOLUME
-========================================================= */
+   ========================================================= */
 
 function renderDoseVolume(container){
 
@@ -2257,9 +2440,10 @@ function renderDoseVolume(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateDoseVolume()"
-        >
+            onclick="calculateDoseVolume()">
+
             Calculate volume
+
         </button>
 
 
@@ -2272,32 +2456,26 @@ function renderDoseVolume(container){
 
 function calculateDoseVolume(){
 
-    const dose =
-        num("volumeDose");
-
+    const dose = num("volumeDose");
     const concentration =
-        num(
-            "volumeConcentration"
-        );
+        num("volumeConcentration");
 
 
     if(
-        ![dose,concentration]
-            .every(Number.isFinite) ||
+        ![dose,concentration].every(Number.isFinite) ||
         dose <= 0 ||
         concentration <= 0
     ){
 
-        document
-            .getElementById(
-                "doseVolumeResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter valid positive values."
-                );
+        document.getElementById(
+            "doseVolumeResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter valid positive values."
+            );
 
         return;
+
     }
 
 
@@ -2305,28 +2483,26 @@ function calculateDoseVolume(){
         dose / concentration;
 
 
-    document
-        .getElementById(
-            "doseVolumeResult"
+    document.getElementById(
+        "doseVolumeResult"
+    ).innerHTML =
+
+        showResult(
+            `${volume.toFixed(2)} mL`
         )
-        .innerHTML =
 
-            showResult(
-                `${volume.toFixed(2)} mL`
-            )
+        +
 
-            +
-
-            safeNote(
-                "Confirm the formulation concentration and measuring device before administration."
-            );
+        safeNote(
+            "Confirm the formulation concentration and measuring device before administration."
+        );
 
 }
 
 
 /* =========================================================
    3. DAILY DOSE SPLIT
-========================================================= */
+   ========================================================= */
 
 function renderDailyDoseSplit(container){
 
@@ -2351,9 +2527,10 @@ function renderDailyDoseSplit(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateDailySplit()"
-        >
+            onclick="calculateDailySplit()">
+
             Calculate individual dose
+
         </button>
 
 
@@ -2366,30 +2543,26 @@ function renderDailyDoseSplit(container){
 
 function calculateDailySplit(){
 
-    const total =
-        num("splitTotal");
-
+    const total = num("splitTotal");
     const frequency =
         num("splitFrequency");
 
 
     if(
-        ![total,frequency]
-            .every(Number.isFinite) ||
+        ![total,frequency].every(Number.isFinite) ||
         total <= 0 ||
         frequency <= 0
     ){
 
-        document
-            .getElementById(
-                "dailySplitResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter valid positive values."
-                );
+        document.getElementById(
+            "dailySplitResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter valid positive values."
+            );
 
         return;
+
     }
 
 
@@ -2397,29 +2570,27 @@ function calculateDailySplit(){
         total / frequency;
 
 
-    document
-        .getElementById(
-            "dailySplitResult"
+    document.getElementById(
+        "dailySplitResult"
+    ).innerHTML =
+
+        showResult(
+            `${dose.toFixed(2)} mg per dose`,
+            `Based on ${frequency} equally divided doses per day.`
         )
-        .innerHTML =
 
-            showResult(
-                `${dose.toFixed(2)} mg per dose`,
-                `Based on ${frequency} equally divided doses per day.`
-            )
+        +
 
-            +
-
-            safeNote(
-                "Confirm the prescribed frequency and drug-specific maximum daily dose."
-            );
+        safeNote(
+            "Confirm the prescribed frequency and drug-specific maximum daily dose."
+        );
 
 }
 
 
 /* =========================================================
-   4. MAINTENANCE
-========================================================= */
+   4. MAINTENANCE FLUIDS
+   ========================================================= */
 
 function renderMaintenance(container){
 
@@ -2438,9 +2609,10 @@ function renderMaintenance(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateMaintenance()"
-        >
+            onclick="calculateMaintenance()">
+
             Calculate hourly fluid
+
         </button>
 
 
@@ -2462,16 +2634,15 @@ function calculateMaintenance(){
         weight <= 0
     ){
 
-        document
-            .getElementById(
-                "maintenanceResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter a valid weight."
-                );
+        document.getElementById(
+            "maintenanceResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter a valid weight."
+            );
 
         return;
+
     }
 
 
@@ -2480,8 +2651,7 @@ function calculateMaintenance(){
 
     if(weight <= 10){
 
-        rate =
-            4 * weight;
+        rate = 4 * weight;
 
     }
     else if(weight <= 20){
@@ -2500,29 +2670,27 @@ function calculateMaintenance(){
     }
 
 
-    document
-        .getElementById(
-            "maintenanceResult"
+    document.getElementById(
+        "maintenanceResult"
+    ).innerHTML =
+
+        showResult(
+            `${rate.toFixed(1)} mL/hr`,
+            "Using the 4-2-1 hourly maintenance rule."
         )
-        .innerHTML =
 
-            showResult(
-                `${rate.toFixed(1)} mL/hr`,
-                "Using the 4-2-1 hourly maintenance rule."
-            )
+        +
 
-            +
-
-            warningNote(
-                "Maintenance fluid choice and volume may need adjustment for age, illness, renal/cardiac status and local protocol."
-            );
+        warningNote(
+            "Maintenance fluid choice and volume may need adjustment for age, illness, renal/cardiac status and local protocol."
+        );
 
 }
 
 
 /* =========================================================
    5. DAILY MAINTENANCE
-========================================================= */
+   ========================================================= */
 
 function renderDailyMaintenance(container){
 
@@ -2541,9 +2709,10 @@ function renderDailyMaintenance(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateDailyMaintenance()"
-        >
+            onclick="calculateDailyMaintenance()">
+
             Calculate daily fluid
+
         </button>
 
 
@@ -2565,16 +2734,15 @@ function calculateDailyMaintenance(){
         weight <= 0
     ){
 
-        document
-            .getElementById(
-                "dailyMaintenanceResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter a valid weight."
-                );
+        document.getElementById(
+            "dailyMaintenanceResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter a valid weight."
+            );
 
         return;
+
     }
 
 
@@ -2583,8 +2751,7 @@ function calculateDailyMaintenance(){
 
     if(weight <= 10){
 
-        daily =
-            100 * weight;
+        daily = 100 * weight;
 
     }
     else if(weight <= 20){
@@ -2603,29 +2770,27 @@ function calculateDailyMaintenance(){
     }
 
 
-    document
-        .getElementById(
-            "dailyMaintenanceResult"
+    document.getElementById(
+        "dailyMaintenanceResult"
+    ).innerHTML =
+
+        showResult(
+            `${daily.toFixed(0)} mL/day`,
+            "Using the 100-50-20 daily maintenance rule."
         )
-        .innerHTML =
 
-            showResult(
-                `${daily.toFixed(0)} mL/day`,
-                "Using the 100-50-20 daily maintenance rule."
-            )
+        +
 
-            +
-
-            warningNote(
-                "Adjust according to clinical condition, electrolytes, renal function and institutional protocol."
-            );
+        warningNote(
+            "Adjust according to clinical condition, electrolytes, renal function and institutional protocol."
+        );
 
 }
 
 
 /* =========================================================
-   6. BOLUS
-========================================================= */
+   6. FLUID BOLUS
+   ========================================================= */
 
 function renderBolus(container){
 
@@ -2644,11 +2809,11 @@ function renderBolus(container){
 
                 <label
                     class="field-label"
-                    for="bolusRate"
-                >
-                    Bolus size
-                </label>
+                    for="bolusRate">
 
+                    Bolus size
+
+                </label>
 
                 <select id="bolusRate">
 
@@ -2669,9 +2834,10 @@ function renderBolus(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateBolus()"
-        >
+            onclick="calculateBolus()">
+
             Calculate bolus
+
         </button>
 
 
@@ -2692,21 +2858,19 @@ function calculateBolus(){
 
 
     if(
-        ![weight,rate]
-            .every(Number.isFinite) ||
+        ![weight,rate].every(Number.isFinite) ||
         weight <= 0
     ){
 
-        document
-            .getElementById(
-                "bolusResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter a valid weight."
-                );
+        document.getElementById(
+            "bolusResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter a valid weight."
+            );
 
         return;
+
     }
 
 
@@ -2714,29 +2878,27 @@ function calculateBolus(){
         weight * rate;
 
 
-    document
-        .getElementById(
-            "bolusResult"
+    document.getElementById(
+        "bolusResult"
+    ).innerHTML =
+
+        showResult(
+            `${volume.toFixed(0)} mL`,
+            `At ${rate} mL/kg for ${weight} kg.`
         )
-        .innerHTML =
 
-            showResult(
-                `${volume.toFixed(0)} mL`,
-                `At ${rate} mL/kg for ${weight} kg.`
-            )
+        +
 
-            +
-
-            warningNote(
-                "Use the appropriate fluid, reassess after boluses, and follow local pediatric resuscitation guidance."
-            );
+        warningNote(
+            "Use the appropriate fluid, reassess after boluses, and follow local pediatric resuscitation guidance."
+        );
 
 }
 
 
 /* =========================================================
-   7. DEFICIT
-========================================================= */
+   7. DEHYDRATION DEFICIT
+   ========================================================= */
 
 function renderDeficit(container){
 
@@ -2761,9 +2923,10 @@ function renderDeficit(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateDeficit()"
-        >
+            onclick="calculateDeficit()">
+
             Calculate deficit
+
         </button>
 
 
@@ -2784,54 +2947,48 @@ function calculateDeficit(){
 
 
     if(
-        ![weight,percent]
-            .every(Number.isFinite) ||
+        ![weight,percent].every(Number.isFinite) ||
         weight <= 0 ||
         percent < 0
     ){
 
-        document
-            .getElementById(
-                "deficitResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter valid values."
-                );
+        document.getElementById(
+            "deficitResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter valid values."
+            );
 
         return;
+
     }
 
 
     const deficit =
-        weight *
-        percent *
-        10;
+        weight * percent * 10;
 
 
-    document
-        .getElementById(
-            "deficitResult"
+    document.getElementById(
+        "deficitResult"
+    ).innerHTML =
+
+        showResult(
+            `${deficit.toFixed(0)} mL`,
+            `${percent}% estimated dehydration in a ${weight} kg child.`
         )
-        .innerHTML =
 
-            showResult(
-                `${deficit.toFixed(0)} mL`,
-                `${percent}% estimated dehydration in a ${weight} kg child.`
-            )
+        +
 
-            +
-
-            warningNote(
-                "This is an estimate. Replacement strategy depends on severity, perfusion, ongoing losses and clinical context."
-            );
+        warningNote(
+            "This is an estimate. Replacement strategy depends on severity, perfusion, ongoing losses and clinical context."
+        );
 
 }
 
 
 /* =========================================================
-   8. ETT
-========================================================= */
+   8. ETT SIZE & DEPTH
+   ========================================================= */
 
 function renderETT(container){
 
@@ -2850,11 +3007,11 @@ function renderETT(container){
 
                 <label
                     class="field-label"
-                    for="ettType"
-                >
-                    Tube type
-                </label>
+                    for="ettType">
 
+                    Tube type
+
+                </label>
 
                 <select id="ettType">
 
@@ -2875,9 +3032,10 @@ function renderETT(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateETT()"
-        >
+            onclick="calculateETT()">
+
             Estimate ETT
+
         </button>
 
 
@@ -2894,11 +3052,9 @@ function calculateETT(){
         num("ettAge");
 
     const type =
-        document
-            .getElementById(
-                "ettType"
-            )
-            .value;
+        document.getElementById(
+            "ettType"
+        ).value;
 
 
     if(
@@ -2906,52 +3062,49 @@ function calculateETT(){
         age < 0
     ){
 
-        document
-            .getElementById(
-                "ettResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter a valid age."
-                );
+        document.getElementById(
+            "ettResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter a valid age."
+            );
 
         return;
+
     }
 
 
     const size =
         type === "cuffed"
-        ? age / 4 + 3.5
-        : age / 4 + 4;
+            ? age / 4 + 3.5
+            : age / 4 + 4;
 
 
     const depth =
         size * 3;
 
 
-    document
-        .getElementById(
-            "ettResult"
+    document.getElementById(
+        "ettResult"
+    ).innerHTML =
+
+        showResult(
+            `${size.toFixed(1)} mm`,
+            `Estimated oral depth: ${depth.toFixed(1)} cm`
         )
-        .innerHTML =
 
-            showResult(
-                `${size.toFixed(1)} mm`,
-                `Estimated oral depth: ${depth.toFixed(1)} cm`
-            )
+        +
 
-            +
-
-            warningNote(
-                "Confirm tube size and position clinically and according to current airway guidance; age-based formulas are estimates."
-            );
+        warningNote(
+            "Confirm tube size and position clinically and according to current airway guidance; age-based formulas are estimates."
+        );
 
 }
 
 
 /* =========================================================
    9. RESPIRATORY RATE
-========================================================= */
+   ========================================================= */
 
 function renderRespiratoryRate(container){
 
@@ -2976,9 +3129,10 @@ function renderRespiratoryRate(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateRR()"
-        >
+            onclick="calculateRR()">
+
             Review RR
+
         </button>
 
 
@@ -2999,48 +3153,44 @@ function calculateRR(){
 
 
     if(
-        ![age,rr]
-            .every(Number.isFinite) ||
+        ![age,rr].every(Number.isFinite) ||
         age < 0 ||
         rr < 0
     ){
 
-        document
-            .getElementById(
-                "rrResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter valid values."
-                );
+        document.getElementById(
+            "rrResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter valid values."
+            );
 
         return;
+
     }
 
 
-    document
-        .getElementById(
-            "rrResult"
+    document.getElementById(
+        "rrResult"
+    ).innerHTML =
+
+        showResult(
+            `${rr.toFixed(0)} breaths/min`,
+            `Measured respiratory rate for age ${age} years.`
         )
-        .innerHTML =
 
-            showResult(
-                `${rr.toFixed(0)} breaths/min`,
-                `Measured respiratory rate for age ${age} years.`
-            )
+        +
 
-            +
-
-            warningNote(
-                "Interpret respiratory rate with age-specific reference ranges and the full clinical picture, including work of breathing and oxygenation."
-            );
+        warningNote(
+            "Interpret respiratory rate with age-specific reference ranges and the full clinical picture, including work of breathing and oxygenation."
+        );
 
 }
 
 
 /* =========================================================
-   10. OXYGEN
-========================================================= */
+   10. OXYGEN / SPO2
+   ========================================================= */
 
 function renderOxygen(container){
 
@@ -3065,9 +3215,10 @@ function renderOxygen(container){
 
         <button
             class="calculate-btn"
-            onclick="reviewOxygen()"
-        >
+            onclick="reviewOxygen()">
+
             Review note
+
         </button>
 
 
@@ -3088,48 +3239,44 @@ function reviewOxygen(){
 
 
     if(
-        ![spo2,flow]
-            .every(Number.isFinite) ||
+        ![spo2,flow].every(Number.isFinite) ||
         spo2 < 0 ||
         flow < 0
     ){
 
-        document
-            .getElementById(
-                "oxygenResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter valid values."
-                );
+        document.getElementById(
+            "oxygenResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter valid values."
+            );
 
         return;
+
     }
 
 
-    document
-        .getElementById(
-            "oxygenResult"
+    document.getElementById(
+        "oxygenResult"
+    ).innerHTML =
+
+        showResult(
+            `SpO₂ ${spo2.toFixed(0)}%`,
+            `Oxygen flow: ${flow.toFixed(1)} L/min`
         )
-        .innerHTML =
 
-            showResult(
-                `SpO₂ ${spo2.toFixed(0)}%`,
-                `Oxygen flow: ${flow.toFixed(1)} L/min`
-            )
+        +
 
-            +
-
-            safeNote(
-                "Document device/interface and clinical context. Oxygen targets depend on the condition being treated."
-            );
+        safeNote(
+            "Document device/interface and clinical context. Oxygen targets depend on the condition being treated."
+        );
 
 }
 
 
 /* =========================================================
    11. BMI
-========================================================= */
+   ========================================================= */
 
 function renderBMI(container){
 
@@ -3154,9 +3301,10 @@ function renderBMI(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateBMI()"
-        >
+            onclick="calculateBMI()">
+
             Calculate BMI
+
         </button>
 
 
@@ -3177,22 +3325,20 @@ function calculateBMI(){
 
 
     if(
-        ![weight,height]
-            .every(Number.isFinite) ||
+        ![weight,height].every(Number.isFinite) ||
         weight <= 0 ||
         height <= 0
     ){
 
-        document
-            .getElementById(
-                "bmiResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter valid values."
-                );
+        document.getElementById(
+            "bmiResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter valid values."
+            );
 
         return;
+
     }
 
 
@@ -3205,29 +3351,27 @@ function calculateBMI(){
         (meters * meters);
 
 
-    document
-        .getElementById(
-            "bmiResult"
+    document.getElementById(
+        "bmiResult"
+    ).innerHTML =
+
+        showResult(
+            `${bmi.toFixed(2)} kg/m²`,
+            "BMI in children should be interpreted using age- and sex-specific growth charts."
         )
-        .innerHTML =
 
-            showResult(
-                `${bmi.toFixed(2)} kg/m²`,
-                "BMI in children should be interpreted using age- and sex-specific growth charts."
-            )
+        +
 
-            +
-
-            safeNote(
-                "For pediatric interpretation, use an appropriate BMI-for-age reference rather than adult BMI categories."
-            );
+        safeNote(
+            "For pediatric interpretation, use an appropriate BMI-for-age reference rather than adult BMI categories."
+        );
 
 }
 
 
 /* =========================================================
    12. BSA
-========================================================= */
+   ========================================================= */
 
 function renderBSA(container){
 
@@ -3252,9 +3396,10 @@ function renderBSA(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateBSA()"
-        >
+            onclick="calculateBSA()">
+
             Calculate BSA
+
         </button>
 
 
@@ -3275,22 +3420,20 @@ function calculateBSA(){
 
 
     if(
-        ![weight,height]
-            .every(Number.isFinite) ||
+        ![weight,height].every(Number.isFinite) ||
         weight <= 0 ||
         height <= 0
     ){
 
-        document
-            .getElementById(
-                "bsaResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter valid values."
-                );
+        document.getElementById(
+            "bsaResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter valid values."
+            );
 
         return;
+
     }
 
 
@@ -3300,22 +3443,21 @@ function calculateBSA(){
         );
 
 
-    document
-        .getElementById(
-            "bsaResult"
-        )
-        .innerHTML =
-            showResult(
-                `${bsa.toFixed(3)} m²`,
-                "Mosteller formula."
-            );
+    document.getElementById(
+        "bsaResult"
+    ).innerHTML =
+
+        showResult(
+            `${bsa.toFixed(3)} m²`,
+            "Mosteller formula."
+        );
 
 }
 
 
 /* =========================================================
-   13. IBW
-========================================================= */
+   13. IDEAL BODY WEIGHT
+   ========================================================= */
 
 function renderIBW(container){
 
@@ -3334,11 +3476,11 @@ function renderIBW(container){
 
                 <label
                     class="field-label"
-                    for="ibwSex"
-                >
-                    Sex
-                </label>
+                    for="ibwSex">
 
+                    Sex
+
+                </label>
 
                 <select id="ibwSex">
 
@@ -3359,9 +3501,10 @@ function renderIBW(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateIBW()"
-        >
+            onclick="calculateIBW()">
+
             Estimate IBW
+
         </button>
 
 
@@ -3378,11 +3521,9 @@ function calculateIBW(){
         num("ibwHeight");
 
     const sex =
-        document
-            .getElementById(
-                "ibwSex"
-            )
-            .value;
+        document.getElementById(
+            "ibwSex"
+        ).value;
 
 
     if(
@@ -3390,16 +3531,15 @@ function calculateIBW(){
         height <= 0
     ){
 
-        document
-            .getElementById(
-                "ibwResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter a valid height."
-                );
+        document.getElementById(
+            "ibwResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter a valid height."
+            );
 
         return;
+
     }
 
 
@@ -3416,33 +3556,31 @@ function calculateIBW(){
 
     const ibw =
         sex === "male"
-        ? 50 + 2.3 * over5
-        : 45.5 + 2.3 * over5;
+            ? 50 + 2.3 * over5
+            : 45.5 + 2.3 * over5;
 
 
-    document
-        .getElementById(
-            "ibwResult"
+    document.getElementById(
+        "ibwResult"
+    ).innerHTML =
+
+        showResult(
+            `${ibw.toFixed(1)} kg`,
+            "Devine-style adult ideal body weight estimate."
         )
-        .innerHTML =
 
-            showResult(
-                `${ibw.toFixed(1)} kg`,
-                "Devine-style adult ideal body weight estimate."
-            )
+        +
 
-            +
-
-            warningNote(
-                "This is not a pediatric standard. Pediatric weight assessment should use age- and sex-specific growth references."
-            );
+        warningNote(
+            "This is not a pediatric standard. Pediatric weight assessment should use age- and sex-specific growth references."
+        );
 
 }
 
 
 /* =========================================================
    14. CORRECTED AGE
-========================================================= */
+   ========================================================= */
 
 function renderCorrectedAge(container){
 
@@ -3467,9 +3605,10 @@ function renderCorrectedAge(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateCorrectedAge()"
-        >
+            onclick="calculateCorrectedAge()">
+
             Calculate corrected age
+
         </button>
 
 
@@ -3490,23 +3629,21 @@ function calculateCorrectedAge(){
 
 
     if(
-        ![chron,gest]
-            .every(Number.isFinite) ||
+        ![chron,gest].every(Number.isFinite) ||
         chron < 0 ||
         gest <= 0 ||
         gest > 40
     ){
 
-        document
-            .getElementById(
-                "correctedAgeResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Enter chronological age in months and a gestational age between 1 and 40 weeks."
-                );
+        document.getElementById(
+            "correctedAgeResult"
+        ).innerHTML =
+            warningNote(
+                "Enter chronological age in months and a gestational age between 1 and 40 weeks."
+            );
 
         return;
+
     }
 
 
@@ -3525,29 +3662,27 @@ function calculateCorrectedAge(){
         );
 
 
-    document
-        .getElementById(
-            "correctedAgeResult"
+    document.getElementById(
+        "correctedAgeResult"
+    ).innerHTML =
+
+        showResult(
+            `${corrected.toFixed(1)} months`,
+            `Approximate adjustment for ${weeksEarly} weeks of prematurity.`
         )
-        .innerHTML =
 
-            showResult(
-                `${corrected.toFixed(1)} months`,
-                `Approximate adjustment for ${weeksEarly} weeks of prematurity.`
-            )
+        +
 
-            +
-
-            safeNote(
-                "Corrected age is commonly used for developmental assessment in preterm infants; follow local guidance for how long to correct."
-            );
+        safeNote(
+            "Corrected age is commonly used for developmental assessment in preterm infants; follow local guidance for how long to correct."
+        );
 
 }
 
 
 /* =========================================================
    15. ANION GAP
-========================================================= */
+   ========================================================= */
 
 function renderAnionGap(container){
 
@@ -3578,9 +3713,10 @@ function renderAnionGap(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateAG()"
-        >
+            onclick="calculateAG()">
+
             Calculate anion gap
+
         </button>
 
 
@@ -3604,20 +3740,18 @@ function calculateAG(){
 
 
     if(
-        ![na,cl,hco3]
-            .every(Number.isFinite)
+        ![na,cl,hco3].every(Number.isFinite)
     ){
 
-        document
-            .getElementById(
-                "agResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter all electrolyte values."
-                );
+        document.getElementById(
+            "agResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter all electrolyte values."
+            );
 
         return;
+
     }
 
 
@@ -3625,29 +3759,27 @@ function calculateAG(){
         na - cl - hco3;
 
 
-    document
-        .getElementById(
-            "agResult"
+    document.getElementById(
+        "agResult"
+    ).innerHTML =
+
+        showResult(
+            `${gap.toFixed(1)} mEq/L`,
+            "Anion gap = Na − Cl − HCO₃⁻."
         )
-        .innerHTML =
 
-            showResult(
-                `${gap.toFixed(1)} mEq/L`,
-                "Anion gap = Na − Cl − HCO₃⁻."
-            )
+        +
 
-            +
-
-            safeNote(
-                "Reference intervals vary by laboratory and analyzer."
-            );
+        safeNote(
+            "Reference intervals vary by laboratory and analyzer."
+        );
 
 }
 
 
 /* =========================================================
    16. CORRECTED SODIUM
-========================================================= */
+   ========================================================= */
 
 function renderCorrectedSodium(container){
 
@@ -3672,9 +3804,10 @@ function renderCorrectedSodium(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateCorrectedNa()"
-        >
+            onclick="calculateCorrectedNa()">
+
             Calculate corrected sodium
+
         </button>
 
 
@@ -3695,20 +3828,18 @@ function calculateCorrectedNa(){
 
 
     if(
-        ![na,glucose]
-            .every(Number.isFinite)
+        ![na,glucose].every(Number.isFinite)
     ){
 
-        document
-            .getElementById(
-                "corrNaResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter valid values."
-                );
+        document.getElementById(
+            "corrNaResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter valid values."
+            );
 
         return;
+
     }
 
 
@@ -3718,29 +3849,27 @@ function calculateCorrectedNa(){
         (glucose - 100);
 
 
-    document
-        .getElementById(
-            "corrNaResult"
+    document.getElementById(
+        "corrNaResult"
+    ).innerHTML =
+
+        showResult(
+            `${corrected.toFixed(1)} mEq/L`,
+            "Uses a correction factor of 2.4 mEq/L per 100 mg/dL glucose above 100."
         )
-        .innerHTML =
 
-            showResult(
-                `${corrected.toFixed(1)} mEq/L`,
-                "Uses a correction factor of 2.4 mEq/L per 100 mg/dL glucose above 100."
-            )
+        +
 
-            +
-
-            safeNote(
-                "Correction factors vary in clinical references; interpret in context."
-            );
+        safeNote(
+            "Correction factors vary in clinical references; interpret in context."
+        );
 
 }
 
 
 /* =========================================================
    17. CORRECTED CALCIUM
-========================================================= */
+   ========================================================= */
 
 function renderCorrectedCalcium(container){
 
@@ -3765,9 +3894,10 @@ function renderCorrectedCalcium(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateCorrectedCa()"
-        >
+            onclick="calculateCorrectedCa()">
+
             Calculate corrected calcium
+
         </button>
 
 
@@ -3788,20 +3918,18 @@ function calculateCorrectedCa(){
 
 
     if(
-        ![calcium,albumin]
-            .every(Number.isFinite)
+        ![calcium,albumin].every(Number.isFinite)
     ){
 
-        document
-            .getElementById(
-                "corrCaResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter valid values."
-                );
+        document.getElementById(
+            "corrCaResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter valid values."
+            );
 
         return;
+
     }
 
 
@@ -3811,29 +3939,27 @@ function calculateCorrectedCa(){
         (4 - albumin);
 
 
-    document
-        .getElementById(
-            "corrCaResult"
+    document.getElementById(
+        "corrCaResult"
+    ).innerHTML =
+
+        showResult(
+            `${corrected.toFixed(2)} mg/dL`,
+            "Uses the common albumin-correction formula."
         )
-        .innerHTML =
 
-            showResult(
-                `${corrected.toFixed(2)} mg/dL`,
-                "Uses the common albumin-correction formula."
-            )
+        +
 
-            +
-
-            warningNote(
-                "Albumin correction is an estimate; ionized calcium may be more clinically informative in some situations."
-            );
+        warningNote(
+            "Albumin correction is an estimate; ionized calcium may be more clinically informative in some situations."
+        );
 
 }
 
 
 /* =========================================================
-   18. OSMOLALITY
-========================================================= */
+   18. CALCULATED OSMOLALITY
+   ========================================================= */
 
 function renderOsmolality(container){
 
@@ -3864,9 +3990,10 @@ function renderOsmolality(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateOsm()"
-        >
+            onclick="calculateOsm()">
+
             Calculate osmolality
+
         </button>
 
 
@@ -3890,20 +4017,18 @@ function calculateOsm(){
 
 
     if(
-        ![na,glucose,bun]
-            .every(Number.isFinite)
+        ![na,glucose,bun].every(Number.isFinite)
     ){
 
-        document
-            .getElementById(
-                "osmResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter all values."
-                );
+        document.getElementById(
+            "osmResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter all values."
+            );
 
         return;
+
     }
 
 
@@ -3913,23 +4038,21 @@ function calculateOsm(){
         bun / 2.8;
 
 
-    document
-        .getElementById(
-            "osmResult"
-        )
-        .innerHTML =
+    document.getElementById(
+        "osmResult"
+    ).innerHTML =
 
-            showResult(
-                `${osm.toFixed(1)} mOsm/kg`,
-                "Calculated serum osmolality estimate."
-            );
+        showResult(
+            `${osm.toFixed(1)} mOsm/kg`,
+            "Calculated serum osmolality estimate."
+        );
 
 }
 
 
 /* =========================================================
    19. SCHWARTZ
-========================================================= */
+   ========================================================= */
 
 function renderSchwartz(container){
 
@@ -3954,9 +4077,10 @@ function renderSchwartz(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateSchwartz()"
-        >
+            onclick="calculateSchwartz()">
+
             Calculate eGFR
+
         </button>
 
 
@@ -3977,22 +4101,20 @@ function calculateSchwartz(){
 
 
     if(
-        ![height,cr]
-            .every(Number.isFinite) ||
+        ![height,cr].every(Number.isFinite) ||
         height <= 0 ||
         cr <= 0
     ){
 
-        document
-            .getElementById(
-                "schwartzResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter valid positive values."
-                );
+        document.getElementById(
+            "schwartzResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter valid positive values."
+            );
 
         return;
+
     }
 
 
@@ -4002,29 +4124,27 @@ function calculateSchwartz(){
         cr;
 
 
-    document
-        .getElementById(
-            "schwartzResult"
+    document.getElementById(
+        "schwartzResult"
+    ).innerHTML =
+
+        showResult(
+            `${egfr.toFixed(1)} mL/min/1.73 m²`,
+            "Bedside Schwartz estimate using k = 0.413."
         )
-        .innerHTML =
 
-            showResult(
-                `${egfr.toFixed(1)} mL/min/1.73 m²`,
-                "Bedside Schwartz estimate using k = 0.413."
-            )
+        +
 
-            +
-
-            warningNote(
-                "eGFR is an estimate and depends on the appropriate equation, assay and clinical context."
-            );
+        warningNote(
+            "eGFR is an estimate and depends on the appropriate equation, assay and clinical context."
+        );
 
 }
 
 
 /* =========================================================
    20. SHOCK INDEX
-========================================================= */
+   ========================================================= */
 
 function renderShockIndex(container){
 
@@ -4049,9 +4169,10 @@ function renderShockIndex(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateShockIndex()"
-        >
+            onclick="calculateShockIndex()">
+
             Calculate shock index
+
         </button>
 
 
@@ -4072,22 +4193,20 @@ function calculateShockIndex(){
 
 
     if(
-        ![hr,sbp]
-            .every(Number.isFinite) ||
+        ![hr,sbp].every(Number.isFinite) ||
         hr < 0 ||
         sbp <= 0
     ){
 
-        document
-            .getElementById(
-                "shockResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter valid values."
-                );
+        document.getElementById(
+            "shockResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter valid values."
+            );
 
         return;
+
     }
 
 
@@ -4095,29 +4214,27 @@ function calculateShockIndex(){
         hr / sbp;
 
 
-    document
-        .getElementById(
-            "shockResult"
+    document.getElementById(
+        "shockResult"
+    ).innerHTML =
+
+        showResult(
+            si.toFixed(2),
+            "Shock index = heart rate ÷ systolic blood pressure."
         )
-        .innerHTML =
 
-            showResult(
-                si.toFixed(2),
-                "Shock index = heart rate ÷ systolic blood pressure."
-            )
+        +
 
-            +
-
-            warningNote(
-                "Interpret pediatric shock index using age-specific context and serial clinical assessment."
-            );
+        warningNote(
+            "Interpret pediatric shock index using age-specific context and serial clinical assessment."
+        );
 
 }
 
 
 /* =========================================================
    21. MAP
-========================================================= */
+   ========================================================= */
 
 function renderMAP(container){
 
@@ -4142,9 +4259,10 @@ function renderMAP(container){
 
         <button
             class="calculate-btn"
-            onclick="calculateMAP()"
-        >
+            onclick="calculateMAP()">
+
             Calculate MAP
+
         </button>
 
 
@@ -4165,22 +4283,20 @@ function calculateMAP(){
 
 
     if(
-        ![sbp,dbp]
-            .every(Number.isFinite) ||
+        ![sbp,dbp].every(Number.isFinite) ||
         sbp < 0 ||
         dbp < 0
     ){
 
-        document
-            .getElementById(
-                "mapResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter valid blood pressure values."
-                );
+        document.getElementById(
+            "mapResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter valid blood pressure values."
+            );
 
         return;
+
     }
 
 
@@ -4188,23 +4304,21 @@ function calculateMAP(){
         (sbp + 2 * dbp) / 3;
 
 
-    document
-        .getElementById(
-            "mapResult"
-        )
-        .innerHTML =
+    document.getElementById(
+        "mapResult"
+    ).innerHTML =
 
-            showResult(
-                `${map.toFixed(1)} mmHg`,
-                "MAP ≈ (SBP + 2×DBP) ÷ 3."
-            );
+        showResult(
+            `${map.toFixed(1)} mmHg`,
+            "MAP ≈ (SBP + 2×DBP) ÷ 3."
+        );
 
 }
 
 
 /* =========================================================
    22. WEIGHT CONVERTER
-========================================================= */
+   ========================================================= */
 
 function renderWeightConverter(container){
 
@@ -4223,11 +4337,11 @@ function renderWeightConverter(container){
 
                 <label
                     class="field-label"
-                    for="weightUnit"
-                >
-                    Unit
-                </label>
+                    for="weightUnit">
 
+                    Unit
+
+                </label>
 
                 <select id="weightUnit">
 
@@ -4252,9 +4366,10 @@ function renderWeightConverter(container){
 
         <button
             class="calculate-btn"
-            onclick="convertWeight()"
-        >
+            onclick="convertWeight()">
+
             Convert
+
         </button>
 
 
@@ -4271,11 +4386,9 @@ function convertWeight(){
         num("weightValue");
 
     const unit =
-        document
-            .getElementById(
-                "weightUnit"
-            )
-            .value;
+        document.getElementById(
+            "weightUnit"
+        ).value;
 
 
     if(
@@ -4283,16 +4396,15 @@ function convertWeight(){
         value < 0
     ){
 
-        document
-            .getElementById(
-                "weightResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter a valid value."
-                );
+        document.getElementById(
+            "weightResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter a valid value."
+            );
 
         return;
+
     }
 
 
@@ -4301,42 +4413,37 @@ function convertWeight(){
 
     if(unit === "kg"){
 
-        kg =
-            value;
+        kg = value;
 
     }
     else if(unit === "g"){
 
-        kg =
-            value / 1000;
+        kg = value / 1000;
 
     }
     else{
 
         kg =
-            value *
-            0.45359237;
+            value * 0.45359237;
 
     }
 
 
-    document
-        .getElementById(
-            "weightResult"
-        )
-        .innerHTML =
+    document.getElementById(
+        "weightResult"
+    ).innerHTML =
 
-            showResult(
-                `${kg.toFixed(3)} kg`,
-                `${(kg * 1000).toFixed(1)} g • ${(kg * 2.20462262).toFixed(2)} lb`
-            );
+        showResult(
+            `${kg.toFixed(3)} kg`,
+            `${(kg * 1000).toFixed(1)} g • ${(kg * 2.20462262).toFixed(2)} lb`
+        );
 
 }
 
 
 /* =========================================================
-   23. TEMPERATURE
-========================================================= */
+   23. TEMPERATURE CONVERTER
+   ========================================================= */
 
 function renderTemperature(container){
 
@@ -4355,11 +4462,11 @@ function renderTemperature(container){
 
                 <label
                     class="field-label"
-                    for="temperatureUnit"
-                >
-                    Unit
-                </label>
+                    for="temperatureUnit">
 
+                    Unit
+
+                </label>
 
                 <select id="temperatureUnit">
 
@@ -4380,9 +4487,10 @@ function renderTemperature(container){
 
         <button
             class="calculate-btn"
-            onclick="convertTemperature()"
-        >
+            onclick="convertTemperature()">
+
             Convert
+
         </button>
 
 
@@ -4399,27 +4507,22 @@ function convertTemperature(){
         num("temperatureValue");
 
     const unit =
-        document
-            .getElementById(
-                "temperatureUnit"
-            )
-            .value;
+        document.getElementById(
+            "temperatureUnit"
+        ).value;
 
 
-    if(
-        !Number.isFinite(value)
-    ){
+    if(!Number.isFinite(value)){
 
-        document
-            .getElementById(
-                "temperatureResult"
-            )
-            .innerHTML =
-                warningNote(
-                    "Please enter a valid temperature."
-                );
+        document.getElementById(
+            "temperatureResult"
+        ).innerHTML =
+            warningNote(
+                "Please enter a valid temperature."
+            );
 
         return;
+
     }
 
 
@@ -4429,16 +4532,14 @@ function convertTemperature(){
             value * 9 / 5 + 32;
 
 
-        document
-            .getElementById(
-                "temperatureResult"
-            )
-            .innerHTML =
+        document.getElementById(
+            "temperatureResult"
+        ).innerHTML =
 
-                showResult(
-                    `${f.toFixed(1)} °F`,
-                    `${value.toFixed(1)} °C`
-                );
+            showResult(
+                `${f.toFixed(1)} °F`,
+                `${value.toFixed(1)} °C`
+            );
 
     }
     else{
@@ -4447,311 +4548,487 @@ function convertTemperature(){
             (value - 32) * 5 / 9;
 
 
-        document
-            .getElementById(
-                "temperatureResult"
-            )
-            .innerHTML =
+        document.getElementById(
+            "temperatureResult"
+        ).innerHTML =
 
-                showResult(
-                    `${c.toFixed(1)} °C`,
-                    `${value.toFixed(1)} °F`
-                );
-
-    }
-
-}
-
-
-/* =========================================================
-   DATE
-========================================================= */
-
-function updateDate(){
-
-    const now =
-        new Date();
-
-
-    document
-        .getElementById(
-            "todayDate"
-        )
-        .textContent =
-
-            now.toLocaleDateString(
-                "en-IN",
-                {
-                    weekday:"long",
-                    day:"numeric",
-                    month:"long",
-                    year:"numeric"
-                }
+            showResult(
+                `${c.toFixed(1)} °C`,
+                `${value.toFixed(1)} °F`
             );
 
-}
-
-
-/* =========================================================
-   MORNING MESSAGES
-========================================================= */
-
-const morningMessages = [
-
-    "Good morning, Doctor. One tiny patient at a time. 💗",
-    "Coffee first, tiny humans next. ☕👶",
-    "Good morning! May your rounds be smooth and your patients cooperative. 😌",
-    "New day, new cases, same amazing Doctor. ✨",
-    "Good morning, Vaishuu. Your little clinical toolkit is ready. 🩷",
-    "May today bring fewer surprises and more smiles. 🌸",
-    "Good morning! You've got this — even before the second coffee. ☕",
-    "Tiny patients, big responsibility, calm Doctor. 💗",
-    "Morning reminder: breathe, think, then prescribe. 🌷",
-    "Good morning! May your stethoscope hear only good news today. 🩺",
-    "Another day of saving tiny humans and surviving paperwork. 😄",
-    "May your first patient smile and your last patient say thank you. 💕",
-    "Good morning! Your pediatric superpowers are officially activated. 🦸‍♀️",
-    "May your rounds be short and your tea remain warm. ☕",
-    "Good morning, Doctor. One diagnosis at a time. ✨",
-    "Today’s forecast: 100% chance of tiny patients. 👶",
-    "Good morning! Stay calm, stay kind, and keep the calculator handy. 😌",
-    "May the charts be readable and the parents relaxed today. 🌸",
-    "Morning mission: help little humans, one at a time. 💗",
-    "Good morning! Your brain has officially entered clinical mode. 🧠",
-    "Another beautiful day to be the doctor everyone trusts. 🌷",
-    "May today be clinically satisfying and emotionally peaceful. ✨",
-    "Good morning! Tiny shoes, tiny hands, huge responsibility. 👶",
-    "May every difficult case come with a clear answer. 💕",
-    "Good morning! Remember: hydration is for doctors too. 😄",
-    "May your patients cooperate better than your phone notifications. 😂",
-    "Good morning! One deep breath before the first round. 🌸",
-    "Today is another chance to make someone’s little world better. 💗",
-    "Good morning, Doctor. Your calm is somebody else’s comfort. ✨",
-    "May your differential diagnosis be short and your day even shorter. 😌",
-    "Good morning! No panic, only pediatric precision. 🩺",
-    "May your coffee be strong and your clinical reasoning stronger. ☕",
-    "Another morning, another opportunity to be someone's favorite doctor. 💕",
-    "Good morning! The tiny humans are waiting. 👶",
-    "May your morning rounds come with more smiles than complaints. 🌷",
-    "Good morning! You've survived harder days than this one. ✨",
-    "Today: diagnose gently, explain patiently, and smile often. 💗",
-    "Good morning! Keep calm and trust your training. 🩷",
-    "May every little patient leave a little happier. 🌸",
-    "Good morning! Your clinical brain is loading... 100%. 🧠",
-    "May the day be kind to you, Doctor. 💕",
-    "Good morning! Tiny patients, tiny socks, very serious medicine. 😂",
-    "Another day, another chance to make a difference. ✨",
-    "Good morning! Let’s keep the chaos clinically controlled. 😄",
-    "May your rounds run on time for once. 😂",
-    "Good morning, Doctor. Be kind to yourself between cases. 🌷",
-    "May today have more solved problems than new ones. 💗",
-    "Good morning! Your little toolkit is ready when you are. 🩺",
-    "Today looks like a good day to save some tiny humans. 👶"
-
-];
-
-
-/* =========================================================
-   AFTERNOON MESSAGES
-========================================================= */
-
-const afternoonMessages = [
-
-    "Good afternoon, Doctor. Still going strong. 💗",
-    "Half the day done, but your pediatric superpowers aren't. ✨",
-    "Good afternoon! Time for another round of tiny humans and big decisions. 👶",
-    "You survived the morning. That deserves a snack. 😄",
-    "Good afternoon, Vaishuu. Keep going — you're doing beautifully. 🌷",
-    "May your afternoon be calmer than your morning rounds. 😌",
-    "Good afternoon! One case at a time, no need to fight the whole hospital at once. 😂",
-    "Tiny patients, big smiles, steady Doctor. 💕",
-    "Afternoon reminder: drink some water too. 💧",
-    "Good afternoon! Your brain has survived the morning and is still operational. 🧠",
-    "May your next patient bring a smile instead of another puzzle. 🌸",
-    "Good afternoon! Clinical mode: still ON. 🩺",
-    "You’ve made it this far. Keep going, Doctor. ✨",
-    "Good afternoon! May your charts be short and your tea be hot. ☕",
-    "Another few hours of helping little humans. You've got this. 💗",
-    "Good afternoon, Doctor. Pause, breathe, continue. 🌷",
-    "May the afternoon bring fewer emergencies and more easy cases. 😌",
-    "Good afternoon! Your stethoscope deserves a break, but apparently it won't get one. 😂",
-    "Halfway through the day and still making a difference. 💕",
-    "Good afternoon! Tiny patients don't care what time it is. 👶",
-    "May your afternoon be productive without being exhausting. ✨",
-    "Good afternoon, Doctor. Remember: calm is contagious. 💗",
-    "One more case, one more little life helped. 🌸",
-    "Good afternoon! The clinical brain is still running on premium mode. 🧠",
-    "May someone thank you today for something you thought was small. 💕",
-    "Good afternoon! You've got enough experience to handle today's chaos. 😄",
-    "May your afternoon rounds be surprisingly peaceful. 🌷",
-    "Good afternoon, Doctor. Keep your kindness louder than the chaos. ✨",
-    "You’re doing important work, even on the ordinary days. 💗",
-    "Good afternoon! Less panic, more pediatric precision. 🩺",
-    "May your next coffee arrive exactly when needed. ☕",
-    "Good afternoon! Tiny humans, giant responsibility, excellent Doctor. 💕",
-    "Keep going, Doctor. The day isn't finished yet. 🌸",
-    "Good afternoon! Your patience deserves an award today. 😂",
-    "May the rest of your shift feel lighter than the first half. ✨",
-    "Good afternoon! One breath, one patient, one decision at a time. 💗",
-    "Your calm voice might be the best medicine in the room. 🌷",
-    "Good afternoon! Don't forget that doctors need breaks too. 💕",
-    "May the rest of today be kinder to you. 😌"
-
-];
-
-
-/* =========================================================
-   EVENING MESSAGES
-========================================================= */
-
-const eveningMessages = [
-
-    "Good evening, Doctor. You made it through another day. 💗",
-    "Good evening! Time to slowly switch from clinical mode to human mode. 😌",
-    "Another day of helping tiny humans — well done, Doctor. ✨",
-    "Good evening, Vaishuu. You survived the chaos beautifully. 🌷",
-    "May tonight bring you the rest you deserve. 💕",
-    "Good evening! The stethoscope can finally take a little break. 🩺",
-    "Another day, another collection of stories, cases and tiny victories. 🌸",
-    "Good evening, Doctor. Be proud of the little things you helped today. 💗",
-    "You did enough today. Now breathe. 😌",
-    "Good evening! Even doctors deserve quiet evenings. ✨",
-    "May your dinner be warm and your phone stay silent for a while. 😂",
-    "Good evening! Pediatric mode: slowly powering down. 🔋",
-    "Another day completed. One more reason to be proud. 💕",
-    "Good evening, Doctor. Rest is part of the treatment plan — for you. 🌷",
-    "May tonight be softer than today's rounds. 🌸",
-    "Good evening! Your clinical brain deserves a timeout. 🧠",
-    "You helped someone today. That's enough reason to smile. 💗",
-    "Good evening, Doctor. Leave today's difficult cases where they belong: in today. 😌",
-    "The little patients are okay. Now take care of yourself too. 💕",
-    "Good evening! Time to trade the white coat mindset for comfy clothes. 😂",
-    "May your evening contain zero surprise calls. ✨",
-    "Good evening, Doctor. You survived another pediatric adventure. 👶",
-    "Tonight’s prescription: food, water, rest and absolutely no unnecessary overthinking. 😄",
-    "Good evening! Tomorrow can wait a little. 🌷",
-    "You did your best today. That matters. 💗",
-    "Good evening, Vaishuu. The day is done — let yourself slow down. ✨",
-    "May your mind become quieter with every passing hour. 🌸",
-    "Good evening! Even superheroes need sleep. 🦸‍♀️",
-    "Another day of medicine completed. Now comes the important part: recovery. 💕",
-    "Good evening, Doctor. Close the charts and open some peace. 😌",
-    "May tonight be calm, comfortable and completely yours. 🌷",
-    "Good evening! The tiny humans can wait until tomorrow. 👶",
-    "You've carried enough today. Put some of it down. 💗",
-    "Good evening! No more diagnoses for the next few hours — hopefully. 😂",
-    "May your evening have more laughter than alarms. ✨",
-    "Good evening, Doctor. Rest your brain; it worked hard today. 🧠",
-    "Today is complete. Tomorrow gets its own story. 🌸",
-    "Good evening! You've done enough. Now breathe and relax. 💕",
-    "Sleep well when the day finally lets you. 🌷"
-
-];
-
-
-/* =========================================================
-   RANDOM MESSAGE
-========================================================= */
-
-function randomItem(array){
-
-    return array[
-        Math.floor(
-            Math.random() *
-            array.length
-        )
-    ];
+    }
 
 }
 
 
 /* =========================================================
-   GREETING
-========================================================= */
+   CALCULATOR REGISTRY
+   ========================================================= */
 
-function updateGreeting(){
+const calculators = {
 
-    const now =
-        new Date();
-
-
-    const hour =
-        now.getHours();
-
-
-    let greeting;
-
-    let messages;
+    drugDose:{
+        category:"dose",
+        icon:"💊",
+        title:"Pediatric Drug Dose",
+        description:
+            "Calculate a weight-based dose from a known dose per kg.",
+        render:renderDrugDose
+    },
 
 
-    if(hour < 12){
+    doseVolume:{
+        category:"dose",
+        icon:"🧴",
+        title:"Dose Volume",
+        description:
+            "Calculate the volume required from dose and concentration.",
+        render:renderDoseVolume
+    },
 
-        greeting =
-            "Good Morning";
 
-        messages =
-            morningMessages;
+    dailyDoseSplit:{
+        category:"dose",
+        icon:"📅",
+        title:"Daily Dose Split",
+        description:
+            "Calculate individual doses when a total daily dose is divided into multiple doses.",
+        render:renderDailyDoseSplit
+    },
 
+
+    maintenance:{
+        category:"fluid",
+        icon:"💧",
+        title:"Maintenance Fluids",
+        description:
+            "Calculate hourly maintenance fluid using the 4-2-1 rule.",
+        render:renderMaintenance
+    },
+
+
+    dailyMaintenance:{
+        category:"fluid",
+        icon:"💧",
+        title:"Daily Maintenance Fluid",
+        description:
+            "Calculate estimated daily maintenance fluid using the 100-50-20 rule.",
+        render:renderDailyMaintenance
+    },
+
+
+    bolus:{
+        category:"fluid",
+        icon:"🚑",
+        title:"Fluid Bolus",
+        description:
+            "Calculate a fluid bolus volume from weight and selected bolus size.",
+        render:renderBolus
+    },
+
+
+    deficit:{
+        category:"fluid",
+        icon:"💧",
+        title:"Dehydration Deficit",
+        description:
+            "Estimate fluid deficit from body weight and dehydration percentage.",
+        render:renderDeficit
+    },
+
+
+    ett:{
+        category:"resp",
+        icon:"🫁",
+        title:"ETT Size & Depth",
+        description:
+            "Estimate pediatric uncuffed/cuffed ETT size and insertion depth.",
+        render:renderETT
+    },
+
+
+    respiratoryRate:{
+        category:"resp",
+        icon:"🫁",
+        title:"Respiratory Rate",
+        description:
+            "Record and interpret a measured respiratory rate.",
+        render:renderRespiratoryRate
+    },
+
+
+    oxygen:{
+        category:"resp",
+        icon:"🫧",
+        title:"Oxygen / SpO₂ Notes",
+        description:
+            "Quick clinical note for documenting oxygen and SpO₂.",
+        render:renderOxygen
+    },
+
+
+    bmi:{
+        category:"growth",
+        icon:"📏",
+        title:"BMI",
+        description:
+            "Calculate body mass index from weight and height.",
+        render:renderBMI
+    },
+
+
+    bsa:{
+        category:"growth",
+        icon:"📐",
+        title:"Body Surface Area",
+        description:
+            "Calculate BSA using the Mosteller formula.",
+        render:renderBSA
+    },
+
+
+    ibw:{
+        category:"growth",
+        icon:"⚖️",
+        title:"Ideal Body Weight",
+        description:
+            "Estimate ideal body weight using height and sex.",
+        render:renderIBW
+    },
+
+
+    correctedAge:{
+        category:"growth",
+        icon:"👶",
+        title:"Corrected Age",
+        description:
+            "Calculate corrected age for a preterm infant.",
+        render:renderCorrectedAge
+    },
+
+
+    anionGap:{
+        category:"lab",
+        icon:"🧪",
+        title:"Anion Gap",
+        description:
+            "Calculate anion gap from sodium, chloride and bicarbonate.",
+        render:renderAnionGap
+    },
+
+
+    correctedSodium:{
+        category:"lab",
+        icon:"🧪",
+        title:"Corrected Sodium",
+        description:
+            "Estimate corrected sodium in hyperglycemia.",
+        render:renderCorrectedSodium
+    },
+
+
+    correctedCalcium:{
+        category:"lab",
+        icon:"🧪",
+        title:"Corrected Calcium",
+        description:
+            "Estimate corrected calcium based on albumin.",
+        render:renderCorrectedCalcium
+    },
+
+
+    osmolality:{
+        category:"lab",
+        icon:"🧪",
+        title:"Calculated Osmolality",
+        description:
+            "Calculate estimated serum osmolality.",
+        render:renderOsmolality
+    },
+
+
+    schwartz:{
+        category:"lab",
+        icon:"🧪",
+        title:"Creatinine Clearance / Schwartz",
+        description:
+            "Estimate pediatric eGFR using the bedside Schwartz equation.",
+        render:renderSchwartz
+    },
+
+
+    shockIndex:{
+        category:"general",
+        icon:"❤️",
+        title:"Shock Index",
+        description:
+            "Calculate heart rate divided by systolic blood pressure.",
+        render:renderShockIndex
+    },
+
+
+    map:{
+        category:"general",
+        icon:"❤️",
+        title:"MAP",
+        description:
+            "Calculate mean arterial pressure from systolic and diastolic BP.",
+        render:renderMAP
+    },
+
+
+    weightConverter:{
+        category:"general",
+        icon:"⚖️",
+        title:"Weight Converter",
+        description:
+            "Convert between kilograms, grams and pounds.",
+        render:renderWeightConverter
+    },
+
+
+    temperature:{
+        category:"general",
+        icon:"🌡️",
+        title:"Temperature Converter",
+        description:
+            "Convert Celsius and Fahrenheit.",
+        render:renderTemperature
     }
 
-    else if(hour < 17){
-
-        greeting =
-            "Good Afternoon";
-
-        messages =
-            afternoonMessages;
-
-    }
-
-    else{
-
-        greeting =
-            "Good Evening";
-
-        messages =
-            eveningMessages;
-
-    }
+};
 
 
-    const messageElement =
+/* =========================================================
+   CALCULATOR NAVIGATION
+   ========================================================= */
+
+let currentCalculator =
+    "drugDose";
+
+
+let currentCategory =
+    "all";
+
+
+function populateSelect(){
+
+    const select =
         document.getElementById(
-            "heroMessage"
+            "calculatorSelect"
         );
 
 
-    messageElement.style.opacity =
-        "0";
+    select.innerHTML = "";
 
 
-    setTimeout(() => {
+    Object.entries(calculators)
+        .forEach(
+            ([key,calc]) => {
 
-        document
-            .getElementById(
-                "greeting"
-            )
-            .textContent =
-                greeting;
+                if(
+                    currentCategory !== "all" &&
+                    calc.category !== currentCategory
+                ){
 
+                    return;
 
-        messageElement.textContent =
-            randomItem(
-                messages
-            );
+                }
 
 
-        messageElement.style.opacity =
-            "1";
+                const option =
+                    document.createElement(
+                        "option"
+                    );
 
-    },120);
+
+                option.value = key;
+
+
+                option.textContent =
+                    `${calc.icon} ${calc.title}`;
+
+
+                select.appendChild(option);
+
+            }
+        );
+
+
+    if(
+        !calculators[currentCalculator] ||
+        (
+            currentCategory !== "all" &&
+            calculators[currentCalculator].category !==
+                currentCategory
+        )
+    ){
+
+        const first =
+            Object.keys(calculators)
+                .find(
+                    key =>
+                        currentCategory === "all" ||
+                        calculators[key].category ===
+                            currentCategory
+                );
+
+
+        currentCalculator =
+            first;
+
+    }
+
+
+    select.value =
+        currentCalculator;
+
+}
+
+
+function changeCalculator(key){
+
+    if(!calculators[key]){
+        return;
+    }
+
+
+    currentCalculator =
+        key;
+
+
+    renderCurrentCalculator();
+
+}
+
+
+function filterCategory(
+    category,
+    button
+){
+
+    currentCategory =
+        category;
+
+
+    document
+        .querySelectorAll(".category")
+        .forEach(
+            item =>
+                item.classList.remove(
+                    "active"
+                )
+        );
+
+
+    button.classList.add(
+        "active"
+    );
+
+
+    populateSelect();
+
+
+    renderCurrentCalculator();
+
+}
+
+
+function openCalculator(key){
+
+    if(!calculators[key]){
+        return;
+    }
+
+
+    currentCategory =
+        "all";
+
+
+    document
+        .querySelectorAll(".category")
+        .forEach(
+            item =>
+                item.classList.remove(
+                    "active"
+                )
+        );
+
+
+    const allButton =
+        document.querySelector(
+            '[data-category="all"]'
+        );
+
+
+    if(allButton){
+        allButton.classList.add(
+            "active"
+        );
+    }
+
+
+    currentCalculator =
+        key;
+
+
+    populateSelect();
+
+
+    renderCurrentCalculator();
+
+
+    document
+        .querySelector(".calculator-card")
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+}
+
+
+function renderCurrentCalculator(){
+
+    const calc =
+        calculators[currentCalculator];
+
+
+    if(!calc){
+        return;
+    }
+
+
+    document.getElementById(
+        "calculatorTitle"
+    ).textContent =
+        calc.title;
+
+
+    document.getElementById(
+        "calculatorDescription"
+    ).textContent =
+        calc.description;
+
+
+    const body =
+        document.getElementById(
+            "calculatorBody"
+        );
+
+
+    body.innerHTML = "";
+
+
+    calc.render(body);
 
 }
 
 
 /* =========================================================
-   SHARED VISIT COUNTER
-========================================================= */
+   QUIET VISIT COUNTER
+   ========================================================= */
 
 async function updateVisitCount(){
 
@@ -4770,10 +5047,8 @@ async function updateVisitCount(){
 
         const counterClient =
             new Counter({
-
                 workspace:
                     "CPU Boy's Workspace"
-
             });
 
 
@@ -4808,26 +5083,15 @@ async function updateVisitCount(){
         ){
 
             counterElement.textContent =
-                Number(
-                    count
-                ).toLocaleString(
-                    "en-IN"
-                );
+                Number(count)
+                    .toLocaleString("en-IN");
 
         }
 
     }
-
     catch(error){
 
-        /*
-           The counter is intentionally silent.
-           If the external service fails, nothing
-           visible is shown to the user.
-        */
-
-        counterElement.textContent =
-            "";
+        counterElement.textContent = "";
 
         console.log(
             "Visit counter unavailable."
@@ -4839,41 +5103,75 @@ async function updateVisitCount(){
 
 
 /* =========================================================
-   INITIALIZATION
-========================================================= */
+   INITIAL PAGE LOAD
+   ========================================================= */
 
-updateGreeting();
+function initializeApp(){
 
-updateDate();
+    /*
+        Dynamic greeting:
+        Good Morning / Good Afternoon / Good Evening
+    */
 
-populateSelect();
-
-renderCurrentCalculator();
-
-updateVisitCount();
+    updateGreeting();
 
 
-/* =========================================================
-   REFRESH GREETING + DATE
-========================================================= */
+    /*
+        Dynamic date
+    */
+
+    updateDate();
+
+
+    /*
+        Populate calculator selector
+    */
+
+    populateSelect();
+
+
+    /*
+        Load default calculator
+    */
+
+    renderCurrentCalculator();
+
+
+    /*
+        Visit counter
+    */
+
+    updateVisitCount();
+
+}
+
+
+/*
+    Start the app
+*/
+
+initializeApp();
+
+
+/*
+    Refresh the greeting and date periodically.
+
+    This means if the page stays open:
+    Morning → Afternoon → Evening
+    will update automatically.
+*/
 
 setInterval(
-
     () => {
 
         updateGreeting();
-
         updateDate();
 
     },
-
     60 * 1000
-
 );
 
 </script>
 
-
 </body>
-
 </html>
